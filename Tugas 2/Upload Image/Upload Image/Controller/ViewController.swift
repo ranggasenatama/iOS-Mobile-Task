@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import Photos
+import RappleProgressHUD
 
 class ViewController: UIViewController {
     
@@ -17,12 +18,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         checkPermission()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     @IBAction func cameraIconPressed(_ sender: UIBarButtonItem) {
@@ -33,27 +32,23 @@ class ViewController: UIViewController {
     }
     
     @IBAction func uploadImageButtonPressed(_ sender: UIButton) {
-        guard let image = imageViewPhoto.image else { fatalError("photo is nill") }
+        guard var image = imageViewPhoto.image else { fatalError("photo is nill") }
+        image = image.resize(withWidth: 200)!
         let imageData = UIImagePNGRepresentation(image)!
-        
-        let parameters = [
-            "image": "swift_file.png"
-        ]
         
         Alamofire.upload(multipartFormData: { (multipartFormData) in
             multipartFormData.append(imageData, withName: "image", fileName: "swift_file.png", mimeType: "image/png")
-            for (key, value) in parameters {
-                multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
-            }
         }, to:"http://localhost:8000/api/image-upload")
         { (result) in
             switch result {
             case .success(let upload, _, _):
+                let attributes = RappleActivityIndicatorView.attribute(style: RappleStyle.circle)
+                RappleActivityIndicatorView.startAnimatingWithLabel("Uploading..." ,attributes: attributes)
                 upload.uploadProgress(closure: { (progress) in
-//                    print(progress)
+                    self.progressHUD(current: progress.completedUnitCount, total: progress.totalUnitCount)
                 })
                 upload.responseString { response in
-//                    print(response)
+                    RappleActivityIndicatorView.stopAnimation(completionIndicator: .success, completionLabel: "Completed.", completionTimeout: 1.0)
                 }
             case .failure(let encodingError):
                 print(encodingError)
@@ -71,19 +66,33 @@ class ViewController: UIViewController {
                 (newStatus) in
                 print("status is \(newStatus)")
                 if newStatus ==  PHAuthorizationStatus.authorized {
-                    /* do stuff here */
                     print("success")
                 }
             })
             print("It is not determined until now")
         case .restricted:
-            // same same
             print("User do not have access to photo album.")
         case .denied:
-            // same same
             print("User has denied the permission.")
         }
     }
     
+    func progressHUD(current: Int64, total: Int64) {
+        let currentProgress: CGFloat = CGFloat(current) / CGFloat(total)
+        RappleActivityIndicatorView.setProgress(currentProgress, textValue: "\(currentProgress)")
+    }
+    
 }
 
+extension UIImage {
+    func resize(withWidth newWidth: CGFloat) -> UIImage? {
+        let scale = newWidth / self.size.width
+        let newHeight = self.size.height * scale
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        self.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
+    }
+}
