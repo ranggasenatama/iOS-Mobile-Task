@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (4.7.3)
+  - RappleProgressHUD (2.4.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7)
+  - RappleProgressHUD
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - RappleProgressHUD
+
+SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  RappleProgressHUD: 1d97178abc04ea9e89e4df74227064ded389ce24
+
+PODFILE CHECKSUM: aceb53ac6ad2d4b2552c22a20cbf795056574a79
+
+COCOAPODS: 1.5.3
