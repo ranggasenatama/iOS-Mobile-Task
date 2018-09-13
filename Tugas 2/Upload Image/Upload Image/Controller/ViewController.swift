@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func cameraIconPressed(_ sender: UIBarButtonItem) {
-        CameraHandler.shared.photoLibrary(vc: self)
+        CameraHandler.shared.camera(vc: self)
         CameraHandler.shared.imagePickedBlock = { (image) in
             self.imageViewPhoto.image = image
         }
@@ -34,19 +34,34 @@ class ViewController: UIViewController {
     @IBAction func uploadImageButtonPressed(_ sender: UIButton) {
         guard var image = imageViewPhoto.image else { fatalError("photo is nill") }
         image = image.resize(withWidth: 200)!
-        let imageData = UIImagePNGRepresentation(image)!
+        uploadImage(image: image)
+    }
+    
+    func uploadImage(image: UIImage) {
+        let apiLink = "http://mobile.if.its.ac.id/kirimgambar"
+        let nrp = "5115100076"
+        let base64String = "data:image/png;base64,"+convertImageToBase64(image: image)
+        
+        let parameters = [
+            "nrp": nrp,
+            "image": base64String
+        ]
         
         Alamofire.upload(multipartFormData: { (multipartFormData) in
-            multipartFormData.append(imageData, withName: "image", fileName: "swift_file.png", mimeType: "image/png")
-        }, to:"http://localhost:8000/api/image-upload")
+            for (key, value) in parameters {
+                multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
+            }
+        }, to: apiLink)
         { (result) in
             switch result {
             case .success(let upload, _, _):
                 let attributes = RappleActivityIndicatorView.attribute(style: RappleStyle.circle)
                 RappleActivityIndicatorView.startAnimatingWithLabel("Uploading..." ,attributes: attributes)
+
                 upload.uploadProgress(closure: { (progress) in
                     self.progressHUD(current: progress.completedUnitCount, total: progress.totalUnitCount)
                 })
+
                 upload.responseString { response in
                     RappleActivityIndicatorView.stopAnimation(completionIndicator: .success, completionLabel: "Completed.", completionTimeout: 1.0)
                 }
@@ -54,6 +69,11 @@ class ViewController: UIViewController {
                 print(encodingError)
             }
         }
+    }
+    
+    func progressHUD(current: Int64, total: Int64) {
+        let currentProgress: CGFloat = CGFloat(current) / CGFloat(total)
+        RappleActivityIndicatorView.setProgress(currentProgress, textValue: "\(Int(currentProgress*100))%")
     }
     
     func checkPermission() {
@@ -77,11 +97,21 @@ class ViewController: UIViewController {
         }
     }
     
-    func progressHUD(current: Int64, total: Int64) {
-        let currentProgress: CGFloat = CGFloat(current) / CGFloat(total)
-        RappleActivityIndicatorView.setProgress(currentProgress, textValue: "\(currentProgress)")
+    //
+    // Convert String to base64
+    //
+    func convertImageToBase64(image: UIImage) -> String {
+        let imageData = UIImagePNGRepresentation(image)!
+        return imageData.base64EncodedString(options: Data.Base64EncodingOptions.lineLength64Characters)
     }
     
+    //
+    // Convert base64 to String
+    //
+    func convertBase64ToImage(imageString: String) -> UIImage {
+        let imageData = Data(base64Encoded: imageString, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)!
+        return UIImage(data: imageData)!
+    }
 }
 
 extension UIImage {

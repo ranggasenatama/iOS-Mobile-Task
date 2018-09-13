@@ -10,6 +10,8 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
+			<key>http://mobile.if.its.ac.id/</key>
+			<string></string>
 			<key>http://localhost:8000/</key>
 			<string></string>
 		</dict>
