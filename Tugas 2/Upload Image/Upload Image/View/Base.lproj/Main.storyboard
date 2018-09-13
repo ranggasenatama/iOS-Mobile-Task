@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Image Uploader-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Upload_Image" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,32 +19,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UIN-OZ-xOR">
-                                <rect key="frame" x="0.0" y="64" width="375" height="519"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="548"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQe-Xh-WJt">
-                                <rect key="frame" x="141" y="610" width="95" height="30"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Upload Image">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="34" y="618.5" width="306" height="32"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                <state key="normal" title="Upload">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="uploadImageButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6yV-sX-Q0H"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyG-3E-yoA">
+                                <rect key="frame" x="167" y="646.5" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qQe-Xh-WJt" secondAttribute="bottom" constant="27" id="3vW-jV-gMb"/>
-                            <constraint firstItem="qQe-Xh-WJt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="141" id="43b-Ti-xGI"/>
-                            <constraint firstItem="qQe-Xh-WJt" firstAttribute="top" secondItem="UIN-OZ-xOR" secondAttribute="bottom" constant="27" id="6yx-kM-oIR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qQe-Xh-WJt" secondAttribute="bottom" constant="16.5" id="32x-DU-Lj7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qQe-Xh-WJt" secondAttribute="trailing" constant="35" id="3Rc-t4-4nH"/>
+                            <constraint firstItem="pyG-3E-yoA" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="CpL-z7-UrY"/>
+                            <constraint firstItem="qQe-Xh-WJt" firstAttribute="top" secondItem="UIN-OZ-xOR" secondAttribute="bottom" constant="6.5" id="EqG-ES-h3h"/>
                             <constraint firstItem="UIN-OZ-xOR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IZt-Cg-ROe"/>
                             <constraint firstItem="UIN-OZ-xOR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="NcC-YT-xqM"/>
+                            <constraint firstItem="pyG-3E-yoA" firstAttribute="top" secondItem="UIN-OZ-xOR" secondAttribute="bottom" constant="34.5" id="ZoT-xE-0rG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UIN-OZ-xOR" secondAttribute="trailing" id="cWZ-Nk-PWD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qQe-Xh-WJt" secondAttribute="trailing" constant="139" id="zQM-ug-Wyh"/>
+                            <constraint firstItem="qQe-Xh-WJt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="34" id="y69-8d-km7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="1rC-uW-vA0">
+                    <navigationItem key="navigationItem" title="Image Uploader" id="1rC-uW-vA0">
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="xBw-Gh-auj">
                             <connections>
                                 <action selector="cameraIconPressed:" destination="BYZ-38-t0r" id="a4C-Ez-FMf"/>
@@ -53,6 +72,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imageViewPhoto" destination="UIN-OZ-xOR" id="fgB-ms-DUZ"/>
+                        <outlet property="timer" destination="pyG-3E-yoA" id="sKQ-MS-dVb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

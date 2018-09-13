@@ -14,6 +14,7 @@ import RappleProgressHUD
 class ViewController: UIViewController {
     
     @IBOutlet weak var imageViewPhoto: UIImageView!
+    @IBOutlet weak var timer: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +48,7 @@ class ViewController: UIViewController {
             "image": base64String
         ]
         
+        let start = Date()
         Alamofire.upload(multipartFormData: { (multipartFormData) in
             for (key, value) in parameters {
                 multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
@@ -59,11 +61,13 @@ class ViewController: UIViewController {
                 RappleActivityIndicatorView.startAnimatingWithLabel("Uploading..." ,attributes: attributes)
 
                 upload.uploadProgress(closure: { (progress) in
-                    self.progressHUD(current: progress.completedUnitCount, total: progress.totalUnitCount)
+                    self.progressHUD(current: progress.fractionCompleted)
                 })
 
-                upload.responseString { response in
+                upload.responseJSON { response in
                     RappleActivityIndicatorView.stopAnimation(completionIndicator: .success, completionLabel: "Completed.", completionTimeout: 1.0)
+                    let end = Date()
+                    self.timer.text = "Time needed :\(start.elapsedTime(to: end))"
                 }
             case .failure(let encodingError):
                 print(encodingError)
@@ -71,9 +75,8 @@ class ViewController: UIViewController {
         }
     }
     
-    func progressHUD(current: Int64, total: Int64) {
-        let currentProgress: CGFloat = CGFloat(current) / CGFloat(total)
-        RappleActivityIndicatorView.setProgress(currentProgress, textValue: "\(Int(currentProgress*100))%")
+    func progressHUD(current: Double) {
+        RappleActivityIndicatorView.setProgress(CGFloat(current), textValue: "\(Int(current*100))%")
     }
     
     func checkPermission() {
@@ -124,5 +127,91 @@ extension UIImage {
         UIGraphicsEndImageContext()
         
         return newImage
+    }
+}
+
+@IBDesignable extension UIButton {
+    
+    @IBInspectable var borderWidth: CGFloat {
+        set {
+            layer.borderWidth = newValue
+        }
+        get {
+            return layer.borderWidth
+        }
+    }
+    
+    @IBInspectable var cornerRadius: CGFloat {
+        set {
+            layer.cornerRadius = newValue
+        }
+        get {
+            return layer.cornerRadius
+        }
+    }
+    
+    @IBInspectable var borderColor: UIColor? {
+        set {
+            guard let uiColor = newValue else { return }
+            layer.borderColor = uiColor.cgColor
+        }
+        get {
+            guard let color = layer.borderColor else { return nil }
+            return UIColor(cgColor: color)
+        }
+    }
+}
+
+extension Date {
+    func elapsedTime(to date: Date) -> String {
+        
+        let attoseconds100 = date.timeIntervalSince(self) * 10000000000000
+        
+        switch attoseconds100 {
+        case 6048000000000000000...:
+            let weeks : Int = Int(attoseconds100 / 6048000000000000000)
+            return "\(weeks)w" + " " + "\(Int(attoseconds100 / 864000000000000000) - (weeks * 7))d"
+            
+        case 864000000000000000...:
+            let days : Int = Int(attoseconds100 / 864000000000000000)
+            return "\(days)d" + " " + "\(Int(attoseconds100 / 36000000000000000) - (days * 24))h"
+            
+        case 36000000000000000...:
+            let hours : Int = Int(attoseconds100 / 36000000000000000)
+            return "\(hours)h" + " " + "\(Int(attoseconds100 / 600000000000000) - (hours * 60))m"
+            
+        case 600000000000000...:
+            let mins : Int = Int(attoseconds100 / 600000000000000)
+            return "\(mins)m" + " " + "\(Int(attoseconds100 / 10000000000000) - (mins * 60))s"
+            
+        case 10000000000000...:
+            let secs : Int = Int(attoseconds100 / 10000000000000)
+            return "\(secs)s" + " " + "\(Int(attoseconds100 / 10000000000) - (secs * 1000))ms"
+            
+        case 10000000000...:
+            let millisecs : Int = Int(attoseconds100 / 10000000000)
+            return "\(millisecs)ms" + " " + "\(Int(attoseconds100 / 10000000) - (millisecs * 1000))μs"
+            
+        case 10000000...:
+            let microsecs : Int = Int(attoseconds100 / 10000000)
+            return "\(microsecs)μs" + " " + "\(Int(attoseconds100 / 10000) - (microsecs * 1000))ns"
+            
+        case 10000...:
+            let nanosecs : Int = Int(attoseconds100 / 10000)
+            return "\(nanosecs)ns" + " " + "\(Int(attoseconds100 / 10) - (nanosecs * 1000))ps"
+            
+        case 10...:
+            let picosecs : Int = Int(attoseconds100 / 10)
+            return "\(picosecs)ps" + " " + "\(Int(attoseconds100 / 0.01) - (picosecs * 1000))fs"
+            
+        case 0.01...:
+            let femtosecs : Int = Int(attoseconds100 * 100)
+            return "\(femtosecs)fs" + " " + "\((Int(attoseconds100 / 0.001) - (femtosecs * 10)) * 100)as"
+        case 0.001...:
+            return "\(Int(attoseconds100 * 100000))as"
+            
+        default:
+            return "Less than 100 attoseconds"
+        }
     }
 }
