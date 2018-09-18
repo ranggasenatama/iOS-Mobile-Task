@@ -11,8 +11,8 @@ import UIKit
 import RealmSwift
 
 class DBManager {
-    private var   database:Realm
-    static let   sharedInstance = DBManager()
+    private var database:Realm
+    static let sharedInstance = DBManager()
     private init() {
         database = try! Realm()
     }

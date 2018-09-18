@@ -68,6 +68,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="myTableView" destination="jxY-mK-eo1" id="W9b-40-sKh"/>
+                        <segue destination="JPZ-gs-C9H" kind="push" id="2J9-mc-rlc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -83,7 +84,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CBh-Sl-7Ih">
-                                <rect key="frame" x="24" y="70" width="327" height="30"/>
+                                <rect key="frame" x="24" y="114" width="327" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -108,22 +109,69 @@
                                     <action selector="deleteButtonPressed:" destination="JPZ-gs-C9H" eventType="touchUpInside" id="tgi-TP-Odr"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Judul" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xW4-bj-kON">
+                                <rect key="frame" x="166" y="85" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gmn-Qr-hBn">
+                                <rect key="frame" x="16" y="185" width="343" height="314"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhs-ge-09g">
+                                <rect key="frame" x="166" y="156" width="47" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fH8-fN-gRX">
+                                <rect key="frame" x="50" y="528" width="275" height="30"/>
+                                <color key="backgroundColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Choose Image">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cameraUploadPressed:" destination="JPZ-gs-C9H" eventType="touchUpInside" id="Mcm-oF-xZ1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="xW4-bj-kON" firstAttribute="leading" secondItem="Ad4-Ng-8Mo" secondAttribute="leading" constant="166" id="43N-GX-NRE"/>
+                            <constraint firstItem="CBh-Sl-7Ih" firstAttribute="top" secondItem="xW4-bj-kON" secondAttribute="bottom" constant="8" id="7Um-ai-oMU"/>
+                            <constraint firstItem="8Xq-mc-qUI" firstAttribute="top" secondItem="fH8-fN-gRX" secondAttribute="bottom" constant="8" id="Anj-hO-589"/>
                             <constraint firstItem="Ad4-Ng-8Mo" firstAttribute="trailing" secondItem="CBh-Sl-7Ih" secondAttribute="trailing" constant="24" id="Evk-IW-gFy"/>
                             <constraint firstItem="CBh-Sl-7Ih" firstAttribute="top" secondItem="Ad4-Ng-8Mo" secondAttribute="top" constant="50" id="Gdm-OO-1je"/>
+                            <constraint firstItem="uhs-ge-09g" firstAttribute="top" secondItem="CBh-Sl-7Ih" secondAttribute="bottom" constant="12" id="Iqp-6e-KOd"/>
                             <constraint firstItem="L2Z-jb-cBS" firstAttribute="top" secondItem="8Xq-mc-qUI" secondAttribute="bottom" constant="21" id="J4a-gl-0By"/>
+                            <constraint firstItem="uhs-ge-09g" firstAttribute="leading" secondItem="Ad4-Ng-8Mo" secondAttribute="leading" constant="166" id="JpM-lO-Lck"/>
                             <constraint firstItem="Ad4-Ng-8Mo" firstAttribute="bottom" secondItem="L2Z-jb-cBS" secondAttribute="bottom" constant="20" id="KkN-RD-g3e"/>
+                            <constraint firstItem="xW4-bj-kON" firstAttribute="top" secondItem="Ad4-Ng-8Mo" secondAttribute="top" constant="21" id="LOU-eT-OKE"/>
                             <constraint firstItem="8Xq-mc-qUI" firstAttribute="leading" secondItem="Ad4-Ng-8Mo" secondAttribute="leading" constant="50" id="OXB-ty-SMf"/>
+                            <constraint firstItem="Ad4-Ng-8Mo" firstAttribute="trailing" secondItem="xW4-bj-kON" secondAttribute="trailing" constant="167" id="VaV-9Y-wVD"/>
+                            <constraint firstItem="fH8-fN-gRX" firstAttribute="top" secondItem="gmn-Qr-hBn" secondAttribute="bottom" constant="29" id="Vqk-9L-MUb"/>
+                            <constraint firstItem="gmn-Qr-hBn" firstAttribute="leading" secondItem="Ad4-Ng-8Mo" secondAttribute="leading" constant="16" id="ZaG-4C-1KR"/>
+                            <constraint firstItem="fH8-fN-gRX" firstAttribute="leading" secondItem="Ad4-Ng-8Mo" secondAttribute="leading" constant="50" id="b0B-8H-WAx"/>
                             <constraint firstItem="Ad4-Ng-8Mo" firstAttribute="trailing" secondItem="L2Z-jb-cBS" secondAttribute="trailing" constant="50" id="cIv-KY-3Vl"/>
                             <constraint firstItem="Ad4-Ng-8Mo" firstAttribute="trailing" secondItem="8Xq-mc-qUI" secondAttribute="trailing" constant="50" id="nf3-n4-gus"/>
                             <constraint firstItem="CBh-Sl-7Ih" firstAttribute="leading" secondItem="Ad4-Ng-8Mo" secondAttribute="leading" constant="24" id="oB6-jq-PZN"/>
+                            <constraint firstItem="Ad4-Ng-8Mo" firstAttribute="trailing" secondItem="uhs-ge-09g" secondAttribute="trailing" constant="162" id="own-ba-SGM"/>
+                            <constraint firstItem="Ad4-Ng-8Mo" firstAttribute="trailing" secondItem="gmn-Qr-hBn" secondAttribute="trailing" constant="16" id="rfp-6U-naC"/>
+                            <constraint firstItem="gmn-Qr-hBn" firstAttribute="top" secondItem="uhs-ge-09g" secondAttribute="bottom" constant="8" id="saC-9V-ZpE"/>
+                            <constraint firstItem="Ad4-Ng-8Mo" firstAttribute="trailing" secondItem="fH8-fN-gRX" secondAttribute="trailing" constant="50" id="uQc-xo-ShS"/>
                             <constraint firstItem="L2Z-jb-cBS" firstAttribute="leading" secondItem="Ad4-Ng-8Mo" secondAttribute="leading" constant="50" id="urm-ZN-yxS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ad4-Ng-8Mo"/>
                     </view>
+                    <navigationItem key="navigationItem" id="drL-Um-nBW">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="X8N-xF-HuG">
+                            <connections>
+                                <action selector="cameraButtonPressed:" destination="JPZ-gs-C9H" id="GaK-PD-Cqf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="imageView" destination="gmn-Qr-hBn" id="anm-JO-wT1"/>
                         <outlet property="txtField" destination="CBh-Sl-7Ih" id="Btl-Wb-hCg"/>
                     </connections>
                 </viewController>

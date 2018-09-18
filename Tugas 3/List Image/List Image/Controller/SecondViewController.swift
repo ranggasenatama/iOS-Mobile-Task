@@ -13,17 +13,71 @@ class SecondViewController: UIViewController {
     var currentItem: Item?
 
     @IBOutlet weak var txtField: UITextField!
+    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if let item = currentItem {
             txtField.text = item.textString
+            imageView.image = UIImage(contentsOfFile: item.imagePath)
         }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func imageChoosen() {
+        CameraHandler.shared.showActionSheet(vc: self)
+        CameraHandler.shared.imagePickedBlock = { (image) in
+            self.imageView.image = image
+        }
+    }
+    
+    @IBAction func cameraUploadPressed(_ sender: UIButton) {
+        imageChoosen()
+    }
+    
+    @IBAction func cameraButtonPressed(_ sender: UIBarButtonItem) {
+        imageChoosen()
+    }
+    
+    
+    func saveImage(img: UIImage, imgName: String) -> String {
+        let fileManager = FileManager.default
+        
+        let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+        
+        let documentsPath = documentsURL.path
+        
+        //final path
+        let filePath = documentsURL.appendingPathComponent("\(imgName).png")
+        print(filePath)
+        
+        //check existing image
+        do {
+            let files = try fileManager.contentsOfDirectory(atPath: "\(documentsPath)")
+            
+            for file in files {
+                if "\(documentsPath)/\(file)" == filePath.path {
+                    try fileManager.removeItem(atPath: filePath.path)
+                }
+            }
+        } catch {
+            print("erorr check image")
+        }
+        
+        //create imageData and write it to filePath
+        do {
+            if let pngImage = UIImagePNGRepresentation(img) {
+                try pngImage.write(to: filePath, options: .atomic)
+            }
+        } catch {
+            print("Error write to filePath")
+        }
+        
+        return filePath.path
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
@@ -33,7 +87,9 @@ class SecondViewController: UIViewController {
             item.ID = DBManager.sharedInstance.getDataFromDB().count
         }
         item.textString = txtField.text!
+        item.imagePath = saveImage(img: imageView.image!, imgName: txtField.text!)
         DBManager.sharedInstance.addData(object: item)
+        
         self.dismiss(animated: true) { }
     }
     
@@ -43,14 +99,6 @@ class SecondViewController: UIViewController {
             self.dismiss(animated: true) { }
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }

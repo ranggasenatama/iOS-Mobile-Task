@@ -12,6 +12,7 @@ import RealmSwift
 class Item: Object {
     @objc dynamic var ID = 0
     @objc dynamic var textString = ""
+    @objc dynamic var imagePath = ""
     override static func primaryKey() -> String? {
         return "ID"
     }

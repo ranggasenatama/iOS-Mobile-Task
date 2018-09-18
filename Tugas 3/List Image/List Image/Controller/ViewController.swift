@@ -46,6 +46,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let item = DBManager.sharedInstance.getDataFromDB()[index] as Item
         cell.textLabel?.text = item.textString
         
+        print("data image \(item.imagePath)")
+        let image: UIImage = UIImage(contentsOfFile: item.imagePath)!
+        print(image)
+        
+        cell.imageView?.image = image
+        
         return cell
         
     }
@@ -60,7 +66,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             let item = DBManager.sharedInstance.getDataFromDB()[index] as Item
             
             vc.currentItem = item
-            self.present(vc, animated: true, completion: nil)
+            self.present(vc, animated: false, completion: nil)
         }
     }
 }
