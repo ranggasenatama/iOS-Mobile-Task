@@ -10,12 +10,15 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    var currentItem: Item?
+
     @IBOutlet weak var txtField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if let item = currentItem {
+            txtField.text = item.textString
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,9 +27,21 @@ class SecondViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
+        let item = Item()
+        if(currentItem == nil) {
+            // if is a new Item then calculate a new ID, else use the current ID
+            item.ID = DBManager.sharedInstance.getDataFromDB().count
+        }
+        item.textString = txtField.text!
+        DBManager.sharedInstance.addData(object: item)
+        self.dismiss(animated: true) { }
     }
     
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
+        if let item = currentItem {
+            DBManager.sharedInstance.deleteFromDb(object: item)
+            self.dismiss(animated: true) { }
+        }
     }
     /*
     // MARK: - Navigation

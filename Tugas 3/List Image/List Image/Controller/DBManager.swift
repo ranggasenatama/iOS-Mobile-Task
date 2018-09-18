@@ -17,7 +17,7 @@ class DBManager {
         database = try! Realm()
     }
     func getDataFromDB() ->   Results<Item> {
-        let results: Results<Route> =   database.objects(Item.self)
+        let results: Results<Item> =   database.objects(Item.self)
         return results
     }
     func addData(object: Item)   {

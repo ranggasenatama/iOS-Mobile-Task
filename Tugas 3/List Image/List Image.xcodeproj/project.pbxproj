@@ -10,6 +10,7 @@
 		5D0A927266DDBA521D0EC95C /* Pods_List_Image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F84F1FFB51DEFE2F5D4A1FE /* Pods_List_Image.framework */; };
 		63274E702150B50C00363787 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63274E6F2150B50C00363787 /* DBManager.swift */; };
 		63B38DEF2150B38300000090 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B38DEE2150B38300000090 /* SecondViewController.swift */; };
+		63CE98CE2150BE3F00E6AD87 /* MyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE98CD2150BE3F00E6AD87 /* MyItem.swift */; };
 		63E7CD30214F2033008CCFBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E7CD2F214F2033008CCFBA /* AppDelegate.swift */; };
 		63E7CD32214F2033008CCFBA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E7CD31214F2033008CCFBA /* ViewController.swift */; };
 		63E7CD35214F2033008CCFBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63E7CD33214F2033008CCFBA /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 		5F84F1FFB51DEFE2F5D4A1FE /* Pods_List_Image.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_List_Image.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63274E6F2150B50C00363787 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		63B38DEE2150B38300000090 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = "List Image/Controller/SecondViewController.swift"; sourceTree = SOURCE_ROOT; };
+		63CE98CD2150BE3F00E6AD87 /* MyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyItem.swift; sourceTree = "<group>"; };
 		63E7CD2C214F2033008CCFBA /* List Image.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "List Image.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63E7CD2F214F2033008CCFBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63E7CD31214F2033008CCFBA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		63E7CD41214F203B008CCFBA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				63CE98CD2150BE3F00E6AD87 /* MyItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			files = (
 				63B38DEF2150B38300000090 /* SecondViewController.swift in Sources */,
 				63E7CD32214F2033008CCFBA /* ViewController.swift in Sources */,
+				63CE98CE2150BE3F00E6AD87 /* MyItem.swift in Sources */,
 				63E7CD30214F2033008CCFBA /* AppDelegate.swift in Sources */,
 				63274E702150B50C00363787 /* DBManager.swift in Sources */,
 			);
