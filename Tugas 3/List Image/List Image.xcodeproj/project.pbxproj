@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5D0A927266DDBA521D0EC95C /* Pods_List_Image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F84F1FFB51DEFE2F5D4A1FE /* Pods_List_Image.framework */; };
 		63274E702150B50C00363787 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63274E6F2150B50C00363787 /* DBManager.swift */; };
+		634B50DC2153102100E344BB /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B50DB2153102100E344BB /* SideMenuTableViewController.swift */; };
 		636A1D282150D54700DA656E /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A1D272150D54700DA656E /* CameraHandler.swift */; };
 		63B38DEF2150B38300000090 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B38DEE2150B38300000090 /* SecondViewController.swift */; };
 		63CE98CE2150BE3F00E6AD87 /* MyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE98CD2150BE3F00E6AD87 /* MyItem.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		5F84F1FFB51DEFE2F5D4A1FE /* Pods_List_Image.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_List_Image.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63274E6F2150B50C00363787 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		634B50DB2153102100E344BB /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
 		636A1D272150D54700DA656E /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
 		63B38DEE2150B38300000090 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = "List Image/Controller/SecondViewController.swift"; sourceTree = SOURCE_ROOT; };
 		63CE98CD2150BE3F00E6AD87 /* MyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyItem.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				63B38DEE2150B38300000090 /* SecondViewController.swift */,
 				63274E6F2150B50C00363787 /* DBManager.swift */,
 				636A1D272150D54700DA656E /* CameraHandler.swift */,
+				634B50DB2153102100E344BB /* SideMenuTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -228,6 +232,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,6 +253,7 @@
 				636A1D282150D54700DA656E /* CameraHandler.swift in Sources */,
 				63E7CD30214F2033008CCFBA /* AppDelegate.swift in Sources */,
 				63274E702150B50C00363787 /* DBManager.swift in Sources */,
+				634B50DC2153102100E344BB /* SideMenuTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

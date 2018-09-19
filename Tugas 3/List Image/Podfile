@@ -9,5 +9,6 @@ target 'List Image' do
 	pod "Alamofire"
 	pod "SwiftyJSON"
 	pod 'RealmSwift'
+	pod 'SideMenu'
 
 end
