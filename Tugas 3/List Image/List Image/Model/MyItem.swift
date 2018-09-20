@@ -13,6 +13,7 @@ class Item: Object {
     @objc dynamic var ID = 0
     @objc dynamic var textString = ""
     @objc dynamic var imagePath = ""
+    @objc dynamic var timeNeeded = ""
     override static func primaryKey() -> String? {
         return "ID"
     }

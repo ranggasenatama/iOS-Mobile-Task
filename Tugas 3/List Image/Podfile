@@ -10,5 +10,6 @@ target 'List Image' do
 	pod "SwiftyJSON"
 	pod 'RealmSwift'
 	pod 'SideMenu'
+	pod "RappleProgressHUD" 
 
 end

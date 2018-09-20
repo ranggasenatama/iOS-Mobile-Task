@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SideMenu
 
 class ViewController: UIViewController  {
     
@@ -17,6 +17,7 @@ class ViewController: UIViewController  {
         super.viewDidLoad()
         myTableView.delegate = self //Set the delegate
         myTableView.dataSource = self //Set the datasource
+        SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
     }
     
     override func viewDidAppear(_ animated: Bool) {
