@@ -54,7 +54,7 @@ class SecondViewController: UIViewController {
     
     func upload(image: UIImage) {
         let apiLink = "http://mobile.if.its.ac.id/kirimgambar"
-        let nrp = "5115100076"
+        let nrp = "5115100001"
         let base64String = "data:image/png;base64,"+convertImageToBase64(image: image)
         
         let parameters = [

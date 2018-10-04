@@ -31,6 +31,14 @@ class ViewController: UIViewController  {
         self.present(vc, animated: false, completion: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "secondViewController" {
+            let destination = segue.destination as! SecondViewController
+            let indexPath = myTableView.indexPathForSelectedRow?.row
+            destination.currentItem = DBManager.sharedInstance.getDataFromDB()[indexPath!] as Item
+        }
+    }
+    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -58,16 +66,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        if( indexPath.row > -1) {
-            
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "secondView") as! SecondViewController
-            
-            let index = Int(indexPath.row)
-            let item = DBManager.sharedInstance.getDataFromDB()[index] as Item
-            
-            vc.currentItem = item
-            self.present(vc, animated: false, completion: nil)
-        }
+            self.performSegue(withIdentifier: "secondViewController", sender: indexPath)
+//        if( indexPath.row > -1) {
+//
+//            let vc = self.storyboard?.instantiateViewController(withIdentifier: "secondView") as! SecondViewController
+//
+//            let index = Int(indexPath.row)
+//            let item = DBManager.sharedInstance.getDataFromDB()[index] as Item
+//
+//            vc.currentItem = item
+//            self.present(vc, animated: false, completion: nil)
+//        }
     }
 }

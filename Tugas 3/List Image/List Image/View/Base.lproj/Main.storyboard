@@ -68,6 +68,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="myTableView" destination="jxY-mK-eo1" id="W9b-40-sKh"/>
+                        <segue destination="JPZ-gs-C9H" kind="show" identifier="secondViewController" id="WwP-rJ-95B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -300,4 +301,7 @@
             <point key="canvasLocation" x="160.80000000000001" y="-582.45877061469275"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="WwP-rJ-95B"/>
+    </inferredMetricsTieBreakers>
 </document>
