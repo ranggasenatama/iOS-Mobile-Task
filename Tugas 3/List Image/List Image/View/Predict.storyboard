@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CD8-9j-NLW">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Io6-DC-sMb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CD8-9j-NLW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="k8t-Ez-zxa"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7Ft-iw-AoX">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3Fv-FJ-SKl" kind="relationship" relationship="rootViewController" id="3Ue-Qd-jcl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ybi-5M-741" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1781.5999999999999" y="-1306.5967016491754"/>
+        </scene>
+        <!--Predict Image-->
+        <scene sceneID="XuN-Iw-eQs">
+            <objects>
+                <viewController id="3Fv-FJ-SKl" customClass="PredictViewController" customModule="List_Image" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h8X-78-Afc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrH-zJ-BkW">
+                                <rect key="frame" x="139" y="563" width="97" height="30"/>
+                                <state key="normal" title="Check Predict"/>
+                                <connections>
+                                    <action selector="predictCheckPressed:" destination="3Fv-FJ-SKl" eventType="touchUpInside" id="bp0-7l-xM4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPm-Wl-lI4">
+                                <rect key="frame" x="50" y="520" width="274" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aka-hJ-pBx">
+                                <rect key="frame" x="166" y="98" width="47" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="46R-b8-BoN">
+                                <rect key="frame" x="41" y="171" width="292" height="300"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OrH-zJ-BkW" firstAttribute="leading" secondItem="eie-Kp-LYN" secondAttribute="leading" constant="139" id="158-8j-87d"/>
+                            <constraint firstItem="46R-b8-BoN" firstAttribute="top" secondItem="aka-hJ-pBx" secondAttribute="bottom" constant="52" id="GXA-uh-n5b"/>
+                            <constraint firstItem="eie-Kp-LYN" firstAttribute="trailing" secondItem="46R-b8-BoN" secondAttribute="trailing" constant="42" id="IG9-Np-vrb"/>
+                            <constraint firstItem="eie-Kp-LYN" firstAttribute="trailing" secondItem="OrH-zJ-BkW" secondAttribute="trailing" constant="139" id="KZJ-Es-zxf"/>
+                            <constraint firstItem="aka-hJ-pBx" firstAttribute="top" secondItem="eie-Kp-LYN" secondAttribute="top" constant="34" id="N7v-WD-lcq"/>
+                            <constraint firstItem="OrH-zJ-BkW" firstAttribute="top" secondItem="uPm-Wl-lI4" secondAttribute="bottom" constant="22" id="NEG-hS-HZE"/>
+                            <constraint firstItem="uPm-Wl-lI4" firstAttribute="top" secondItem="46R-b8-BoN" secondAttribute="bottom" constant="49" id="V7f-hI-hW6"/>
+                            <constraint firstItem="46R-b8-BoN" firstAttribute="leading" secondItem="eie-Kp-LYN" secondAttribute="leading" constant="41" id="Y6T-hk-MDc"/>
+                            <constraint firstItem="uPm-Wl-lI4" firstAttribute="leading" secondItem="eie-Kp-LYN" secondAttribute="leading" constant="50" id="ZbQ-hd-Nl2"/>
+                            <constraint firstItem="aka-hJ-pBx" firstAttribute="leading" secondItem="eie-Kp-LYN" secondAttribute="leading" constant="166" id="b6D-c9-1xY"/>
+                            <constraint firstItem="eie-Kp-LYN" firstAttribute="trailing" secondItem="aka-hJ-pBx" secondAttribute="trailing" constant="162" id="mlk-ZD-nmL"/>
+                            <constraint firstItem="eie-Kp-LYN" firstAttribute="trailing" secondItem="uPm-Wl-lI4" secondAttribute="trailing" constant="51" id="qyg-dg-x9Q"/>
+                            <constraint firstItem="eie-Kp-LYN" firstAttribute="bottom" secondItem="OrH-zJ-BkW" secondAttribute="bottom" constant="25" id="vJG-Fx-YBQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eie-Kp-LYN"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Predict Image" id="52i-8f-Lee">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="GK9-pW-6tE">
+                            <connections>
+                                <action selector="cameraButtonPressed:" destination="3Fv-FJ-SKl" id="Xip-dH-yYN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="46R-b8-BoN" id="I3y-5B-0Wa"/>
+                        <outlet property="labelView" destination="uPm-Wl-lI4" id="hmE-9P-oWS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bE0-KU-hkH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2752.8000000000002" y="-1297.6011994002999"/>
+        </scene>
+    </scenes>
+</document>
