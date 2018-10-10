@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Alamofire
 import RappleProgressHUD
+import SwiftyJSON
 
 class PredictViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
@@ -56,9 +57,10 @@ class PredictViewController: UIViewController {
                     
                 })
                 
-                upload.responseString { response in
+                upload.responseJSON { response in
                     RappleActivityIndicatorView.stopAnimation(completionIndicator: .success, completionLabel: "Completed.", completionTimeout: 1.0)
                     print(response)
+                    
                 }
             case .failure(let encodingError):
                 print(encodingError)

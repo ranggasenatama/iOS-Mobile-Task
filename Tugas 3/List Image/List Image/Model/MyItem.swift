@@ -18,3 +18,13 @@ class Item: Object {
         return "ID"
     }
 }
+
+class Item: Object {
+    var ID = 0
+    var textString = ""
+    @objc dynamic var imagePath = ""
+    @objc dynamic var timeNeeded = ""
+    override static func primaryKey() -> String? {
+        return "ID"
+    }
+}
