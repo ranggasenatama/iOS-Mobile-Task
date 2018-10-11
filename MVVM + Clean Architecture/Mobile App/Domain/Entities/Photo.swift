@@ -10,4 +10,8 @@ import Foundation
 
 public struct Photo {
     let url: String
+    
+    public init(url: String) {
+        self.url = url
+    }
 }
