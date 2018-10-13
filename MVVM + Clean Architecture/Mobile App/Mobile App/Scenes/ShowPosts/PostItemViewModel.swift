@@ -11,7 +11,7 @@ import Domain
 
 final class PostItemViewModel   {
     let title:String
-    let image: Photo
+    let image: UIImage
     let time: String
     let post: Post
     

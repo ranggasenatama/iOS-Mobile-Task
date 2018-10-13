@@ -13,7 +13,6 @@
 		63556B9F216EE97F00E0D736 /* UseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63556B9E216EE97F00E0D736 /* UseCaseProvider.swift */; };
 		63556BA1216EE99900E0D736 /* PostsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63556BA0216EE99900E0D736 /* PostsUseCase.swift */; };
 		63556BA3216EE9A500E0D736 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63556BA2216EE9A500E0D736 /* Post.swift */; };
-		63556BA5216EE9EC00E0D736 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63556BA4216EE9EC00E0D736 /* Photo.swift */; };
 		63556BA8216EED7300E0D736 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63556BA7216EED7300E0D736 /* ViewModelType.swift */; };
 		63556BAF216EF5EC00E0D736 /* PostsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63556BAE216EF5EC00E0D736 /* PostsNavigator.swift */; };
 		63556BB1216EF90A00E0D736 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63556BB0216EF90A00E0D736 /* PostsViewController.swift */; };
@@ -63,7 +62,6 @@
 		63556B9E216EE97F00E0D736 /* UseCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseProvider.swift; sourceTree = "<group>"; };
 		63556BA0216EE99900E0D736 /* PostsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsUseCase.swift; sourceTree = "<group>"; };
 		63556BA2216EE9A500E0D736 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		63556BA4216EE9EC00E0D736 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		63556BA7216EED7300E0D736 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		63556BAE216EF5EC00E0D736 /* PostsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsNavigator.swift; sourceTree = "<group>"; };
 		63556BB0216EF90A00E0D736 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
@@ -131,7 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				63556BA2216EE9A500E0D736 /* Post.swift */,
-				63556BA4216EE9EC00E0D736 /* Photo.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -421,7 +418,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63556BA5216EE9EC00E0D736 /* Photo.swift in Sources */,
 				63556BA3216EE9A500E0D736 /* Post.swift in Sources */,
 				63556B9F216EE97F00E0D736 /* UseCaseProvider.swift in Sources */,
 				63556BA1216EE99900E0D736 /* PostsUseCase.swift in Sources */,

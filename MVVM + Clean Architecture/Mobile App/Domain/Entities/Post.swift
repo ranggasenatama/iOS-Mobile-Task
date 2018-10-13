@@ -10,10 +10,10 @@ import Foundation
 
 public struct Post {
     public let title: String
-    public let image: Photo
+    public let image: UIImage
     public let time: String
     
-    public init(title: String, image: Photo, time: String) {
+    public init(title: String, image: UIImage, time: String) {
         self.title = title
         self.image = image
         self.time = time

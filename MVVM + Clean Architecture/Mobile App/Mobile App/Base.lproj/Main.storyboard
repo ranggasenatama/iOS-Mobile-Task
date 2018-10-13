@@ -49,8 +49,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="imageCellView" destination="pjA-Ip-fGH" id="s1c-qH-egm"/>
-                                    <outlet property="titleLabel" destination="Xy9-Fx-8KY" id="bcP-ZL-ooc"/>
+                                    <outlet property="imageViewCell" destination="keO-lz-Kf5" id="ena-Hi-vpj"/>
+                                    <outlet property="titleLabel" destination="T0C-WA-gmP" id="esZ-7V-96F"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
