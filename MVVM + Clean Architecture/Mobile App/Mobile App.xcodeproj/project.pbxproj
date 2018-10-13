@@ -23,6 +23,10 @@
 		63B4A9BC216E349800EC5553 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63B4A9BA216E349800EC5553 /* Main.storyboard */; };
 		63B4A9BE216E349A00EC5553 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B4A9BD216E349A00EC5553 /* Assets.xcassets */; };
 		63B4A9C1216E349A00EC5553 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63B4A9BF216E349A00EC5553 /* LaunchScreen.storyboard */; };
+		63E91F362170A8C700E4FF2A /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E91F352170A8C700E4FF2A /* ActivityIndicator.swift */; };
+		63E91F382170A8EC00E4FF2A /* ErrorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E91F372170A8EC00E4FF2A /* ErrorTracker.swift */; };
+		63E91F3A2170A9A700E4FF2A /* Observable+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E91F392170A9A700E4FF2A /* Observable+Ext.swift */; };
+		63E91F3C2170BE6900E4FF2A /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E91F3B2170BE6900E4FF2A /* PostTableViewCell.swift */; };
 		BC80115B3843A84EE004081F /* Pods_Mobile_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E6FF8A0B4CACECAD5946D0C /* Pods_Mobile_App.framework */; };
 		CACD97FB834812515DD56E06 /* Pods_Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A58B491130F4BE4F157BE944 /* Pods_Domain.framework */; };
 /* End PBXBuildFile section */
@@ -71,6 +75,10 @@
 		63B4A9BD216E349A00EC5553 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63B4A9C0216E349A00EC5553 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63B4A9C2216E349A00EC5553 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63E91F352170A8C700E4FF2A /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		63E91F372170A8EC00E4FF2A /* ErrorTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTracker.swift; sourceTree = "<group>"; };
+		63E91F392170A9A700E4FF2A /* Observable+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Ext.swift"; sourceTree = "<group>"; };
+		63E91F3B2170BE6900E4FF2A /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		72B77C5A8963CDEFF8D673AB /* Pods-Domain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Domain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Domain/Pods-Domain.debug.xcconfig"; sourceTree = "<group>"; };
 		99CA578E9BBB15554C4A7099 /* Pods-Mobile App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mobile App/Pods-Mobile App.debug.xcconfig"; sourceTree = "<group>"; };
 		A58B491130F4BE4F157BE944 /* Pods_Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +157,7 @@
 		63556BAA216EEE1200E0D736 /* ShowPosts */ = {
 			isa = PBXGroup;
 			children = (
+				63E91F3B2170BE6900E4FF2A /* PostTableViewCell.swift */,
 				63556BAE216EF5EC00E0D736 /* PostsNavigator.swift */,
 				63556BB0216EF90A00E0D736 /* PostsViewController.swift */,
 				63556BB2216EFAC000E0D736 /* PostsViewModel.swift */,
@@ -174,6 +183,9 @@
 		63556BAD216EEE3C00E0D736 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				63E91F352170A8C700E4FF2A /* ActivityIndicator.swift */,
+				63E91F372170A8EC00E4FF2A /* ErrorTracker.swift */,
+				63E91F392170A9A700E4FF2A /* Observable+Ext.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -201,9 +213,9 @@
 		63B4A9B5216E349800EC5553 /* Mobile App */ = {
 			isa = PBXGroup;
 			children = (
+				63B4A9B6216E349800EC5553 /* AppDelegate.swift */,
 				63556BA6216EED6100E0D736 /* Common */,
 				63556BA9216EEDFF00E0D736 /* Scenes */,
-				63B4A9B6216E349800EC5553 /* AppDelegate.swift */,
 				63556BAD216EEE3C00E0D736 /* Utility */,
 				63B4A9BA216E349800EC5553 /* Main.storyboard */,
 				63B4A9BD216E349A00EC5553 /* Assets.xcassets */,
@@ -423,7 +435,11 @@
 				63B4A9B7216E349800EC5553 /* AppDelegate.swift in Sources */,
 				63556BB5216EFB8600E0D736 /* PostItemViewModel.swift in Sources */,
 				63556BB3216EFAC000E0D736 /* PostsViewModel.swift in Sources */,
+				63E91F382170A8EC00E4FF2A /* ErrorTracker.swift in Sources */,
+				63E91F3A2170A9A700E4FF2A /* Observable+Ext.swift in Sources */,
 				63556BA8216EED7300E0D736 /* ViewModelType.swift in Sources */,
+				63E91F362170A8C700E4FF2A /* ActivityIndicator.swift in Sources */,
+				63E91F3C2170BE6900E4FF2A /* PostTableViewCell.swift in Sources */,
 				63556BAF216EF5EC00E0D736 /* PostsNavigator.swift in Sources */,
 				63556BB1216EF90A00E0D736 /* PostsViewController.swift in Sources */,
 			);

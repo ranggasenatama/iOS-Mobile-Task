@@ -15,7 +15,7 @@ final class PostItemViewModel   {
     let time: String
     let post: Post
     
-    init (with post: Post) {
+    public init (with post: Post) {
         self.post = post
         self.title = post.title
         self.image = post.image

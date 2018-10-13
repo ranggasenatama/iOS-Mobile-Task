@@ -9,9 +9,9 @@
 import Foundation
 
 public struct Post {
-    let title: String
-    let image: Photo
-    let time: String
+    public let title: String
+    public let image: Photo
+    public let time: String
     
     public init(title: String, image: Photo, time: String) {
         self.title = title
