@@ -14,7 +14,7 @@ import RxCocoa
 class PostsViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
-    let viewMode: PostsViewModel
+//    let viewModel: PostsViewModel
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,39 +23,39 @@ class PostsViewController: UIViewController {
     }
     
     private func configureTableView() {
-        tableView.refreshControl = UIRefreshControl()
-        tableView.estimatedRowHeight = 64
-        tableView.rowHeight = UITableViewAutomaticDimension
+//        tableView.refreshControl = UIRefreshControl()
+//        tableView.estimatedRowHeight = 64
+//        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     private func bindViewModel() {
         assert(viewModel != nil)
-        let viewWillAppear = rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
-            .mapToVoid()
-            .asDriverOnErrorJustComplete()
-        let pull = tableView.refreshControl!.rx
-            .controlEvent(.valueChanged)
-            .asDriver()
-        
-        let input = PostsViewModel.Input(trigger: Driver.merge(viewWillAppear, pull),
-                                         createPostTrigger: createPostButton.rx.tap.asDriver(),
-                                         selection: tableView.rx.itemSelected.asDriver())
-        let output = viewModel.transform(input: input)
-        //Bind Posts to UITableView
-        output.posts.drive(tableView.rx.items(cellIdentifier: PostTableViewCell.reuseID, cellType: PostTableViewCell.self)) { tv, viewModel, cell in
-            cell.bind(viewModel)
-            
-            }.addDisposableTo(disposeBag)
-        //Connect Create Post to UI
-        
-        output.fetching
-            .drive(tableView.refreshControl!.rx.isRefreshing)
-            .disposed(by: disposeBag)
-        output.createPost
-            .drive()
-            .disposed(by: disposeBag)
-        output.selectedPost
-            .drive()
-            .disposed(by: disposeBag)
+//        let viewWillAppear = rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
+//            .mapToVoid()
+//            .asDriverOnErrorJustComplete()
+//        let pull = tableView.refreshControl!.rx
+//            .controlEvent(.valueChanged)
+//            .asDriver()
+//
+//        let input = PostsViewModel.Input(trigger: Driver.merge(viewWillAppear, pull),
+//                                         createPostTrigger: createPostButton.rx.tap.asDriver(),
+//                                         selection: tableView.rx.itemSelected.asDriver())
+//        let output = viewModel.transform(input: input)
+//        //Bind Posts to UITableView
+//        output.posts.drive(tableView.rx.items(cellIdentifier: PostTableViewCell.reuseID, cellType: PostTableViewCell.self)) { tv, viewModel, cell in
+//            cell.bind(viewModel)
+//
+//            }.addDisposableTo(disposeBag)
+//        //Connect Create Post to UI
+//
+//        output.fetching
+//            .drive(tableView.refreshControl!.rx.isRefreshing)
+//            .disposed(by: disposeBag)
+//        output.createPost
+//            .drive()
+//            .disposed(by: disposeBag)
+//        output.selectedPost
+//            .drive()
+//            .disposed(by: disposeBag)
     }
 }
