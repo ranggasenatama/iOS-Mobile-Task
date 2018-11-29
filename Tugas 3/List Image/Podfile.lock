@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.7.3)
+  - BarcodeScanner (4.1.3)
   - RappleProgressHUD (2.4.1)
   - Realm (3.9.0):
     - Realm/Headers (= 3.9.0)
@@ -11,6 +12,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - BarcodeScanner
   - RappleProgressHUD
   - RealmSwift
   - SideMenu
@@ -19,6 +21,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - BarcodeScanner
     - RappleProgressHUD
     - Realm
     - RealmSwift
@@ -27,12 +30,13 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  BarcodeScanner: fce1ad2b3f28286b1ab5091fe0979789618bee27
   RappleProgressHUD: 1d97178abc04ea9e89e4df74227064ded389ce24
   Realm: 3d36f208bf3aff8335dc3298742140182bde4edb
   RealmSwift: aa4d11917bfcfaa3ed51f219102a487ecd895447
   SideMenu: 70ee5657df63ec3382660ec4ef470bf1cf5db07d
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: a4a768eee91ef8bb6d5ab849ccaf5b09d9a579fc
+PODFILE CHECKSUM: e8c4383d9181ba75dd329ce146900a9e11db33f3
 
 COCOAPODS: 1.5.3

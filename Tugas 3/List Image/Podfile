@@ -10,6 +10,8 @@ target 'List Image' do
 	pod "SwiftyJSON"
 	pod 'RealmSwift'
 	pod 'SideMenu'
-	pod "RappleProgressHUD" 
+	pod "RappleProgressHUD"
+	pod 'BarcodeScanner'
+
 
 end
