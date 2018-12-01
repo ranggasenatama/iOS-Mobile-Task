@@ -9,9 +9,9 @@
 import Foundation
 
 public class ImageEntity {
-    public let image: UIImage
+    public let image: Data
     
-    public init(_image: UIImage) {
+    public init(_image: Data) {
         self.image = _image
     }
 }

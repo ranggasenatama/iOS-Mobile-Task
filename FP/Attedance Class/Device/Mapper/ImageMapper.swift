@@ -15,10 +15,12 @@ public class ImageMapper: MapperBase<ImageEntity, ImageDevice> {
     }
     
     public override func mapToEntity(model: ImageDevice) -> ImageEntity {
-        return ImageEntity(_image: model.image)
+        guard let uiImage = UIImagePNGRepresentation(model.image) else { fatalError() }
+        return ImageEntity(_image: uiImage)
     }
     
     public override func mapToModel(entity: ImageEntity) -> ImageDevice {
-        return ImageDevice(_image: entity.image)
+        guard let data = UIImage(data: entity.image) else { fatalError() }
+        return ImageDevice(_image: data)
     }
 }

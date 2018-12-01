@@ -8,10 +8,10 @@
 
 import Foundation
 
-class Image {
-    let image: [UInt8]
+public class ImageData {
+    public let image: String
     
-    init(_image: [UInt8]) {
+    public init(_image: String) {
         self.image = _image
     }
 }

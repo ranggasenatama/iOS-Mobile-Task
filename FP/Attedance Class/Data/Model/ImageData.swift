@@ -1,5 +1,5 @@
 //
-//  GetPredictImageUseCase.swift
+//  Image.swift
 //  Data
 //
 //  Created by Rangga Senatama Putra on 01/12/18.
@@ -8,6 +8,10 @@
 
 import Foundation
 
-public class GetPredictImageUseCase {
+public class Image {
+    public let image: Data
     
+    public init(_image: Data) {
+        self.image = _image
+    }
 }
