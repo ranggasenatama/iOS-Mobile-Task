@@ -35,6 +35,9 @@
 		63A944D321AF951A0040D501 /* ImageMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A944D221AF951A0040D501 /* ImageMapper.swift */; };
 		63A944D521AF96800040D501 /* ImageRepositoryDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A944D421AF96800040D501 /* ImageRepositoryDevice.swift */; };
 		63A944D821AFA2BB0040D501 /* SuccesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A944D721AFA2BB0040D501 /* SuccesViewController.swift */; };
+		63B22D2821B1A57800B6ADFD /* AttedanceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B22D2721B1A57800B6ADFD /* AttedanceAPI.swift */; };
+		63B22D2D21B1C46700B6ADFD /* GetPredictImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B22D2C21B1C46700B6ADFD /* GetPredictImageUseCase.swift */; };
+		63B22D2F21B1C4C200B6ADFD /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B22D2E21B1C4C200B6ADFD /* Image.swift */; };
 		63D21F0E21AEE66600AAA7A2 /* AgendaCoordinateEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D21F0D21AEE66600AAA7A2 /* AgendaCoordinateEntity.swift */; };
 		63F3471B21AC51B5000FAEC3 /* CoordinateEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F3471A21AC51B5000FAEC3 /* CoordinateEntity.swift */; };
 		63F3471E21AC52CB000FAEC3 /* MapperBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F3471D21AC52CB000FAEC3 /* MapperBase.swift */; };
@@ -122,6 +125,9 @@
 		63A944D221AF951A0040D501 /* ImageMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMapper.swift; sourceTree = "<group>"; };
 		63A944D421AF96800040D501 /* ImageRepositoryDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepositoryDevice.swift; sourceTree = "<group>"; };
 		63A944D721AFA2BB0040D501 /* SuccesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccesViewController.swift; sourceTree = "<group>"; };
+		63B22D2721B1A57800B6ADFD /* AttedanceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttedanceAPI.swift; sourceTree = "<group>"; };
+		63B22D2C21B1C46700B6ADFD /* GetPredictImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPredictImageUseCase.swift; sourceTree = "<group>"; };
+		63B22D2E21B1C4C200B6ADFD /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		63D21F0D21AEE66600AAA7A2 /* AgendaCoordinateEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaCoordinateEntity.swift; sourceTree = "<group>"; };
 		63F3471A21AC51B5000FAEC3 /* CoordinateEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateEntity.swift; sourceTree = "<group>"; };
 		63F3471D21AC52CB000FAEC3 /* MapperBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapperBase.swift; sourceTree = "<group>"; };
@@ -186,16 +192,9 @@
 		630AF6E521AFC6D500AF8953 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				630AF6E621AFC6FF00AF8953 /* Request */,
+				63B22D2721B1A57800B6ADFD /* AttedanceAPI.swift */,
 			);
 			path = API;
-			sourceTree = "<group>";
-		};
-		630AF6E621AFC6FF00AF8953 /* Request */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Request;
 			sourceTree = "<group>";
 		};
 		6312336721AEDB90006783FE /* Scenes */ = {
@@ -271,7 +270,10 @@
 		639F807021AC5042008A98AE /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				63B22D2921B1C1C800B6ADFD /* Repository */,
 				630AF6E521AFC6D500AF8953 /* API */,
+				63B22D2A21B1C1D500B6ADFD /* Model */,
+				63B22D2B21B1C1DC00B6ADFD /* UseCase */,
 				639F807121AC5042008A98AE /* Data.h */,
 				639F807221AC5042008A98AE /* Info.plist */,
 			);
@@ -334,6 +336,29 @@
 				63A944D721AFA2BB0040D501 /* SuccesViewController.swift */,
 			);
 			path = Success;
+			sourceTree = "<group>";
+		};
+		63B22D2921B1C1C800B6ADFD /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		63B22D2A21B1C1D500B6ADFD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63B22D2E21B1C4C200B6ADFD /* Image.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		63B22D2B21B1C1DC00B6ADFD /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				63B22D2C21B1C46700B6ADFD /* GetPredictImageUseCase.swift */,
+			);
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 		63F3471C21AC5270000FAEC3 /* Mapper */ = {
@@ -544,6 +569,7 @@
 					};
 					639F806E21AC5042008A98AE = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 					639F807F21AC5054008A98AE = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -689,12 +715,16 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -738,6 +768,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63B22D2D21B1C46700B6ADFD /* GetPredictImageUseCase.swift in Sources */,
+				63B22D2F21B1C4C200B6ADFD /* Image.swift in Sources */,
+				63B22D2821B1A57800B6ADFD /* AttedanceAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1017,6 +1050,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 584D8DCE257B2D153992E66E /* Pods-Data.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1035,6 +1069,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ranggasenatama.Data;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1046,6 +1081,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AE5DC61D987A0675FE4CC0CB /* Pods-Data.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

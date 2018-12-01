@@ -23,9 +23,7 @@ target 'Data' do
   use_frameworks!
 
   # Pods for Data
-	rx_swift
-	rx_cocoa
-	pod 'Alamofire', '~> 4.7'
+	pod 'Moya', '~> 11.00'
 end
 
 target 'Device' do
@@ -33,8 +31,6 @@ target 'Device' do
   use_frameworks!
 
   # Pods for Device
-	rx_swift
-	rx_cocoa
 end
 
 target 'Domain' do
@@ -42,6 +38,4 @@ target 'Domain' do
   use_frameworks!
 
   # Pods for Domain
-	rx_swift
-	rx_cocoa
 end
