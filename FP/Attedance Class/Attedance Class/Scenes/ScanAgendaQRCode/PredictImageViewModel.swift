@@ -7,15 +7,11 @@
 //
 
 import Device
-import Domain
 
 class PredictImageViewModel {
     var image: UIImage! = nil
-    let imageRepository: ImageRepository = ImageRepositoryDevice()
     
-    func getImage(vc: UIViewController) {
-        
+    func makePredict(image: UI) -> <#return type#> {
+        <#function body#>
     }
-    
-    
 }

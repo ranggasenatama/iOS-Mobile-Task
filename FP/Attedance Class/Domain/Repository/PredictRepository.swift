@@ -1,6 +1,6 @@
 //
-//  Image.swift
-//  Data
+//  PredictRepository.swift
+//  Domain
 //
 //  Created by Rangga Senatama Putra on 01/12/18.
 //  Copyright © 2018 Rangga Senatama Putra. All rights reserved.
@@ -8,10 +8,6 @@
 
 import Foundation
 
-public class Image {
-    public let image: Data
-    
-    public init(_image: Data) {
-        self.image = _image
-    }
+public protocol PredictRepository {
+    func makePredict(entity: PredictEntity)
 }

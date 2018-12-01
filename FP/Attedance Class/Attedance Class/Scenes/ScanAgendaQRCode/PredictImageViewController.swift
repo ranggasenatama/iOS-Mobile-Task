@@ -31,6 +31,7 @@ class PredictImageViewController: UIViewController {
     }
     
     @IBAction func predictButtonPressed(_ sender: Any) {
+        
         performSegue(withIdentifier: "berhasil", sender: self)
     }
 }
