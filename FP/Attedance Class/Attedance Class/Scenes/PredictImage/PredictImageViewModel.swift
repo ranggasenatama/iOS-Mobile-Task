@@ -18,7 +18,7 @@ class PredictImageViewModel {
     let predictRequest: PredictRequestRepository = PredictRequestRepositoryData()
     
     func makePredict() {
-        guard let data = UIImagePNGRepresentation(self.image) else {
+        guard let data = UIImageJPEGRepresentation(self.image, 0.1) else {
             fatalError("error convert UIImage to data")
         }
         print(data)

@@ -202,19 +202,20 @@
 			children = (
 				63A7212F21AEFEDA00721504 /* ShowAgendaScan */,
 				63A7212A21AEF20100721504 /* GetLocation */,
-				6312336821AEDBB8006783FE /* ScanAgendaQRCode */,
+				6312336821AEDBB8006783FE /* MakePredictImage */,
 				63A944D621AFA28E0040D501 /* Success */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		6312336821AEDBB8006783FE /* ScanAgendaQRCode */ = {
+		6312336821AEDBB8006783FE /* MakePredictImage */ = {
 			isa = PBXGroup;
 			children = (
 				639F804821AC4A3F008A98AE /* PredictImageViewController.swift */,
 				63F3473221AC7E46000FAEC3 /* PredictImageViewModel.swift */,
 			);
-			path = ScanAgendaQRCode;
+			name = MakePredictImage;
+			path = PredictImage;
 			sourceTree = "<group>";
 		};
 		6385305821B2C3D70013985C /* Model */ = {

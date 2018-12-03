@@ -11,8 +11,6 @@ import SwiftyJSON
 import Alamofire
 
 public class APIManager {
-    let provider = MoyaProvider<AttendanceAPI>()
-
     func makePredictImage(_username: String, _password: String, _image: String) {
         let parameters: [String: String] = [
             "idUser" : _username,
