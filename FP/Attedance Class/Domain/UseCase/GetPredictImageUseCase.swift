@@ -9,13 +9,13 @@
 import Foundation
 
 public class GetPredictImageUseCase {
-    public var predictRepository: PredictRepository
+    public var predictRepository: PredictRequestRepository
     
-    public init(_predictRepository: PredictRepository) {
+    public init(_predictRepository: PredictRequestRepository) {
         self.predictRepository = _predictRepository
     }
     
-    public func invoke(_entity: PredictEntity) {
+    public func invoke(_entity: PredictRequestEntity) {
         predictRepository.makePredict(entity: _entity)
     }
 }

@@ -10,8 +10,9 @@ import UIKit
 import Device
 
 class PredictImageViewController: UIViewController {
-    let viewModel: PredictImageViewModel = PredictImageViewModel()
     @IBOutlet weak var imageView: UIImageView!
+    
+    let predictImageViewModel: PredictImageViewModel = PredictImageViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,10 @@ class PredictImageViewController: UIViewController {
     }
     
     @IBAction func predictButtonPressed(_ sender: Any) {
-        
+        predictImageViewModel.nrp = "5115100076"
+        predictImageViewModel.password = "123456"
+        predictImageViewModel.image = imageView.image
+        predictImageViewModel.makePredict()
         performSegue(withIdentifier: "berhasil", sender: self)
     }
 }

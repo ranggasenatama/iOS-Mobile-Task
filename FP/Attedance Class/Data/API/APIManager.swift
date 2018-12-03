@@ -7,26 +7,22 @@
 //
 
 import Foundation
-import Moya
+import SwiftyJSON
+import Alamofire
 
 public class APIManager {
     let provider = MoyaProvider<AttendanceAPI>()
 
     func makePredictImage(_username: String, _password: String, _image: String) {
-        provider.request(.doTrain(idUser: _username, password: _password, image: _image)) { result in
-            switch result {
-            case let .success(response):
-                do {
-                    try response.filterSuccessfulStatusCodes()
-                    let data = try response.data
-                    print(data)
-                }
-                catch {
-                    print(error)
-                }
-            case let .failure(error):
-                print(error)
-            }
+        let parameters: [String: String] = [
+            "idUser" : _username,
+            "password" : _password,
+            "image" : _image,
+        ]
+        
+        Alamofire.request("http://etc.if.its.ac.id/doTrain/", method: .post, parameters: parameters)
+            .responseJSON { response in
+                print(response)
         }
     }
 }

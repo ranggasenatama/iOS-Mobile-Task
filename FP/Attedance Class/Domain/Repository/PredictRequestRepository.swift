@@ -8,6 +8,6 @@
 
 import Foundation
 
-public protocol PredictRepository {
-    func makePredict(entity: PredictEntity)
+public protocol PredictRequestRepository {
+    func makePredict(entity: PredictRequestEntity)
 }

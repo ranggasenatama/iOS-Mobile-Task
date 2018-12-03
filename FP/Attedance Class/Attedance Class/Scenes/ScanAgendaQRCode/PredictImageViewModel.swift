@@ -6,12 +6,22 @@
 //  Copyright © 2018 Rangga Senatama Putra. All rights reserved.
 //
 
-import Device
+import UIKit
+import Domain
+import Data
 
 class PredictImageViewModel {
-    var image: UIImage! = nil
+    var nrp: String!
+    var password: String!
+    var image: UIImage!
     
-    func makePredict(image: UI) -> <#return type#> {
-        <#function body#>
+    let predictRequest: PredictRequestRepository = PredictRequestRepositoryData()
+    
+    func makePredict() {
+        guard let data = UIImagePNGRepresentation(self.image) else {
+            fatalError("error convert UIImage to data")
+        }
+        print(data)
+        predictRequest.makePredict(entity: PredictRequestEntity(_user: UserEntity(_nrp: self.nrp, _password: self.password), _image: ImageEntity(_image: data)))
     }
 }

@@ -9,9 +9,11 @@
 import Foundation
 
 public class ResponseEntity {
-    let response: String
+    public let statusCode: String
+    public let message: String
     
-    init(_response: String) {
-        self.response = _response
+    public init(_statusCode: String, _message: String) {
+        self.statusCode = _statusCode
+        self.message = _message
     }
 }

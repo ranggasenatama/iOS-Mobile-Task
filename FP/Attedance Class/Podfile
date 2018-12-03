@@ -23,7 +23,8 @@ target 'Data' do
   use_frameworks!
 
   # Pods for Data
-	pod 'Moya', '~> 11.00'
+	pod 'SwiftyJSON', '~> 4.0'
+	pod 'Alamofire', '~> 4.7'
 end
 
 target 'Device' do
