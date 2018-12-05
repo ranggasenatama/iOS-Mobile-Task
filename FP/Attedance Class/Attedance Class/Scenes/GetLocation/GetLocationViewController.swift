@@ -116,7 +116,7 @@ class GetLocationViewController: UIViewController {
         let confirmAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.default, handler: { (action) -> Void in
             
             self.viewModel.transfrom(input: decode)
-            if true {
+            if self.viewModel.isInRangeLocation() {
                 self.performSegue(withIdentifier: "faceIDScanner", sender: self)
             } else {
                 self.captureSession.startRunning()

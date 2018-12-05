@@ -14,20 +14,21 @@ class GetLocationViewModel {
     var agenda: String!
     var longtitude: String!
     var latitude: String!
-    
-    let coordinateRepository: CoordinateRepository = CoordinateRepositoryDevice()
-    
+
+    let getCoordinateUseCase: GetCoordinateGPSUseCase = GetCoordinateGPSUseCase(_coordinateRepository: CoordinateRepositoryDevice())
+    let getRangeTwoCoordinate: GetRangeTwoCoordinateInMetersUseCase = GetRangeTwoCoordinateInMetersUseCase(_coordinateRepository: CoordinateRepositoryDevice())
+
     func transfrom(input: String) {
         let output = input.split(separator: ",")
         latitude = String(output[0])
         longtitude = String(output[1])
         agenda = String(output[2])
     }
-    
+
     func isInRangeLocation() -> Bool {
-        let currentLocation = coordinateRepository.getCoordinate()
+        let currentLocation = self.getCoordinateUseCase.invoke()
         let agendaQRCode = CoordinateEntity(_longtitude: Double(longtitude)!, _latitude: Double(latitude)!)
-        let meters = coordinateRepository.calculateDistance(coordinate1: currentLocation, coordinate2: agendaQRCode)
+        let meters = self.getRangeTwoCoordinate.invoke(_coordinate1: currentLocation, _coordinate2: agendaQRCode)
         print(meters)
         return meters <= 10
     }

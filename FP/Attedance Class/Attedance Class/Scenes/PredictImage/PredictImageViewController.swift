@@ -32,8 +32,10 @@ class PredictImageViewController: UIViewController {
     }
     
     @IBAction func predictButtonPressed(_ sender: Any) {
-        predictImageViewModel.nrp = "5115100076"
-        predictImageViewModel.password = "123456"
+        predictImageViewModel.nrp = "5115100003"
+        predictImageViewModel.password = "teja5115003"
+//        predictImageViewModel.nrp = "5115100174"
+//        predictImageViewModel.password = "ronald123"
         predictImageViewModel.image = imageView.image
         predictImageViewModel.makePredict()
         performSegue(withIdentifier: "berhasil", sender: self)

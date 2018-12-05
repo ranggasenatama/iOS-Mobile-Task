@@ -14,11 +14,11 @@ public class CoordinateDevice {
     
     public init(_longitude: Double, _latitude: Double) {
         self.latitude = _latitude
-        self.longitude = _latitude
+        self.longitude = _longitude
     }
     
     public func set(_longitude: Double, _latitude: Double) {
         self.latitude = _latitude
-        self.longitude = _latitude
+        self.longitude = _longitude
     }
 }

@@ -15,13 +15,16 @@ class PredictImageViewModel {
     var password: String!
     var image: UIImage!
     
-    let predictRequest: PredictRequestRepository = PredictRequestRepositoryData()
+    let getPredictImageUseCase: GetPredictImageUseCase = GetPredictImageUseCase(_predictRepository: PredictRequestRepositoryData())
     
     func makePredict() {
-        guard let data = UIImageJPEGRepresentation(self.image, 0.1) else {
+        let resize = self.image.renderResizedImage(newWidth: 96)
+        //let compressImage = resize.compressTo(1)
+        guard let data = UIImageJPEGRepresentation(resize, 1) else {
             fatalError("error convert UIImage to data")
         }
         print(data)
-        predictRequest.makePredict(entity: PredictRequestEntity(_user: UserEntity(_nrp: self.nrp, _password: self.password), _image: ImageEntity(_image: data)))
+        
+        self.getPredictImageUseCase.invoke(_entity: PredictRequestEntity(_user: UserEntity(_nrp: self.nrp, _password: self.password), _image: ImageEntity(_image: data)))
     }
 }

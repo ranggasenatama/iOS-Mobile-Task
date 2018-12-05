@@ -15,10 +15,10 @@ public class APIManager {
         let parameters: [String: String] = [
             "idUser" : _username,
             "password" : _password,
-            "image" : _image,
+            "image" : _image
         ]
         
-        Alamofire.request("http://etc.if.its.ac.id/doTrain/", method: .post, parameters: parameters)
+        Alamofire.request("http://etc.if.its.ac.id/doPredict/", method: .post, parameters: parameters)
             .responseJSON { response in
                 print(response)
         }

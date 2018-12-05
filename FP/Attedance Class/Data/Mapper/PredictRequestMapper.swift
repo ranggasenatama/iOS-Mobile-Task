@@ -23,7 +23,7 @@ public class PredictRequestMapper: MapperBase<PredictRequestEntity, PredictReque
     }
     
     public override func mapToModel(entity: PredictRequestEntity) -> PredictRequestData {
-        let imageBase64 = entity.image.image.base64EncodedString(options: Data.Base64EncodingOptions.lineLength64Characters)
+        let imageBase64 = "data:image/jpeg;base64,\(entity.image.image.base64EncodedString(options: Data.Base64EncodingOptions.lineLength64Characters))"
         
         return PredictRequestData(_nrp: entity.user.nrp, _password: entity.user.password, _image: imageBase64)
     }

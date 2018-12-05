@@ -13,7 +13,6 @@
 		6385305121B2BF090013985C /* PredictRequstEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385305021B2BF090013985C /* PredictRequstEntity.swift */; };
 		6385305321B2BFA70013985C /* PredictRequestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385305221B2BFA70013985C /* PredictRequestRepository.swift */; };
 		6385305521B2C0200013985C /* PredictRequestRepositoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385305421B2C0200013985C /* PredictRequestRepositoryData.swift */; };
-		6385305721B2C02E0013985C /* ResponseRepositoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385305621B2C02E0013985C /* ResponseRepositoryData.swift */; };
 		6391CBDF21B4064900E57004 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391CBDE21B4064900E57004 /* UserEntity.swift */; };
 		6391CBE121B406D100E57004 /* PredictRequestMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391CBE021B406D100E57004 /* PredictRequestMapper.swift */; };
 		6391CBE321B4079900E57004 /* ImageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391CBE221B4079900E57004 /* ImageEntity.swift */; };
@@ -37,6 +36,8 @@
 		63A7213121AEFF1F00721504 /* ShowAgendaScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A7213021AEFF1F00721504 /* ShowAgendaScan.swift */; };
 		63A944C921AF93340040D501 /* CameraUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A944C821AF93340040D501 /* CameraUtils.swift */; };
 		63A944D821AFA2BB0040D501 /* SuccesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A944D721AFA2BB0040D501 /* SuccesViewController.swift */; };
+		63AFFAE521B5182100FD0B28 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AFFAE421B5182100FD0B28 /* UIImage.swift */; };
+		63DA144721B7AE5C00886563 /* GetRangeTwoCoordinateInMetersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DA144621B7AE5C00886563 /* GetRangeTwoCoordinateInMetersUseCase.swift */; };
 		63E64A4221B290E700C32115 /* PredictRequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E64A4121B290E700C32115 /* PredictRequestData.swift */; };
 		63F3471B21AC51B5000FAEC3 /* CoordinateEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F3471A21AC51B5000FAEC3 /* CoordinateEntity.swift */; };
 		63F3471E21AC52CB000FAEC3 /* MapperBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F3471D21AC52CB000FAEC3 /* MapperBase.swift */; };
@@ -102,7 +103,6 @@
 		6385305021B2BF090013985C /* PredictRequstEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictRequstEntity.swift; sourceTree = "<group>"; };
 		6385305221B2BFA70013985C /* PredictRequestRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictRequestRepository.swift; sourceTree = "<group>"; };
 		6385305421B2C0200013985C /* PredictRequestRepositoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictRequestRepositoryData.swift; sourceTree = "<group>"; };
-		6385305621B2C02E0013985C /* ResponseRepositoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseRepositoryData.swift; sourceTree = "<group>"; };
 		6391CBDE21B4064900E57004 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 		6391CBE021B406D100E57004 /* PredictRequestMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictRequestMapper.swift; sourceTree = "<group>"; };
 		6391CBE221B4079900E57004 /* ImageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEntity.swift; sourceTree = "<group>"; };
@@ -127,6 +127,8 @@
 		63A7213021AEFF1F00721504 /* ShowAgendaScan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAgendaScan.swift; sourceTree = "<group>"; };
 		63A944C821AF93340040D501 /* CameraUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraUtils.swift; sourceTree = "<group>"; };
 		63A944D721AFA2BB0040D501 /* SuccesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccesViewController.swift; sourceTree = "<group>"; };
+		63AFFAE421B5182100FD0B28 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		63DA144621B7AE5C00886563 /* GetRangeTwoCoordinateInMetersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRangeTwoCoordinateInMetersUseCase.swift; sourceTree = "<group>"; };
 		63E64A4121B290E700C32115 /* PredictRequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictRequestData.swift; sourceTree = "<group>"; };
 		63F3471A21AC51B5000FAEC3 /* CoordinateEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateEntity.swift; sourceTree = "<group>"; };
 		63F3471D21AC52CB000FAEC3 /* MapperBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapperBase.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				6312336721AEDB90006783FE /* Scenes */,
 				6385305821B2C3D70013985C /* Model */,
 				639F804A21AC4A3F008A98AE /* Main.storyboard */,
+				63AFFAE321B5180B00FD0B28 /* Extension */,
 				639F804D21AC4A41008A98AE /* Assets.xcassets */,
 				639F804F21AC4A41008A98AE /* LaunchScreen.storyboard */,
 				639F805221AC4A41008A98AE /* Info.plist */,
@@ -318,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				63F3472421AC5F91000FAEC3 /* GetCoordinateGPSUseCase.swift */,
+				63DA144621B7AE5C00886563 /* GetRangeTwoCoordinateInMetersUseCase.swift */,
 				63FE727A21B2AB4100DA4610 /* GetPredictImageUseCase.swift */,
 			);
 			path = UseCase;
@@ -348,11 +352,18 @@
 			path = Success;
 			sourceTree = "<group>";
 		};
+		63AFFAE321B5180B00FD0B28 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				63AFFAE421B5182100FD0B28 /* UIImage.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		63B22D2921B1C1C800B6ADFD /* Repository */ = {
 			isa = PBXGroup;
 			children = (
 				6385305421B2C0200013985C /* PredictRequestRepositoryData.swift */,
-				6385305621B2C02E0013985C /* ResponseRepositoryData.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -746,6 +757,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				639F804921AC4A3F008A98AE /* PredictImageViewController.swift in Sources */,
+				63AFFAE521B5182100FD0B28 /* UIImage.swift in Sources */,
 				63A7213121AEFF1F00721504 /* ShowAgendaScan.swift in Sources */,
 				63A944D821AFA2BB0040D501 /* SuccesViewController.swift in Sources */,
 				63A7212E21AEF28900721504 /* GetLocationViewModel.swift in Sources */,
@@ -765,6 +777,7 @@
 				63FE727B21B2AB4100DA4610 /* GetPredictImageUseCase.swift in Sources */,
 				6391CBDF21B4064900E57004 /* UserEntity.swift in Sources */,
 				63F3472521AC5F91000FAEC3 /* GetCoordinateGPSUseCase.swift in Sources */,
+				63DA144721B7AE5C00886563 /* GetRangeTwoCoordinateInMetersUseCase.swift in Sources */,
 				63F3471E21AC52CB000FAEC3 /* MapperBase.swift in Sources */,
 				6385305121B2BF090013985C /* PredictRequstEntity.swift in Sources */,
 				6391CBE321B4079900E57004 /* ImageEntity.swift in Sources */,
@@ -776,7 +789,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6385305721B2C02E0013985C /* ResponseRepositoryData.swift in Sources */,
 				63FE728121B2B21100DA4610 /* APIManager.swift in Sources */,
 				6391CBE121B406D100E57004 /* PredictRequestMapper.swift in Sources */,
 				63E64A4221B290E700C32115 /* PredictRequestData.swift in Sources */,
