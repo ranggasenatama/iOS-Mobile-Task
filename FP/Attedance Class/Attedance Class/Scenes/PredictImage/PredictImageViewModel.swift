@@ -21,7 +21,7 @@ class PredictImageViewModel {
     func makePredict() -> Observable<PredictResponseEntity> {
         let resize = self.image.renderResizedImage(newWidth: 96)
         //let compressImage = resize.compressTo(1)
-        guard let data = UIImageJPEGRepresentation(resize, 1) else {
+        guard let data = UIImageJPEGRepresentation(resize, 0.5) else {
             fatalError("error convert UIImage to data")
         }
         print(data)

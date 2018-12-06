@@ -149,10 +149,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7gJ-MC-OZV">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="7gJ-MC-OZV" customClass="RoundedImageView" customModule="Attedance_Class" customModuleProvider="target">
                                 <rect key="frame" x="23" y="134" width="328" height="249"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="249" id="kCy-9b-tN6"/>
+                                    <constraint firstAttribute="width" constant="328" id="wYq-3W-m8n"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sw1-b1-NER">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sw1-b1-NER" customClass="RectBorderButton" customModule="Attedance_Class" customModuleProvider="target">
                                 <rect key="frame" x="100" y="493" width="175" height="56"/>
                                 <color key="backgroundColor" red="0.61176470589999998" green="0.1529411765" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="KannadaSangamMN-Bold" family="Kannada Sangam MN" pointSize="34"/>
@@ -264,6 +268,7 @@
     </scenes>
     <resources>
         <image name="close" width="128" height="128"/>
+        <image name="profile" width="112" height="112"/>
         <image name="qrcode2" width="256" height="256"/>
     </resources>
 </document>

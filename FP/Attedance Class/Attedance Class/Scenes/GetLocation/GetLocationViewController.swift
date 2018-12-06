@@ -124,7 +124,7 @@ class GetLocationViewController: UIViewController {
             
         })
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: {_ -> Void in self.captureSession.startRunning()})
         
         alertPrompt.addAction(confirmAction)
         alertPrompt.addAction(cancelAction)

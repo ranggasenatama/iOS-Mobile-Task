@@ -25,11 +25,11 @@ public class CoordinateRepositoryDevice: CoordinateRepository {
     }
     
     public func calculateDistance(coordinate1: CoordinateEntity, coordinate2: CoordinateEntity) -> Double {
-        let coordinate₀ = CLLocation(latitude: coordinate1.latitude, longitude: coordinate1.longtitude)
-        let coordinate₁ = CLLocation(latitude: coordinate2.latitude, longitude: coordinate2.longtitude)
-        print("2 \(coordinate2.latitude) - \(coordinate2.longtitude)")
-        print("1 \(coordinate1.latitude) - \(coordinate1.longtitude)")
-        let distanceInMeters = coordinate₀.distance(from: coordinate₁)
+        let data1 = CLLocation(latitude: coordinate1.latitude, longitude: coordinate1.longtitude)
+        let data2 = CLLocation(latitude: coordinate2.latitude, longitude: coordinate2.longtitude)
+        print("2 \(data2.coordinate.latitude) - \(data2.coordinate.longitude)")
+        print("1 \(data1.coordinate.latitude) - \(data1.coordinate.longitude)")
+        let distanceInMeters = data1.distance(from: data2)
         return distanceInMeters
     }
     

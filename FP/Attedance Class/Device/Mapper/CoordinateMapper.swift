@@ -15,7 +15,7 @@ public class CoordinateMapper: MapperBase<CoordinateEntity, CoordinateDevice> {
     }
     
     public override func mapToEntity(model: CoordinateDevice) -> CoordinateEntity {
-        return CoordinateEntity(_longtitude: model.latitude, _latitude: model.longitude)
+        return CoordinateEntity(_longtitude: model.longitude, _latitude: model.latitude)
     }
     
     public override func mapToModel(entity: CoordinateEntity) -> CoordinateDevice {

@@ -11,6 +11,8 @@
 		4BA629AA4E6E5E2AD195268F /* Pods_Device.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 445063F086F5D58F1D109416 /* Pods_Device.framework */; };
 		633A729321B813F800200753 /* PredictResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633A729221B813F800200753 /* PredictResponseData.swift */; };
 		633A729521B8150E00200753 /* PredictResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633A729421B8150E00200753 /* PredictResponseMapper.swift */; };
+		637995A521B8D8E6000A8CD5 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637995A421B8D8E6000A8CD5 /* UIButton.swift */; };
+		637995A721B8DC61000A8CD5 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637995A621B8DC61000A8CD5 /* UIImageView.swift */; };
 		6385304F21B2BE9A0013985C /* PredictResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385304E21B2BE9A0013985C /* PredictResponseEntity.swift */; };
 		6385305121B2BF090013985C /* PredictRequstEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385305021B2BF090013985C /* PredictRequstEntity.swift */; };
 		6385305321B2BFA70013985C /* PredictRequestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385305221B2BFA70013985C /* PredictRequestRepository.swift */; };
@@ -103,6 +105,8 @@
 		5F212D291ACAE0111D8AB830 /* Pods-Attedance Class.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Attedance Class.release.xcconfig"; path = "Pods/Target Support Files/Pods-Attedance Class/Pods-Attedance Class.release.xcconfig"; sourceTree = "<group>"; };
 		633A729221B813F800200753 /* PredictResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictResponseData.swift; sourceTree = "<group>"; };
 		633A729421B8150E00200753 /* PredictResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictResponseMapper.swift; sourceTree = "<group>"; };
+		637995A421B8D8E6000A8CD5 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		637995A621B8DC61000A8CD5 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		6385304E21B2BE9A0013985C /* PredictResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictResponseEntity.swift; sourceTree = "<group>"; };
 		6385305021B2BF090013985C /* PredictRequstEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictRequstEntity.swift; sourceTree = "<group>"; };
 		6385305221B2BFA70013985C /* PredictRequestRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictRequestRepository.swift; sourceTree = "<group>"; };
@@ -360,6 +364,8 @@
 			isa = PBXGroup;
 			children = (
 				63AFFAE421B5182100FD0B28 /* UIImage.swift */,
+				637995A421B8D8E6000A8CD5 /* UIButton.swift */,
+				637995A621B8DC61000A8CD5 /* UIImageView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -770,8 +776,10 @@
 				63A944D821AFA2BB0040D501 /* SuccesViewController.swift in Sources */,
 				63A7212E21AEF28900721504 /* GetLocationViewModel.swift in Sources */,
 				63A7212C21AEF22D00721504 /* GetLocationViewController.swift in Sources */,
+				637995A721B8DC61000A8CD5 /* UIImageView.swift in Sources */,
 				63F3473321AC7E46000FAEC3 /* PredictImageViewModel.swift in Sources */,
 				639F804721AC4A3F008A98AE /* AppDelegate.swift in Sources */,
+				637995A521B8D8E6000A8CD5 /* UIButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

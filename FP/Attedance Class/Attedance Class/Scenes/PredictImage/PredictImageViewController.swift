@@ -34,17 +34,6 @@ class PredictImageViewController: UIViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "berhasil" {
-            if let succesViewController = segue.destination as? SuccessViewController {
-                print("data \(self.data)")
-                print("status code \(self.statusCode)")
-                succesViewController.statusCodeVar = "Status code: \(self.statusCode!)"
-                succesViewController.messageVar = self.data
-            }
-        }
-    }
-    
     @IBAction func predictButtonPressed(_ sender: Any) {
         predictImageViewModel.nrp = "5115100003"
         predictImageViewModel.password = "12345678"
@@ -59,5 +48,18 @@ class PredictImageViewController: UIViewController {
             
             self.performSegue(withIdentifier: "berhasil", sender: self)
         }, onError: nil, onCompleted: nil, onDisposed: nil)
+    }
+}
+
+extension PredictImageViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "berhasil" {
+            if let succesViewController = segue.destination as? SuccessViewController {
+                print("data \(self.data)")
+                print("status code \(self.statusCode)")
+                succesViewController.statusCodeVar = "Status code: \(self.statusCode!)"
+                succesViewController.messageVar = self.data
+            }
+        }
     }
 }
