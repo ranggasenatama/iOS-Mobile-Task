@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		259067DE107543935102340C /* Pods_Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2F96D40B786EB6E38E7B657 /* Pods_Domain.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		4BA629AA4E6E5E2AD195268F /* Pods_Device.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 445063F086F5D58F1D109416 /* Pods_Device.framework */; };
-		6385304F21B2BE9A0013985C /* ResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385304E21B2BE9A0013985C /* ResponseEntity.swift */; };
+		633A729321B813F800200753 /* PredictResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633A729221B813F800200753 /* PredictResponseData.swift */; };
+		633A729521B8150E00200753 /* PredictResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633A729421B8150E00200753 /* PredictResponseMapper.swift */; };
+		6385304F21B2BE9A0013985C /* PredictResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385304E21B2BE9A0013985C /* PredictResponseEntity.swift */; };
 		6385305121B2BF090013985C /* PredictRequstEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385305021B2BF090013985C /* PredictRequstEntity.swift */; };
 		6385305321B2BFA70013985C /* PredictRequestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385305221B2BFA70013985C /* PredictRequestRepository.swift */; };
 		6385305521B2C0200013985C /* PredictRequestRepositoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385305421B2C0200013985C /* PredictRequestRepositoryData.swift */; };
@@ -99,7 +101,9 @@
 		445063F086F5D58F1D109416 /* Pods_Device.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Device.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		584D8DCE257B2D153992E66E /* Pods-Data.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Data.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Data/Pods-Data.debug.xcconfig"; sourceTree = "<group>"; };
 		5F212D291ACAE0111D8AB830 /* Pods-Attedance Class.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Attedance Class.release.xcconfig"; path = "Pods/Target Support Files/Pods-Attedance Class/Pods-Attedance Class.release.xcconfig"; sourceTree = "<group>"; };
-		6385304E21B2BE9A0013985C /* ResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseEntity.swift; sourceTree = "<group>"; };
+		633A729221B813F800200753 /* PredictResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictResponseData.swift; sourceTree = "<group>"; };
+		633A729421B8150E00200753 /* PredictResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictResponseMapper.swift; sourceTree = "<group>"; };
+		6385304E21B2BE9A0013985C /* PredictResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictResponseEntity.swift; sourceTree = "<group>"; };
 		6385305021B2BF090013985C /* PredictRequstEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictRequstEntity.swift; sourceTree = "<group>"; };
 		6385305221B2BFA70013985C /* PredictRequestRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictRequestRepository.swift; sourceTree = "<group>"; };
 		6385305421B2C0200013985C /* PredictRequestRepositoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictRequestRepositoryData.swift; sourceTree = "<group>"; };
@@ -309,7 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				63F3471A21AC51B5000FAEC3 /* CoordinateEntity.swift */,
-				6385304E21B2BE9A0013985C /* ResponseEntity.swift */,
+				6385304E21B2BE9A0013985C /* PredictResponseEntity.swift */,
 				6385305021B2BF090013985C /* PredictRequstEntity.swift */,
 				6391CBDE21B4064900E57004 /* UserEntity.swift */,
 				6391CBE221B4079900E57004 /* ImageEntity.swift */,
@@ -372,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				63E64A4121B290E700C32115 /* PredictRequestData.swift */,
+				633A729221B813F800200753 /* PredictResponseData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -380,6 +385,7 @@
 			isa = PBXGroup;
 			children = (
 				6391CBE021B406D100E57004 /* PredictRequestMapper.swift */,
+				633A729421B8150E00200753 /* PredictResponseMapper.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -735,6 +741,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -742,6 +749,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -772,7 +780,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6385305321B2BFA70013985C /* PredictRequestRepository.swift in Sources */,
-				6385304F21B2BE9A0013985C /* ResponseEntity.swift in Sources */,
+				6385304F21B2BE9A0013985C /* PredictResponseEntity.swift in Sources */,
 				63F3472321AC5DF0000FAEC3 /* CoordinateRepository.swift in Sources */,
 				63FE727B21B2AB4100DA4610 /* GetPredictImageUseCase.swift in Sources */,
 				6391CBDF21B4064900E57004 /* UserEntity.swift in Sources */,
@@ -790,8 +798,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				63FE728121B2B21100DA4610 /* APIManager.swift in Sources */,
+				633A729521B8150E00200753 /* PredictResponseMapper.swift in Sources */,
 				6391CBE121B406D100E57004 /* PredictRequestMapper.swift in Sources */,
 				63E64A4221B290E700C32115 /* PredictRequestData.swift in Sources */,
+				633A729321B813F800200753 /* PredictResponseData.swift in Sources */,
 				6385305521B2C0200013985C /* PredictRequestRepositoryData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

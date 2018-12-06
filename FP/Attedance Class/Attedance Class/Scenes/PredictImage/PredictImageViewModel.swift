@@ -9,6 +9,7 @@
 import UIKit
 import Domain
 import Data
+import RxSwift
 
 class PredictImageViewModel {
     var nrp: String!
@@ -17,7 +18,7 @@ class PredictImageViewModel {
     
     let getPredictImageUseCase: GetPredictImageUseCase = GetPredictImageUseCase(_predictRepository: PredictRequestRepositoryData())
     
-    func makePredict() {
+    func makePredict() -> Observable<PredictResponseEntity> {
         let resize = self.image.renderResizedImage(newWidth: 96)
         //let compressImage = resize.compressTo(1)
         guard let data = UIImageJPEGRepresentation(resize, 1) else {
@@ -25,6 +26,6 @@ class PredictImageViewModel {
         }
         print(data)
         
-        self.getPredictImageUseCase.invoke(_entity: PredictRequestEntity(_user: UserEntity(_nrp: self.nrp, _password: self.password), _image: ImageEntity(_image: data)))
+        return self.getPredictImageUseCase.invoke(_entity: PredictRequestEntity(_user: UserEntity(_nrp: self.nrp, _password: self.password), _image: ImageEntity(_image: data)))
     }
 }

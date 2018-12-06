@@ -8,11 +8,11 @@
 
 import Foundation
 
-public class ResponseEntity {
-    public let statusCode: String
+public class PredictResponseEntity {
+    public let statusCode: Int
     public let message: String
     
-    public init(_statusCode: String, _message: String) {
+    public init(_statusCode: Int, _message: String) {
         self.statusCode = _statusCode
         self.message = _message
     }

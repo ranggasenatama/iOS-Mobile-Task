@@ -30,7 +30,7 @@ public class CoordinateRepositoryDevice: CoordinateRepository {
         print("2 \(coordinate2.latitude) - \(coordinate2.longtitude)")
         print("1 \(coordinate1.latitude) - \(coordinate1.longtitude)")
         let distanceInMeters = coordinate₀.distance(from: coordinate₁)
-        return distanceInMeters/1609
+        return distanceInMeters
     }
     
     

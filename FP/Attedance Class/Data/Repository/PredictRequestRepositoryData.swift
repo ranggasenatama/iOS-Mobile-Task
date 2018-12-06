@@ -8,6 +8,7 @@
 
 import Foundation
 import Domain
+import RxSwift
 
 public class PredictRequestRepositoryData: PredictRequestRepository {
     let apiManager = APIManager()
@@ -17,9 +18,9 @@ public class PredictRequestRepositoryData: PredictRequestRepository {
         
     }
     
-    public func makePredict(entity: PredictRequestEntity) {
+    public func makePredict(entity: PredictRequestEntity) -> Observable<PredictResponseEntity>  {
         let request: PredictRequestData = predictMapper.mapToModel(entity: entity)
-        
-        apiManager.makePredictImage(_username: request.nrp, _password: request.password, _image: request.image)
+
+        return apiManager.makePredictImage(_username: request.nrp, _password: request.password, _image: request.image)
     }
 }

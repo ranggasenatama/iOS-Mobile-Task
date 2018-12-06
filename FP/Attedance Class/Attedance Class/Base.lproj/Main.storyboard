@@ -201,21 +201,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Berhasil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgB-PP-M8n">
-                                <rect key="frame" x="97" y="321" width="181" height="25"/>
+                                <rect key="frame" x="0.0" y="159" width="375" height="31.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Tt-gz-Ltu">
+                                <rect key="frame" x="0.0" y="240" width="375" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2a7-XB-TiX">
+                                <rect key="frame" x="0.0" y="414" width="375" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Ntd-NT-3lf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="S2n-sE-hJD" firstAttribute="bottom" secondItem="mgB-PP-M8n" secondAttribute="bottom" constant="321" id="2em-nm-tlQ"/>
-                            <constraint firstItem="mgB-PP-M8n" firstAttribute="leading" secondItem="S2n-sE-hJD" secondAttribute="leading" constant="97" id="kYn-qN-m68"/>
-                            <constraint firstItem="S2n-sE-hJD" firstAttribute="trailing" secondItem="mgB-PP-M8n" secondAttribute="trailing" constant="97" id="whZ-7F-h9x"/>
-                            <constraint firstItem="mgB-PP-M8n" firstAttribute="top" secondItem="S2n-sE-hJD" secondAttribute="top" constant="257" id="y5a-O5-Ace"/>
+                            <constraint firstItem="4Tt-gz-Ltu" firstAttribute="leading" secondItem="S2n-sE-hJD" secondAttribute="leading" id="5k0-5G-Jbu"/>
+                            <constraint firstItem="2a7-XB-TiX" firstAttribute="leading" secondItem="S2n-sE-hJD" secondAttribute="leading" id="6br-2X-FQ8"/>
+                            <constraint firstItem="mgB-PP-M8n" firstAttribute="top" secondItem="S2n-sE-hJD" secondAttribute="top" constant="95" id="9I5-X1-cFt"/>
+                            <constraint firstItem="2a7-XB-TiX" firstAttribute="top" secondItem="4Tt-gz-Ltu" secondAttribute="bottom" constant="141" id="9sA-IG-5zD"/>
+                            <constraint firstItem="S2n-sE-hJD" firstAttribute="trailing" secondItem="4Tt-gz-Ltu" secondAttribute="trailing" id="EYi-eR-aNg"/>
+                            <constraint firstItem="4Tt-gz-Ltu" firstAttribute="top" secondItem="mgB-PP-M8n" secondAttribute="bottom" constant="49.5" id="KxY-WQ-1l6"/>
+                            <constraint firstItem="mgB-PP-M8n" firstAttribute="leading" secondItem="S2n-sE-hJD" secondAttribute="leading" id="WVb-Iz-wkm"/>
+                            <constraint firstItem="2a7-XB-TiX" firstAttribute="trailing" secondItem="S2n-sE-hJD" secondAttribute="trailing" id="hBF-vK-2cf"/>
+                            <constraint firstItem="S2n-sE-hJD" firstAttribute="trailing" secondItem="mgB-PP-M8n" secondAttribute="trailing" id="hn2-DU-yfp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="S2n-sE-hJD"/>
                     </view>
+                    <connections>
+                        <outlet property="message" destination="2a7-XB-TiX" id="W3h-Pl-QxP"/>
+                        <outlet property="statusCode" destination="4Tt-gz-Ltu" id="sQf-kB-JAA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="67j-aG-bFd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

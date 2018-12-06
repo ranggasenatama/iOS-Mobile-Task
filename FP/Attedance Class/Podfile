@@ -25,6 +25,9 @@ target 'Data' do
   # Pods for Data
 	pod 'SwiftyJSON', '~> 4.0'
 	pod 'Alamofire', '~> 4.7'
+	rx_swift
+	rx_cocoa
+	pod 'RxAlamofire'
 end
 
 target 'Device' do
@@ -32,6 +35,8 @@ target 'Device' do
   use_frameworks!
 
   # Pods for Device
+	rx_swift
+	rx_cocoa
 end
 
 target 'Domain' do
@@ -39,4 +44,6 @@ target 'Domain' do
   use_frameworks!
 
   # Pods for Domain
+	rx_swift
+	rx_cocoa
 end

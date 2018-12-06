@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 public class GetPredictImageUseCase {
     public var predictRepository: PredictRequestRepository
@@ -15,7 +16,7 @@ public class GetPredictImageUseCase {
         self.predictRepository = _predictRepository
     }
     
-    public func invoke(_entity: PredictRequestEntity) {
-        predictRepository.makePredict(entity: _entity)
+    public func invoke(_entity: PredictRequestEntity) -> Observable<PredictResponseEntity> {
+        return predictRepository.makePredict(entity: _entity)
     }
 }
