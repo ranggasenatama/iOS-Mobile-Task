@@ -11,9 +11,11 @@ import Foundation
 public class PredictRequestEntity {
     public let user: UserEntity
     public let image: ImageEntity
+    public let agenda: AgendaEntity
     
-    public init(_user: UserEntity, _image: ImageEntity) {
+    public init(_user: UserEntity, _image: ImageEntity, _agenda: AgendaEntity) {
         self.user = _user
         self.image = _image
+        self.agenda = _agenda
     }
 }

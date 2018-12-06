@@ -17,20 +17,18 @@ public class APIManager {
     
     let predictResponseMapper: MapperBase<PredictResponseEntity, JSON> = PredictResponseMapper()
     
-    func makePredictImage(_username: String, _password: String, _image: String) -> Observable<PredictResponseEntity> {
+    func makePredictImage(_username: String, _password: String, _image: String, _lat: String, _lon: String, _agenda: String) -> Observable<PredictResponseEntity> {
         
         let parameters: [String: String] = [
             "idUser" : _username,
             "password" : _password,
-            "image" : _image
+            "image" : _image,
+            "Lat": _lat,
+            "Lon": _lon,
+            "idAgenda": _agenda
         ]
         
-        let url = "http://etc.if.its.ac.id/doPredict/"
-        
-//        Alamofire.request(url, method: .post, parameters: parameters)
-//            .responseJSON { response in
-//                print(response)
-//        }
+        let url = "http://etc.if.its.ac.id/signin/"
         
         return Observable<PredictResponseEntity>.create { (observer) -> Disposable in
             let requestReference = Alamofire.request(url,

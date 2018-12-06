@@ -15,6 +15,9 @@ class PredictImageViewModel {
     var nrp: String!
     var password: String!
     var image: UIImage!
+    var lat: String!
+    var lon: String!
+    var agenda: String!
     
     let getPredictImageUseCase: GetPredictImageUseCase = GetPredictImageUseCase(_predictRepository: PredictRequestRepositoryData())
     
@@ -26,6 +29,6 @@ class PredictImageViewModel {
         }
         print(data)
         
-        return self.getPredictImageUseCase.invoke(_entity: PredictRequestEntity(_user: UserEntity(_nrp: self.nrp, _password: self.password), _image: ImageEntity(_image: data)))
+        return self.getPredictImageUseCase.invoke(_entity: PredictRequestEntity(_user: UserEntity(_nrp: self.nrp, _password: self.password), _image: ImageEntity(_image: data), _agenda: AgendaEntity(_lat: self.lat, _lon: self.lon, _idAgenda: self.agenda)))
     }
 }

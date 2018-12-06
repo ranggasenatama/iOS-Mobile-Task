@@ -10,9 +10,13 @@ import UIKit
 import Device
 
 class PredictImageViewController: UIViewController {
+    @IBOutlet weak var imageView: UIImageView!
+    
     var data: String!
     var statusCode: Int!
-    @IBOutlet weak var imageView: UIImageView!
+    var agenda: String!
+    var lat: String!
+    var lon: String!
     
     let predictImageViewModel: PredictImageViewModel = PredictImageViewModel()
     
@@ -37,11 +41,11 @@ class PredictImageViewController: UIViewController {
     @IBAction func predictButtonPressed(_ sender: Any) {
         predictImageViewModel.nrp = "5115100003"
         predictImageViewModel.password = "12345678"
-//        predictImageViewModel.nrp = "5115100174"
-//        predictImageViewModel.password = "ronald123"
-//        predictImageViewModel.nrp = "05111540000055"
-//        predictImageViewModel.password = "abcdefgh"
         predictImageViewModel.image = imageView.image
+        predictImageViewModel.lat = self.lat
+        predictImageViewModel.lon = self.lon
+        predictImageViewModel.agenda = self.agenda
+        
         predictImageViewModel.makePredict().subscribe(onNext: { (result) in
             self.data = result.message
             self.statusCode = result.statusCode

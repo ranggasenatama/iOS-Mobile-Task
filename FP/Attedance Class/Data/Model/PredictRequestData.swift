@@ -12,10 +12,17 @@ public class PredictRequestData {
     public let nrp: String
     public let password: String
     public let image: String
+    public let Lat: String
+    public let Lon: String
+    public let idAgenda: String
+
     
-    public init(_nrp: String, _password: String, _image: String) {
+    public init(_nrp: String, _password: String, _image: String, _lat: String, _lon: String, _idAgenda: String) {
         self.nrp = _nrp
         self.password = _password
         self.image = _image
+        self.Lat = _lat
+        self.Lon = _lon
+        self.idAgenda = _idAgenda
     }
 }

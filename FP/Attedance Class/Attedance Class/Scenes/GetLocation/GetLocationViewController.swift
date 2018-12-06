@@ -135,6 +135,18 @@ class GetLocationViewController: UIViewController {
     
 }
 
+extension GetLocationViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let navVC = segue.destination as? UINavigationController {
+            if let predictController = navVC.viewControllers.first as? PredictImageViewController {
+                predictController.agenda = viewModel.agenda
+                predictController.lat = viewModel.latitude
+                predictController.lon = viewModel.longtitude
+            }
+        }
+    }
+}
+
 extension GetLocationViewController: AVCaptureMetadataOutputObjectsDelegate {
     
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
