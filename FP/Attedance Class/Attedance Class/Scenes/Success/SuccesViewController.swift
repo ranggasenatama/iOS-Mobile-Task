@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CollectionViewSlantedLayout
 
 class SuccessViewController: UIViewController {
     @IBOutlet weak var statusCode: UILabel!

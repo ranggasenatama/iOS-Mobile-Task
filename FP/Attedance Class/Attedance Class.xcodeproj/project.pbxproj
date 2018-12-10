@@ -12,10 +12,12 @@
 		633A729321B813F800200753 /* PredictResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633A729221B813F800200753 /* PredictResponseData.swift */; };
 		633A729521B8150E00200753 /* PredictResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633A729421B8150E00200753 /* PredictResponseMapper.swift */; };
 		635984F721B8FF0D00E37013 /* AgendaEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635984F621B8FF0C00E37013 /* AgendaEntity.swift */; };
+		635CCA9121BE9F9400353FCF /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CCA9021BE9F9400353FCF /* HomeCollectionViewCell.swift */; };
 		636E52DA21BE39E800BF3AEB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636E52D921BE39E800BF3AEB /* LoginViewController.swift */; };
 		636E52DC21BE3A8D00BF3AEB /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636E52DB21BE3A8D00BF3AEB /* UITextField.swift */; };
 		637995A521B8D8E6000A8CD5 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637995A421B8D8E6000A8CD5 /* UIButton.swift */; };
 		637995A721B8DC61000A8CD5 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637995A621B8DC61000A8CD5 /* UIImageView.swift */; };
+		637FABD321BE93B600FB6AAB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637FABD221BE93B600FB6AAB /* HomeViewController.swift */; };
 		6385304F21B2BE9A0013985C /* PredictResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385304E21B2BE9A0013985C /* PredictResponseEntity.swift */; };
 		6385305121B2BF090013985C /* PredictRequstEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385305021B2BF090013985C /* PredictRequstEntity.swift */; };
 		6385305321B2BFA70013985C /* PredictRequestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385305221B2BFA70013985C /* PredictRequestRepository.swift */; };
@@ -110,10 +112,12 @@
 		633A729221B813F800200753 /* PredictResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictResponseData.swift; sourceTree = "<group>"; };
 		633A729421B8150E00200753 /* PredictResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictResponseMapper.swift; sourceTree = "<group>"; };
 		635984F621B8FF0C00E37013 /* AgendaEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaEntity.swift; sourceTree = "<group>"; };
+		635CCA9021BE9F9400353FCF /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		636E52D921BE39E800BF3AEB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "Attedance Class/Scenes/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
 		636E52DB21BE3A8D00BF3AEB /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		637995A421B8D8E6000A8CD5 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		637995A621B8DC61000A8CD5 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		637FABD221BE93B600FB6AAB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6385304E21B2BE9A0013985C /* PredictResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictResponseEntity.swift; sourceTree = "<group>"; };
 		6385305021B2BF090013985C /* PredictRequstEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictRequstEntity.swift; sourceTree = "<group>"; };
 		6385305221B2BFA70013985C /* PredictRequestRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictRequestRepository.swift; sourceTree = "<group>"; };
@@ -219,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				636E52D821BE39D100BF3AEB /* Login */,
+				637FABD121BE93A800FB6AAB /* Home */,
 				63A7212F21AEFEDA00721504 /* ShowAgendaScan */,
 				63A7212A21AEF20100721504 /* GetLocation */,
 				6312336821AEDBB8006783FE /* MakePredictImage */,
@@ -244,6 +249,15 @@
 				63C39AF521BE8FB700B88999 /* LoginViewModel.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		637FABD121BE93A800FB6AAB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				637FABD221BE93B600FB6AAB /* HomeViewController.swift */,
+				635CCA9021BE9F9400353FCF /* HomeCollectionViewCell.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		6385305821B2C3D70013985C /* Model */ = {
@@ -764,7 +778,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Attedance Class/Pods-Attedance Class-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/CollectionViewSlantedLayout/CollectionViewSlantedLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
@@ -773,7 +787,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CollectionViewSlantedLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
@@ -797,6 +811,8 @@
 				63A7213121AEFF1F00721504 /* ShowAgendaScan.swift in Sources */,
 				63A944D821AFA2BB0040D501 /* SuccesViewController.swift in Sources */,
 				63A7212E21AEF28900721504 /* GetLocationViewModel.swift in Sources */,
+				635CCA9121BE9F9400353FCF /* HomeCollectionViewCell.swift in Sources */,
+				637FABD321BE93B600FB6AAB /* HomeViewController.swift in Sources */,
 				63A7212C21AEF22D00721504 /* GetLocationViewController.swift in Sources */,
 				637995A721B8DC61000A8CD5 /* UIImageView.swift in Sources */,
 				63F3473321AC7E46000FAEC3 /* PredictImageViewModel.swift in Sources */,

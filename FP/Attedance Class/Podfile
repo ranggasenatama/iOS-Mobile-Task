@@ -16,7 +16,7 @@ target 'Attedance Class' do
   # Pods for Attedance Class
 	rx_swift
 	rx_cocoa
-	pod 'CollectionViewSlantedLayout'
+	pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
 end
 
 target 'Data' do
