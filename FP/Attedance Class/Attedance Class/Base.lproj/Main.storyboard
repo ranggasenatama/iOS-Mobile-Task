@@ -161,7 +161,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bWy-9w-CKM">
-                                <rect key="frame" x="20" y="402" width="335" height="50"/>
+                                <rect key="frame" x="20" y="407" width="335" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="XBm-z2-O0P"/>
                                 </constraints>
@@ -175,7 +175,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaP-vg-UGO">
-                                <rect key="frame" x="20" y="468" width="335" height="50"/>
+                                <rect key="frame" x="20" y="477" width="335" height="50"/>
                                 <color key="backgroundColor" red="0.15294117647058825" green="0.68235294117647061" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="gX7-3e-K0a"/>
@@ -189,7 +189,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="NRP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7c3-JR-dKu">
-                                <rect key="frame" x="20" y="336" width="335" height="50"/>
+                                <rect key="frame" x="20" y="337" width="335" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="jcb-ES-bWj"/>
                                 </constraints>
@@ -203,7 +203,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="XEO-AQ-90o">
-                                <rect key="frame" x="67" y="104" width="240" height="76"/>
+                                <rect key="frame" x="67" y="104" width="240" height="77"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Rr-Yd-a78">
                                 <rect key="frame" x="0.0" y="264" width="0.0" height="0.0"/>
@@ -213,7 +213,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="LogAttendance adalah aplikasi mahasiswa informatika berbasis mobile yang ingin melakukan absensi" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1rb-xb-tas">
-                                <rect key="frame" x="16" y="208" width="343" height="76"/>
+                                <rect key="frame" x="16" y="209" width="343" height="76"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="76" id="49s-kV-hgp"/>
                                 </constraints>
@@ -225,9 +225,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="TK8-cJ-VNj" firstAttribute="trailing" secondItem="PqP-PA-dTi" secondAttribute="trailing" id="0at-rb-M8e"/>
-                            <constraint firstItem="PqP-PA-dTi" firstAttribute="bottom" secondItem="iaP-vg-UGO" secondAttribute="bottom" constant="149" id="0uG-iH-0BN"/>
+                            <constraint firstItem="PqP-PA-dTi" firstAttribute="bottom" secondItem="iaP-vg-UGO" secondAttribute="bottom" constant="140" id="0uG-iH-0BN"/>
                             <constraint firstItem="1rb-xb-tas" firstAttribute="top" secondItem="XEO-AQ-90o" secondAttribute="bottom" constant="28" id="4ez-Io-xQa"/>
-                            <constraint firstItem="bWy-9w-CKM" firstAttribute="top" secondItem="7c3-JR-dKu" secondAttribute="bottom" constant="16" id="5kV-zv-ovw"/>
+                            <constraint firstItem="bWy-9w-CKM" firstAttribute="top" secondItem="7c3-JR-dKu" secondAttribute="bottom" constant="20" id="5kV-zv-ovw"/>
                             <constraint firstItem="bWy-9w-CKM" firstAttribute="leading" secondItem="PqP-PA-dTi" secondAttribute="leading" constant="20" id="7TD-xl-dOJ"/>
                             <constraint firstItem="TK8-cJ-VNj" firstAttribute="top" secondItem="Btj-d7-ZNb" secondAttribute="top" id="DTw-EI-zEv"/>
                             <constraint firstItem="PqP-PA-dTi" firstAttribute="trailing" secondItem="XEO-AQ-90o" secondAttribute="trailing" constant="68" id="FxW-uD-khK"/>
@@ -241,20 +241,54 @@
                             <constraint firstItem="7c3-JR-dKu" firstAttribute="top" secondItem="1rb-xb-tas" secondAttribute="bottom" constant="52" id="R7x-pk-YgW"/>
                             <constraint firstItem="7c3-JR-dKu" firstAttribute="leading" secondItem="PqP-PA-dTi" secondAttribute="leading" constant="20" id="Rcc-4m-JyD"/>
                             <constraint firstItem="PqP-PA-dTi" firstAttribute="trailing" secondItem="bWy-9w-CKM" secondAttribute="trailing" constant="20" id="VGL-xR-haQ"/>
-                            <constraint firstItem="iaP-vg-UGO" firstAttribute="top" secondItem="bWy-9w-CKM" secondAttribute="bottom" constant="16" id="bMA-nu-yDe"/>
+                            <constraint firstItem="iaP-vg-UGO" firstAttribute="top" secondItem="bWy-9w-CKM" secondAttribute="bottom" constant="20" id="bMA-nu-yDe"/>
                             <constraint firstItem="TK8-cJ-VNj" firstAttribute="leading" secondItem="PqP-PA-dTi" secondAttribute="leading" id="mKB-BM-gVS"/>
                             <constraint firstItem="iaP-vg-UGO" firstAttribute="leading" secondItem="PqP-PA-dTi" secondAttribute="leading" constant="20" id="n0C-7n-rN4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PqP-PA-dTi"/>
                     </view>
                     <connections>
+                        <outlet property="loginButton" destination="iaP-vg-UGO" id="GUM-6C-Arz"/>
                         <outlet property="nrpTextField" destination="7c3-JR-dKu" id="GIJ-MM-euZ"/>
                         <outlet property="passwordTextField" destination="bWy-9w-CKM" id="b8V-zV-skE"/>
+                        <segue destination="8cE-pf-7BC" kind="show" identifier="home" id="DtB-ZD-dVD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cuw-ka-Iqu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1677.5999999999999" y="833.43328335832086"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="24V-Ac-1aK">
+            <objects>
+                <navigationController id="8cE-pf-7BC" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Uau-H3-4zP">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="UWK-k8-LSO" kind="relationship" relationship="rootViewController" id="gch-0Z-wOY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xsg-R9-gpq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2442" y="833"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="g4z-lX-NdC">
+            <objects>
+                <viewController id="UWK-k8-LSO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M0Z-Ym-mm0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Ezc-oJ-36l"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Kwc-o8-n56"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zqC-j9-NnF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3281" y="833"/>
         </scene>
         <!--FaceID Scanner-->
         <scene sceneID="UFS-DV-Nan">

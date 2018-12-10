@@ -12,14 +12,24 @@ import UIKit
 class LoginViewController: UIViewController {
     @IBOutlet weak var nrpTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         nrpTextField.rounded()
         passwordTextField.rounded()
+        loginButton.rounded()
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        
+        performSegue(withIdentifier: "home", sender: self)
+    }
+}
+
+extension LoginViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "home" {
+            print("home")
+        }
     }
 }

@@ -91,7 +91,7 @@ extension UIButton {
     func rounded() {
         
         // set rounded and white border
-        self.layer.cornerRadius = 25
+        self.layer.cornerRadius = 8
         self.clipsToBounds = true
     }
 }
