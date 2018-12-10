@@ -16,6 +16,7 @@ target 'Attedance Class' do
   # Pods for Attedance Class
 	rx_swift
 	rx_cocoa
+	pod 'CollectionViewSlantedLayout'
 end
 
 target 'Data' do

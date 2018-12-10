@@ -13,6 +13,8 @@ class PredictImageViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     var data: String!
+    var nrp: String!
+    var password: String!
     var statusCode: Int!
     var agenda: String!
     var lat: String!
@@ -23,6 +25,7 @@ class PredictImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loginPage()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -39,8 +42,8 @@ class PredictImageViewController: UIViewController {
     }
     
     @IBAction func predictButtonPressed(_ sender: Any) {
-        predictImageViewModel.nrp = "5115100003"
-        predictImageViewModel.password = "12345678"
+        predictImageViewModel.nrp = self.nrp
+        predictImageViewModel.password = self.password
         predictImageViewModel.image = imageView.image
         predictImageViewModel.lat = self.lat
         predictImageViewModel.lon = self.lon
@@ -65,5 +68,45 @@ extension PredictImageViewController {
                 succesViewController.messageVar = self.data
             }
         }
+    }
+}
+
+extension PredictImageViewController {
+    func loginPage() {
+        // 1
+        let loginController = UIAlertController(title: "Please Sign In", message: "Fill in the following", preferredStyle: UIAlertControllerStyle.alert)
+        // 2
+        let loginAction = UIAlertAction(title: "Log In", style: UIAlertActionStyle.default) { (action:UIAlertAction) -> Void in
+            
+            let loginTextField = loginController.textFields![0] as! UITextField
+            
+            let passwordTextField = loginController.textFields![1] as! UITextField
+            
+            self.nrp = loginTextField.text!
+            self.password = passwordTextField.text!
+            print(self.nrp)
+            print(self.password)
+        }
+        loginAction.isEnabled = true
+        // 4
+        loginController.addTextField { (textField:UITextField!) -> Void in
+            
+            textField.placeholder = "Username or Email"
+            
+            textField.keyboardType = UIKeyboardType.default
+            
+        }
+        // 5
+        loginController.addTextField { (textField:UITextField!) -> Void in
+            
+            textField.placeholder = "Password"
+            
+            textField.isSecureTextEntry = true
+            
+        }
+        // 6
+        loginController.addAction(loginAction)
+        // 7
+        present(loginController, animated: true, completion: nil)
     }
 }

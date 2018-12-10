@@ -86,3 +86,12 @@ public class RectBorderButton: UIButton {
         self.roundRectLayer = shapeLayer
     }
 }
+
+extension UIButton {
+    func rounded() {
+        
+        // set rounded and white border
+        self.layer.cornerRadius = 25
+        self.clipsToBounds = true
+    }
+}
