@@ -17,6 +17,7 @@ target 'Attedance Class' do
 	rx_swift
 	rx_cocoa
 	pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
+	pod 'MaterialComponents/Snackbar'
 end
 
 target 'Data' do

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UWK-k8-LSO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="muW-8i-zB7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -274,7 +274,7 @@
             </objects>
             <point key="canvasLocation" x="2442" y="833"/>
         </scene>
-        <!--Attendance Class-->
+        <!--Home View Controller-->
         <scene sceneID="g4z-lX-NdC">
             <objects>
                 <viewController id="UWK-k8-LSO" customClass="HomeViewController" customModule="Attedance_Class" customModuleProvider="target" sceneMemberID="viewController">
@@ -385,7 +385,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ezc-oJ-36l"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Attendance Class" id="Kwc-o8-n56"/>
+                    <navigationItem key="navigationItem" id="Kwc-o8-n56"/>
                     <connections>
                         <outlet property="collectionView" destination="6Wi-KO-Vjk" id="fC0-JS-Odp"/>
                         <outlet property="topView" destination="cN0-cF-Ji0" id="dPw-4U-FME"/>

@@ -18,15 +18,22 @@ class LoginViewModel {
         self.password = _password
     }
     
-    func isValidNRP() -> Bool {
-        if self.nrp == "5115100076" {
+    func isNRPNil() -> Bool {
+        if self.nrp == "" {
             return true
         }
         return false
     }
     
-    func isValidPassword() -> Bool {
-        if self.password == "123456" {
+    func isPasswordNil() -> Bool {
+        if self.password == "" {
+            return true
+        }
+        return false
+    }
+    
+    func isNotValidNRPOrPassword() -> Bool {
+        if self.nrp != "5115100076" || self.password != "123456" {
             return true
         }
         return false
