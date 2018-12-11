@@ -41,6 +41,7 @@ PODS:
     - MaterialComponents/private/Math
   - MDFInternationalization (2.0.0)
   - MDFTextAccessibility (2.0.0)
+  - ReachabilitySwift (4.3.0)
   - RxAlamofire (4.2.0):
     - RxAlamofire/Core (= 4.2.0)
   - RxAlamofire/Core (4.2.0):
@@ -55,6 +56,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.7)
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - MaterialComponents/Snackbar
+  - ReachabilitySwift
   - RxAlamofire
   - RxCocoa (~> 4.3)
   - RxSwift (~> 4.3)
@@ -66,6 +68,7 @@ SPEC REPOS:
     - MaterialComponents
     - MDFInternationalization
     - MDFTextAccessibility
+    - ReachabilitySwift
     - RxAlamofire
     - RxCocoa
     - RxSwift
@@ -86,11 +89,12 @@ SPEC CHECKSUMS:
   MaterialComponents: fb709eff8adee8021cc55b3de93adb0f1050aa4a
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
+  ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
   RxAlamofire: 87a9c588541210cc3e4a1f843ccc3ecf3eb98b31
   RxCocoa: 71b9cce833fbcb89a8eec11816dd225830c2bd3c
   RxSwift: a9717a34df3179fe63563f76e046ad345078dd3a
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 94476272a51eee42acd36d906c057e50cf1274b7
+PODFILE CHECKSUM: bf941dee7883458f4bc8dd084c863d481ccab225
 
 COCOAPODS: 1.5.3

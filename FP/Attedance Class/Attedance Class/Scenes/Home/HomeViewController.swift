@@ -6,16 +6,23 @@
 //  Copyright © 2018 Rangga Senatama Putra. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import ChameleonFramework
+import MaterialComponents
+import Device
+import Reachability
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var botView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    var workItem: DispatchWorkItem?
+    let connection = ConnectionUtil.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        isReachableConnection()
         initCollectionCell()
         configUI()
     }
@@ -23,6 +30,7 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        workItem?.cancel()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -40,6 +48,49 @@ class HomeViewController: UIViewController {
             UIColor.flatBlueDark
         ]
         topView.backgroundColor = GradientColor(.topToBottom, frame: view.frame, colors: colors)
+    }
+}
+
+extension HomeViewController {
+    func isReachableConnection() {
+        ConnectionUtil.isUnreachable { networkManagerInstance in
+            self.messageConnection()
+        }
+        connection.reachability.whenUnreachable = { reachability in
+            self.messageConnection()
+        }
+    }
+    
+    func item() {
+        workItem = DispatchWorkItem{
+            self.viewDidLoad()
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: workItem!)
+    }
+    
+    func messageConnection() {
+        let messageWithAction = MDCSnackbarMessage()
+        let action = MDCSnackbarMessageAction()
+        workItem?.cancel()
+        messageWithAction.text = "You are offline, Check your connection"
+        let actionHandler = {() in
+            self.viewDidLoad()
+            self.workItem?.cancel()
+        }
+        action.handler = actionHandler
+        action.title = "Retry"
+        messageWithAction.action = action
+        messageWithAction.duration = 10
+        item()
+        MDCSnackbarManager.show(messageWithAction)
+    }
+}
+
+extension HomeViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AttendanceClass" {
+            print("AttendanceClass")
+        }
     }
 }
 
@@ -75,6 +126,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.backgroundColor = UIColor.white
         // Configure the cell
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            performSegue(withIdentifier: "AttendaceClass", sender: self)
+        }
     }
     
     func shadowCell(cell: HomeCollectionViewCell) -> HomeCollectionViewCell {

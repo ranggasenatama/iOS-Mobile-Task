@@ -6,21 +6,27 @@
 //  Copyright © 2018 Rangga Senatama Putra. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import MaterialComponents
+import Device
+import Reachability
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var nrpTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
+    let connection = ConnectionUtil.sharedInstance
     var loginViewModel: LoginViewModel!
-    
-    let message = MDCSnackbarMessage()
+    var workItem: DispatchWorkItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        buttonRounded()
+        isReachableConnection()
+    }
+    
+    func buttonRounded() {
         nrpTextField.rounded()
         passwordTextField.rounded()
         loginButton.rounded()
@@ -37,8 +43,46 @@ class LoginViewController: UIViewController {
             performSegue(withIdentifier: "home", sender: self)
         }
     }
+}
+
+extension LoginViewController {
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        workItem?.cancel()
+    }
     
+    func isReachableConnection() {
+        ConnectionUtil.isUnreachable { networkManagerInstance in
+            self.messageConnection()
+        }
+        connection.reachability.whenUnreachable = { reachability in
+            self.messageConnection()
+        }
+    }
     
+    func item() {
+        workItem = DispatchWorkItem{
+            self.viewDidLoad()
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: workItem!)
+    }
+    
+    func messageConnection() {
+        let messageWithAction = MDCSnackbarMessage()
+        let action = MDCSnackbarMessageAction()
+        workItem?.cancel()
+        messageWithAction.text = "You are offline, Check your connection"
+        let actionHandler = {() in
+            self.viewDidLoad()
+            self.workItem?.cancel()
+        }
+        action.handler = actionHandler
+        action.title = "Retry"
+        messageWithAction.action = action
+        messageWithAction.duration = 10
+        item()
+        MDCSnackbarManager.show(messageWithAction)
+    }
 }
 
 extension LoginViewController {
@@ -51,10 +95,10 @@ extension LoginViewController {
 
 extension LoginViewController {
     func isValidUser() -> Bool {
+        let message = MDCSnackbarMessage()
+
         if loginViewModel.isNRPNil() {
             message.text = "NRP is Required"
-            print(loginViewModel.isNRPNil())
-            print(loginViewModel.nrp)
             MDCSnackbarManager.show(message)
             return false
         } else if loginViewModel.isPasswordNil() {

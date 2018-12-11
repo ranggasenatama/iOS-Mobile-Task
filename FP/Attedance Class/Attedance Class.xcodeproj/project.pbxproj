@@ -11,6 +11,7 @@
 		4BA629AA4E6E5E2AD195268F /* Pods_Device.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 445063F086F5D58F1D109416 /* Pods_Device.framework */; };
 		633A729321B813F800200753 /* PredictResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633A729221B813F800200753 /* PredictResponseData.swift */; };
 		633A729521B8150E00200753 /* PredictResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633A729421B8150E00200753 /* PredictResponseMapper.swift */; };
+		6356000421BFC499006ED0BB /* ConnectionUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6356000321BFC499006ED0BB /* ConnectionUtil.swift */; };
 		635984F721B8FF0D00E37013 /* AgendaEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635984F621B8FF0C00E37013 /* AgendaEntity.swift */; };
 		635CCA9121BE9F9400353FCF /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CCA9021BE9F9400353FCF /* HomeCollectionViewCell.swift */; };
 		636E52DA21BE39E800BF3AEB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636E52D921BE39E800BF3AEB /* LoginViewController.swift */; };
@@ -25,6 +26,7 @@
 		6391CBDF21B4064900E57004 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391CBDE21B4064900E57004 /* UserEntity.swift */; };
 		6391CBE121B406D100E57004 /* PredictRequestMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391CBE021B406D100E57004 /* PredictRequestMapper.swift */; };
 		6391CBE321B4079900E57004 /* ImageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391CBE221B4079900E57004 /* ImageEntity.swift */; };
+		639AA6D921BF89A300279B8B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639AA6D821BF89A300279B8B /* UIView.swift */; };
 		639F804721AC4A3F008A98AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639F804621AC4A3F008A98AE /* AppDelegate.swift */; };
 		639F804921AC4A3F008A98AE /* PredictImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639F804821AC4A3F008A98AE /* PredictImageViewController.swift */; };
 		639F804C21AC4A3F008A98AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639F804A21AC4A3F008A98AE /* Main.storyboard */; };
@@ -111,6 +113,7 @@
 		5F212D291ACAE0111D8AB830 /* Pods-Attedance Class.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Attedance Class.release.xcconfig"; path = "Pods/Target Support Files/Pods-Attedance Class/Pods-Attedance Class.release.xcconfig"; sourceTree = "<group>"; };
 		633A729221B813F800200753 /* PredictResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictResponseData.swift; sourceTree = "<group>"; };
 		633A729421B8150E00200753 /* PredictResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictResponseMapper.swift; sourceTree = "<group>"; };
+		6356000321BFC499006ED0BB /* ConnectionUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionUtil.swift; sourceTree = "<group>"; };
 		635984F621B8FF0C00E37013 /* AgendaEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaEntity.swift; sourceTree = "<group>"; };
 		635CCA9021BE9F9400353FCF /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		636E52D921BE39E800BF3AEB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "Attedance Class/Scenes/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
@@ -125,6 +128,7 @@
 		6391CBDE21B4064900E57004 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 		6391CBE021B406D100E57004 /* PredictRequestMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictRequestMapper.swift; sourceTree = "<group>"; };
 		6391CBE221B4079900E57004 /* ImageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEntity.swift; sourceTree = "<group>"; };
+		639AA6D821BF89A300279B8B /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		639F804321AC4A3E008A98AE /* Attedance Class.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Attedance Class.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		639F804621AC4A3F008A98AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		639F804821AC4A3F008A98AE /* PredictImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictImageViewController.swift; sourceTree = "<group>"; };
@@ -400,6 +404,7 @@
 				637995A421B8D8E6000A8CD5 /* UIButton.swift */,
 				637995A621B8DC61000A8CD5 /* UIImageView.swift */,
 				636E52DB21BE3A8D00BF3AEB /* UITextField.swift */,
+				639AA6D821BF89A300279B8B /* UIView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -460,6 +465,7 @@
 			children = (
 				63F3472A21AC6448000FAEC3 /* LocationUtil.swift */,
 				63A944C821AF93340040D501 /* CameraUtils.swift */,
+				6356000321BFC499006ED0BB /* ConnectionUtil.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -782,6 +788,7 @@
 				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
@@ -794,6 +801,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
@@ -812,6 +820,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				639AA6D921BF89A300279B8B /* UIView.swift in Sources */,
 				639F804921AC4A3F008A98AE /* PredictImageViewController.swift in Sources */,
 				63AFFAE521B5182100FD0B28 /* UIImage.swift in Sources */,
 				63A7213121AEFF1F00721504 /* ShowAgendaScan.swift in Sources */,
@@ -869,6 +878,7 @@
 				63F3472B21AC6448000FAEC3 /* LocationUtil.swift in Sources */,
 				63F3472821AC60D2000FAEC3 /* CoordinateRepositoryDevice.swift in Sources */,
 				63A944C921AF93340040D501 /* CameraUtils.swift in Sources */,
+				6356000421BFC499006ED0BB /* ConnectionUtil.swift in Sources */,
 				63F3473121AC6BE5000FAEC3 /* CoordinateMapper.swift in Sources */,
 				63F3472E21AC6947000FAEC3 /* CoordinateDevice.swift in Sources */,
 			);
