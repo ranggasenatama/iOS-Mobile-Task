@@ -49,7 +49,7 @@
 		639F808421AC5054008A98AE /* Device.h in Headers */ = {isa = PBXBuildFile; fileRef = 639F808221AC5054008A98AE /* Device.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		639F808721AC5054008A98AE /* Device.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639F808021AC5054008A98AE /* Device.framework */; };
 		639F808821AC5054008A98AE /* Device.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 639F808021AC5054008A98AE /* Device.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		63A7212921AEEB8D00721504 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639F805D21AC4E69008A98AE /* Domain.framework */; };
+		63A7212921AEEB8D00721504 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639F805D21AC4E69008A98AE /* Domain.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		63A7212C21AEF22D00721504 /* GetLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A7212B21AEF22D00721504 /* GetLocationViewController.swift */; };
 		63A7212E21AEF28900721504 /* GetLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A7212D21AEF28900721504 /* GetLocationViewModel.swift */; };
 		63A7213121AEFF1F00721504 /* ShowAgendaScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A7213021AEFF1F00721504 /* ShowAgendaScan.swift */; };
@@ -57,6 +57,7 @@
 		63AC794921C0D3CD0019687D /* AgendaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AC794821C0D3CD0019687D /* AgendaModel.swift */; };
 		63AC794B21C0D44A0019687D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AC794A21C0D44A0019687D /* UserModel.swift */; };
 		63AFFAE521B5182100FD0B28 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AFFAE421B5182100FD0B28 /* UIImage.swift */; };
+		63BA6CA921C15E1E003CC446 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639F805D21AC4E69008A98AE /* Domain.framework */; };
 		63C2737821C13B70003A3557 /* AbsentUserRequestMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2737721C13B70003A3557 /* AbsentUserRequestMapper.swift */; };
 		63C2737A21C13BF2003A3557 /* AbsentRequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2737921C13BF2003A3557 /* AbsentRequestData.swift */; };
 		63C2737D21C1436F003A3557 /* SendImageDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2737C21C1436F003A3557 /* SendImageDataViewController.swift */; };
@@ -253,6 +254,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63BA6CA921C15E1E003CC446 /* Domain.framework in Frameworks */,
 				B3DA309BF25B1B2ACBA06B86 /* Pods_Data.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -884,9 +886,7 @@
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
-				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
-				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/KTSnackBar/KTSnackBar.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -899,9 +899,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KTSnackBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",

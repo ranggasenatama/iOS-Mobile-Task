@@ -8,7 +8,7 @@
 
 import UIKit
 import AVFoundation
-import MaterialComponents
+//import MaterialComponents
 
 class GetLocationViewController: UIViewController {
     
@@ -165,17 +165,17 @@ extension GetLocationViewController: AVCaptureMetadataOutputObjectsDelegate {
 
 extension GetLocationViewController {
     func messageSnackbar(msg: String) {
-        let messageWithAction = MDCSnackbarMessage()
-        let action = MDCSnackbarMessageAction()
-        messageWithAction.text = msg
-        let actionHandler = {() in
-            self.captureSession.startRunning()
-        }
-        action.handler = actionHandler
-        action.title = "Retry"
-        messageWithAction.action = action
-        messageWithAction.duration = 10
-        MDCSnackbarManager.show(messageWithAction)
+//        let messageWithAction = MDCSnackbarMessage()
+//        let action = MDCSnackbarMessageAction()
+//        messageWithAction.text = msg
+//        let actionHandler = {() in
+//            self.captureSession.startRunning()
+//        }
+//        action.handler = actionHandler
+//        action.title = "Retry"
+//        messageWithAction.action = action
+//        messageWithAction.duration = 10
+//        MDCSnackbarManager.show(messageWithAction)
     }
 }
 
