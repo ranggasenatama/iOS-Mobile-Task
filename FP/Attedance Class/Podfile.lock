@@ -6,6 +6,44 @@ PODS:
   - IQKeyboardManagerSwift (6.2.0)
   - JGProgressHUD (2.0.3)
   - KTSnackBar (1.0.0)
+  - MaterialComponents/AnimationTiming (72.0.1)
+  - MaterialComponents/Buttons (72.0.1):
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/private/Shapes
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFInternationalization
+    - MDFTextAccessibility
+  - MaterialComponents/Ink (72.0.1):
+    - MaterialComponents/private/Math
+  - MaterialComponents/OverlayWindow (72.0.1):
+    - MaterialComponents/private/Application
+  - MaterialComponents/private/Application (72.0.1)
+  - MaterialComponents/private/KeyboardWatcher (72.0.1):
+    - MaterialComponents/private/Application
+  - MaterialComponents/private/Math (72.0.1)
+  - MaterialComponents/private/Overlay (72.0.1)
+  - MaterialComponents/private/Shapes (72.0.1):
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowLayer
+  - MaterialComponents/ShadowElevations (72.0.1)
+  - MaterialComponents/ShadowLayer (72.0.1):
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/Snackbar (72.0.1):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Buttons
+    - MaterialComponents/OverlayWindow
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/KeyboardWatcher
+    - MaterialComponents/private/Overlay
+    - MaterialComponents/Typography
+  - MaterialComponents/Typography (72.0.1):
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/Math
+  - MDFInternationalization (2.0.0)
+  - MDFTextAccessibility (2.0.0)
   - ReachabilitySwift (4.3.0)
   - RxAlamofire (4.2.0):
     - RxAlamofire/Core (= 4.2.0)
@@ -23,6 +61,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - JGProgressHUD
   - KTSnackBar
+  - MaterialComponents/Snackbar
   - ReachabilitySwift
   - RxAlamofire
   - RxCocoa (~> 4.3)
@@ -35,6 +74,9 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - JGProgressHUD
     - KTSnackBar
+    - MaterialComponents
+    - MDFInternationalization
+    - MDFTextAccessibility
     - ReachabilitySwift
     - RxAlamofire
     - RxCocoa
@@ -56,12 +98,15 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
   JGProgressHUD: 12b20a8f4ffe05258f8635c1ab92816e451f904d
   KTSnackBar: 3db830a46bdc1860c4c332036c06f61c99d11fc4
+  MaterialComponents: fb709eff8adee8021cc55b3de93adb0f1050aa4a
+  MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
+  MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
   RxAlamofire: 87a9c588541210cc3e4a1f843ccc3ecf3eb98b31
   RxCocoa: 71b9cce833fbcb89a8eec11816dd225830c2bd3c
   RxSwift: a9717a34df3179fe63563f76e046ad345078dd3a
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 8f2974663820e8da5c955d0a7874ca992ad7d348
+PODFILE CHECKSUM: f939e778a4ebfb1158b91479d5e421b8d074cfcb
 
 COCOAPODS: 1.5.3

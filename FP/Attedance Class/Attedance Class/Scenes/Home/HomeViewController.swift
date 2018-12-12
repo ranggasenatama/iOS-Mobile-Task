@@ -8,7 +8,6 @@
 
 import UIKit
 import ChameleonFramework
-//import MaterialComponents
 import KTSnackBar
 import Device
 import Reachability
@@ -20,11 +19,12 @@ class HomeViewController: UIViewController {
     
     var user: UserModel!
     fileprivate var snackBar: KTSnackBar?
-//    var workItem: DispatchWorkItem?
     let connection = ConnectionUtil.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        isReachableConnection()
+        isUserLogin()
         initCollectionCell()
         configUI()
     }
@@ -32,22 +32,16 @@ class HomeViewController: UIViewController {
     func isUserLogin() {
         if user == nil {
             performSegue(withIdentifier: "Login", sender: self)
-        } else {
-            isReachableConnection()
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        isUserLogin()
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
-//        workItem?.cancel()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-//        workItem?.cancel()
-        self.snackBar?.dismiss()
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
@@ -67,44 +61,30 @@ class HomeViewController: UIViewController {
 extension HomeViewController {
     func isReachableConnection() {
         ConnectionUtil.isUnreachable { networkManagerInstance in
+            print("aduh dek rara")
             self.messageConnection()
         }
-        connection.reachability.whenUnreachable = { reachability in
+        connection.reachability.whenUnreachable = { _ in
             self.messageConnection()
+        }
+        connection.reachability.whenReachable = { _ in
+            self.snackBar?.dismiss()
         }
     }
-    
-//    func item() {
-//        workItem = DispatchWorkItem{
-//            self.viewDidLoad()
-//        }
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: workItem!)
-//    }
     
     func messageConnection() {
         self.snackBar = KTSnackBar()
         self.snackBar?.show(buttonText: "Lost connection")
         self.snackBar?.pressedBlock = {
-            self.isReachableConnection()
+            ConnectionUtil.isUnreachable { networkManagerInstance in
+                print("aduh dek rara")
+                self.messageConnection()
+            }
+            ConnectionUtil.isReachable { networkManagerInstance in
+                print("aduh dek rara2")
+            }
         }
     }
-    
-//    func messageConnection() {
-//        let messageWithAction = MDCSnackbarMessage()
-//        let action = MDCSnackbarMessageAction()
-//        workItem?.cancel()
-//        messageWithAction.text = "You are offline, Check your connection"
-//        let actionHandler = {() in
-//            self.viewDidLoad()
-//            self.workItem?.cancel()
-//        }
-//        action.handler = actionHandler
-//        action.title = "Retry"
-//        messageWithAction.action = action
-//        messageWithAction.duration = 10
-//        item()
-//        MDCSnackbarManager.show(messageWithAction)
-//    }
 }
 
 extension HomeViewController: isAbleToReceiveData {

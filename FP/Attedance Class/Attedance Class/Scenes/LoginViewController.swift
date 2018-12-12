@@ -8,6 +8,7 @@
 
 import UIKit
 //import MaterialComponents
+import KTSnackBar
 import Device
 import Reachability
 
@@ -21,15 +22,15 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     
     var delegate: isAbleToReceiveData?
+//    fileprivate var snackBar: KTSnackBar?
     
     let connection = ConnectionUtil.sharedInstance
     var loginViewModel: LoginViewModel!
-    var workItem: DispatchWorkItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         buttonRounded()
-        isReachableConnection()
+//        isReachableConnection()
     }
     
     func buttonRounded() {
@@ -54,42 +55,25 @@ class LoginViewController: UIViewController {
 extension LoginViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        workItem?.cancel()
         delegate?.pass(user: UserModel(_nrp: loginViewModel.nrp, _password: loginViewModel.password))
     }
     
-    func isReachableConnection() {
-        ConnectionUtil.isUnreachable { networkManagerInstance in
-            self.messageConnection()
-        }
-        connection.reachability.whenUnreachable = { reachability in
-            self.messageConnection()
-        }
-    }
-    
-    func item() {
-        workItem = DispatchWorkItem{
-            self.viewDidLoad()
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: workItem!)
-    }
-    
-    func messageConnection() {
-//        let messageWithAction = MDCSnackbarMessage()
-//        let action = MDCSnackbarMessageAction()
-//        workItem?.cancel()
-//        messageWithAction.text = "You are offline, Check your connection"
-//        let actionHandler = {() in
-//            self.viewDidLoad()
-//            self.workItem?.cancel()
+//    func isReachableConnection() {
+//        ConnectionUtil.isUnreachable { networkManagerInstance in
+//            self.messageConnection()
 //        }
-//        action.handler = actionHandler
-//        action.title = "Retry"
-//        messageWithAction.action = action
-//        messageWithAction.duration = 10
-//        item()
-//        MDCSnackbarManager.show(messageWithAction)
-    }
+//        connection.reachability.whenUnreachable = { reachability in
+//            self.messageConnection()
+//        }
+//    }
+//
+//    func messageConnection() {
+//        self.snackBar = KTSnackBar()
+//        self.snackBar?.show(buttonText: "Lost connection")
+//        self.snackBar?.pressedBlock = {
+//            self.isReachableConnection()
+//        }
+//    }
 }
 
 extension LoginViewController {
