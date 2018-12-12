@@ -7,8 +7,7 @@
 //
 
 import UIKit
-//import MaterialComponents
-import KTSnackBar
+import MaterialComponents
 import Device
 import Reachability
 
@@ -22,7 +21,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     
     var delegate: isAbleToReceiveData?
-//    fileprivate var snackBar: KTSnackBar?
     
     let connection = ConnectionUtil.sharedInstance
     var loginViewModel: LoginViewModel!
@@ -30,7 +28,6 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         buttonRounded()
-//        isReachableConnection()
     }
     
     func buttonRounded() {
@@ -57,23 +54,6 @@ extension LoginViewController {
         super.viewWillDisappear(animated)
         delegate?.pass(user: UserModel(_nrp: loginViewModel.nrp, _password: loginViewModel.password))
     }
-    
-//    func isReachableConnection() {
-//        ConnectionUtil.isUnreachable { networkManagerInstance in
-//            self.messageConnection()
-//        }
-//        connection.reachability.whenUnreachable = { reachability in
-//            self.messageConnection()
-//        }
-//    }
-//
-//    func messageConnection() {
-//        self.snackBar = KTSnackBar()
-//        self.snackBar?.show(buttonText: "Lost connection")
-//        self.snackBar?.pressedBlock = {
-//            self.isReachableConnection()
-//        }
-//    }
 }
 
 extension LoginViewController {
@@ -86,22 +66,21 @@ extension LoginViewController {
 
 extension LoginViewController {
     func isValidUser() -> Bool {
-//        let message = MDCSnackbarMessage()
-//
-//        if loginViewModel.isNRPNil() {
-//            message.text = "NRP is Required"
-//            MDCSnackbarManager.show(message)
-//            return false
-//        } else if loginViewModel.isPasswordNil() {
-//            message.text = "Password is Required"
-//            MDCSnackbarManager.show(message)
-//            return false
-//        } else if loginViewModel.isNotValidNRPOrPassword() {
-//            message.text = "Your NRP or Password is Wrong"
-//            MDCSnackbarManager.show(message)
-//            return false
-//        }
-//        return true
+        let message = MDCSnackbarMessage()
+
+        if loginViewModel.isNRPNil() {
+            message.text = "NRP is Required"
+            MDCSnackbarManager.show(message)
+            return false
+        } else if loginViewModel.isPasswordNil() {
+            message.text = "Password is Required"
+            MDCSnackbarManager.show(message)
+            return false
+        } else if loginViewModel.isNotValidNRPOrPassword() {
+            message.text = "Your NRP or Password is Wrong"
+            MDCSnackbarManager.show(message)
+            return false
+        }
         return true
     }
 }
