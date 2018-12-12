@@ -10,5 +10,5 @@ import Foundation
 import RxSwift
 
 public protocol PredictRequestRepository {
-    func makePredict(entity: PredictRequestEntity) -> Observable<PredictResponseEntity>
+    func makePredict(entity: PredictRequestEntity) -> Observable<SuperResponseEntity>
 }

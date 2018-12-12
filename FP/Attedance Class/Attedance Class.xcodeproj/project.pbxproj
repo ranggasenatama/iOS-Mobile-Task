@@ -9,8 +9,13 @@
 /* Begin PBXBuildFile section */
 		259067DE107543935102340C /* Pods_Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2F96D40B786EB6E38E7B657 /* Pods_Domain.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		4BA629AA4E6E5E2AD195268F /* Pods_Device.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 445063F086F5D58F1D109416 /* Pods_Device.framework */; };
-		633A729321B813F800200753 /* PredictResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633A729221B813F800200753 /* PredictResponseData.swift */; };
-		633A729521B8150E00200753 /* PredictResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633A729421B8150E00200753 /* PredictResponseMapper.swift */; };
+		633A729321B813F800200753 /* SuperResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633A729221B813F800200753 /* SuperResponseData.swift */; };
+		633A729521B8150E00200753 /* SuperResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633A729421B8150E00200753 /* SuperResponseMapper.swift */; };
+		634F272A21C11055004D693A /* GetPredictImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634F272921C11055004D693A /* GetPredictImageViewController.swift */; };
+		634F272C21C11062004D693A /* GetPredictImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634F272B21C11062004D693A /* GetPredictImageViewModel.swift */; };
+		634F272E21C113A3004D693A /* AbsentRequestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634F272D21C113A3004D693A /* AbsentRequestEntity.swift */; };
+		634F273021C1143C004D693A /* UserModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634F272F21C1143C004D693A /* UserModelData.swift */; };
+		634F273221C11447004D693A /* AgendaModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634F273121C11447004D693A /* AgendaModelData.swift */; };
 		6356000421BFC499006ED0BB /* ConnectionUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6356000321BFC499006ED0BB /* ConnectionUtil.swift */; };
 		635984F721B8FF0D00E37013 /* AgendaEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635984F621B8FF0C00E37013 /* AgendaEntity.swift */; };
 		635CCA9121BE9F9400353FCF /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CCA9021BE9F9400353FCF /* HomeCollectionViewCell.swift */; };
@@ -18,8 +23,11 @@
 		636E52DC21BE3A8D00BF3AEB /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636E52DB21BE3A8D00BF3AEB /* UITextField.swift */; };
 		637995A521B8D8E6000A8CD5 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637995A421B8D8E6000A8CD5 /* UIButton.swift */; };
 		637995A721B8DC61000A8CD5 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637995A621B8DC61000A8CD5 /* UIImageView.swift */; };
+		637DF7A921C11AF500E3BD41 /* GetAbsentUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637DF7A821C11AF500E3BD41 /* GetAbsentUserUseCase.swift */; };
+		637DF7AB21C11B2200E3BD41 /* AbsentRequestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637DF7AA21C11B2200E3BD41 /* AbsentRequestRepository.swift */; };
+		637DF7AD21C11F0600E3BD41 /* AbsentUserRequestRepositoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637DF7AC21C11F0600E3BD41 /* AbsentUserRequestRepositoryData.swift */; };
 		637FABD321BE93B600FB6AAB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637FABD221BE93B600FB6AAB /* HomeViewController.swift */; };
-		6385304F21B2BE9A0013985C /* PredictResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385304E21B2BE9A0013985C /* PredictResponseEntity.swift */; };
+		6385304F21B2BE9A0013985C /* SuperResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385304E21B2BE9A0013985C /* SuperResponseEntity.swift */; };
 		6385305121B2BF090013985C /* PredictRequstEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385305021B2BF090013985C /* PredictRequstEntity.swift */; };
 		6385305321B2BFA70013985C /* PredictRequestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385305221B2BFA70013985C /* PredictRequestRepository.swift */; };
 		6385305521B2C0200013985C /* PredictRequestRepositoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385305421B2C0200013985C /* PredictRequestRepositoryData.swift */; };
@@ -49,6 +57,16 @@
 		63AC794921C0D3CD0019687D /* AgendaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AC794821C0D3CD0019687D /* AgendaModel.swift */; };
 		63AC794B21C0D44A0019687D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AC794A21C0D44A0019687D /* UserModel.swift */; };
 		63AFFAE521B5182100FD0B28 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AFFAE421B5182100FD0B28 /* UIImage.swift */; };
+		63C2737821C13B70003A3557 /* AbsentUserRequestMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2737721C13B70003A3557 /* AbsentUserRequestMapper.swift */; };
+		63C2737A21C13BF2003A3557 /* AbsentRequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2737921C13BF2003A3557 /* AbsentRequestData.swift */; };
+		63C2737D21C1436F003A3557 /* SendImageDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2737C21C1436F003A3557 /* SendImageDataViewController.swift */; };
+		63C2737F21C1437B003A3557 /* SendImageDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2737E21C1437B003A3557 /* SendImageDataViewModel.swift */; };
+		63C2738121C14737003A3557 /* SendImageRequestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2738021C14737003A3557 /* SendImageRequestEntity.swift */; };
+		63C2738321C147D0003A3557 /* SendImageRequestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2738221C147D0003A3557 /* SendImageRequestRepository.swift */; };
+		63C2738521C14814003A3557 /* SendImageUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2738421C14814003A3557 /* SendImageUserUseCase.swift */; };
+		63C2738721C148C3003A3557 /* SendImageRequestRepositoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2738621C148C3003A3557 /* SendImageRequestRepositoryData.swift */; };
+		63C2738921C1496A003A3557 /* SendImageRequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2738821C1496A003A3557 /* SendImageRequestData.swift */; };
+		63C2738B21C14999003A3557 /* SendImageRequestMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2738A21C14999003A3557 /* SendImageRequestMapper.swift */; };
 		63C39AF621BE8FB700B88999 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C39AF521BE8FB700B88999 /* LoginViewModel.swift */; };
 		63DA144721B7AE5C00886563 /* GetRangeTwoCoordinateInMetersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DA144621B7AE5C00886563 /* GetRangeTwoCoordinateInMetersUseCase.swift */; };
 		63E64A4221B290E700C32115 /* PredictRequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E64A4121B290E700C32115 /* PredictRequestData.swift */; };
@@ -112,8 +130,13 @@
 		445063F086F5D58F1D109416 /* Pods_Device.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Device.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		584D8DCE257B2D153992E66E /* Pods-Data.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Data.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Data/Pods-Data.debug.xcconfig"; sourceTree = "<group>"; };
 		5F212D291ACAE0111D8AB830 /* Pods-Attedance Class.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Attedance Class.release.xcconfig"; path = "Pods/Target Support Files/Pods-Attedance Class/Pods-Attedance Class.release.xcconfig"; sourceTree = "<group>"; };
-		633A729221B813F800200753 /* PredictResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictResponseData.swift; sourceTree = "<group>"; };
-		633A729421B8150E00200753 /* PredictResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictResponseMapper.swift; sourceTree = "<group>"; };
+		633A729221B813F800200753 /* SuperResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperResponseData.swift; sourceTree = "<group>"; };
+		633A729421B8150E00200753 /* SuperResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperResponseMapper.swift; sourceTree = "<group>"; };
+		634F272921C11055004D693A /* GetPredictImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPredictImageViewController.swift; sourceTree = "<group>"; };
+		634F272B21C11062004D693A /* GetPredictImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPredictImageViewModel.swift; sourceTree = "<group>"; };
+		634F272D21C113A3004D693A /* AbsentRequestEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsentRequestEntity.swift; sourceTree = "<group>"; };
+		634F272F21C1143C004D693A /* UserModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelData.swift; sourceTree = "<group>"; };
+		634F273121C11447004D693A /* AgendaModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaModelData.swift; sourceTree = "<group>"; };
 		6356000321BFC499006ED0BB /* ConnectionUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionUtil.swift; sourceTree = "<group>"; };
 		635984F621B8FF0C00E37013 /* AgendaEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaEntity.swift; sourceTree = "<group>"; };
 		635CCA9021BE9F9400353FCF /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -121,8 +144,11 @@
 		636E52DB21BE3A8D00BF3AEB /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		637995A421B8D8E6000A8CD5 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		637995A621B8DC61000A8CD5 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		637DF7A821C11AF500E3BD41 /* GetAbsentUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAbsentUserUseCase.swift; sourceTree = "<group>"; };
+		637DF7AA21C11B2200E3BD41 /* AbsentRequestRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsentRequestRepository.swift; sourceTree = "<group>"; };
+		637DF7AC21C11F0600E3BD41 /* AbsentUserRequestRepositoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsentUserRequestRepositoryData.swift; sourceTree = "<group>"; };
 		637FABD221BE93B600FB6AAB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		6385304E21B2BE9A0013985C /* PredictResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictResponseEntity.swift; sourceTree = "<group>"; };
+		6385304E21B2BE9A0013985C /* SuperResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperResponseEntity.swift; sourceTree = "<group>"; };
 		6385305021B2BF090013985C /* PredictRequstEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictRequstEntity.swift; sourceTree = "<group>"; };
 		6385305221B2BFA70013985C /* PredictRequestRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictRequestRepository.swift; sourceTree = "<group>"; };
 		6385305421B2C0200013985C /* PredictRequestRepositoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictRequestRepositoryData.swift; sourceTree = "<group>"; };
@@ -153,6 +179,16 @@
 		63AC794821C0D3CD0019687D /* AgendaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaModel.swift; sourceTree = "<group>"; };
 		63AC794A21C0D44A0019687D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		63AFFAE421B5182100FD0B28 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		63C2737721C13B70003A3557 /* AbsentUserRequestMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsentUserRequestMapper.swift; sourceTree = "<group>"; };
+		63C2737921C13BF2003A3557 /* AbsentRequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsentRequestData.swift; sourceTree = "<group>"; };
+		63C2737C21C1436F003A3557 /* SendImageDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendImageDataViewController.swift; sourceTree = "<group>"; };
+		63C2737E21C1437B003A3557 /* SendImageDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendImageDataViewModel.swift; sourceTree = "<group>"; };
+		63C2738021C14737003A3557 /* SendImageRequestEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendImageRequestEntity.swift; sourceTree = "<group>"; };
+		63C2738221C147D0003A3557 /* SendImageRequestRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendImageRequestRepository.swift; sourceTree = "<group>"; };
+		63C2738421C14814003A3557 /* SendImageUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendImageUserUseCase.swift; sourceTree = "<group>"; };
+		63C2738621C148C3003A3557 /* SendImageRequestRepositoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendImageRequestRepositoryData.swift; sourceTree = "<group>"; };
+		63C2738821C1496A003A3557 /* SendImageRequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendImageRequestData.swift; sourceTree = "<group>"; };
+		63C2738A21C14999003A3557 /* SendImageRequestMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendImageRequestMapper.swift; sourceTree = "<group>"; };
 		63C39AF521BE8FB700B88999 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		63DA144621B7AE5C00886563 /* GetRangeTwoCoordinateInMetersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRangeTwoCoordinateInMetersUseCase.swift; sourceTree = "<group>"; };
 		63E64A4121B290E700C32115 /* PredictRequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictRequestData.swift; sourceTree = "<group>"; };
@@ -230,6 +266,9 @@
 			children = (
 				636E52D821BE39D100BF3AEB /* Login */,
 				637FABD121BE93A800FB6AAB /* Home */,
+				634F272821C10FEB004D693A /* TrainData */,
+				634F272721C10FD5004D693A /* GetPredictImage */,
+				634F272621C10FBD004D693A /* SendImageData */,
 				63A7212F21AEFEDA00721504 /* ShowAgendaScan */,
 				63A7212A21AEF20100721504 /* GetLocation */,
 				6312336821AEDBB8006783FE /* MakePredictImage */,
@@ -245,6 +284,31 @@
 			);
 			name = MakePredictImage;
 			path = PredictImage;
+			sourceTree = "<group>";
+		};
+		634F272621C10FBD004D693A /* SendImageData */ = {
+			isa = PBXGroup;
+			children = (
+				63C2737C21C1436F003A3557 /* SendImageDataViewController.swift */,
+				63C2737E21C1437B003A3557 /* SendImageDataViewModel.swift */,
+			);
+			path = SendImageData;
+			sourceTree = "<group>";
+		};
+		634F272721C10FD5004D693A /* GetPredictImage */ = {
+			isa = PBXGroup;
+			children = (
+				634F272921C11055004D693A /* GetPredictImageViewController.swift */,
+				634F272B21C11062004D693A /* GetPredictImageViewModel.swift */,
+			);
+			path = GetPredictImage;
+			sourceTree = "<group>";
+		};
+		634F272821C10FEB004D693A /* TrainData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TrainData;
 			sourceTree = "<group>";
 		};
 		636E52D821BE39D100BF3AEB /* Login */ = {
@@ -356,7 +420,9 @@
 			isa = PBXGroup;
 			children = (
 				63F3471A21AC51B5000FAEC3 /* CoordinateEntity.swift */,
-				6385304E21B2BE9A0013985C /* PredictResponseEntity.swift */,
+				63C2738021C14737003A3557 /* SendImageRequestEntity.swift */,
+				634F272D21C113A3004D693A /* AbsentRequestEntity.swift */,
+				6385304E21B2BE9A0013985C /* SuperResponseEntity.swift */,
 				6385305021B2BF090013985C /* PredictRequstEntity.swift */,
 				6391CBDE21B4064900E57004 /* UserEntity.swift */,
 				6391CBE221B4079900E57004 /* ImageEntity.swift */,
@@ -371,6 +437,8 @@
 				63F3472421AC5F91000FAEC3 /* GetCoordinateGPSUseCase.swift */,
 				63DA144621B7AE5C00886563 /* GetRangeTwoCoordinateInMetersUseCase.swift */,
 				63FE727A21B2AB4100DA4610 /* GetPredictImageUseCase.swift */,
+				637DF7A821C11AF500E3BD41 /* GetAbsentUserUseCase.swift */,
+				63C2738421C14814003A3557 /* SendImageUserUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -408,6 +476,8 @@
 			isa = PBXGroup;
 			children = (
 				6385305421B2C0200013985C /* PredictRequestRepositoryData.swift */,
+				637DF7AC21C11F0600E3BD41 /* AbsentUserRequestRepositoryData.swift */,
+				63C2738621C148C3003A3557 /* SendImageRequestRepositoryData.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -416,7 +486,11 @@
 			isa = PBXGroup;
 			children = (
 				63E64A4121B290E700C32115 /* PredictRequestData.swift */,
-				633A729221B813F800200753 /* PredictResponseData.swift */,
+				63C2737921C13BF2003A3557 /* AbsentRequestData.swift */,
+				63C2738821C1496A003A3557 /* SendImageRequestData.swift */,
+				633A729221B813F800200753 /* SuperResponseData.swift */,
+				634F272F21C1143C004D693A /* UserModelData.swift */,
+				634F273121C11447004D693A /* AgendaModelData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -425,7 +499,9 @@
 			isa = PBXGroup;
 			children = (
 				6391CBE021B406D100E57004 /* PredictRequestMapper.swift */,
-				633A729421B8150E00200753 /* PredictResponseMapper.swift */,
+				633A729421B8150E00200753 /* SuperResponseMapper.swift */,
+				63C2737721C13B70003A3557 /* AbsentUserRequestMapper.swift */,
+				63C2738A21C14999003A3557 /* SendImageRequestMapper.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -443,6 +519,8 @@
 			children = (
 				63F3472221AC5DF0000FAEC3 /* CoordinateRepository.swift */,
 				6385305221B2BFA70013985C /* PredictRequestRepository.swift */,
+				637DF7AA21C11B2200E3BD41 /* AbsentRequestRepository.swift */,
+				63C2738221C147D0003A3557 /* SendImageRequestRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -823,17 +901,21 @@
 				639F804921AC4A3F008A98AE /* PredictImageViewController.swift in Sources */,
 				63AFFAE521B5182100FD0B28 /* UIImage.swift in Sources */,
 				63A7213121AEFF1F00721504 /* ShowAgendaScan.swift in Sources */,
+				63C2737F21C1437B003A3557 /* SendImageDataViewModel.swift in Sources */,
 				63A7212E21AEF28900721504 /* GetLocationViewModel.swift in Sources */,
 				635CCA9121BE9F9400353FCF /* HomeCollectionViewCell.swift in Sources */,
 				637FABD321BE93B600FB6AAB /* HomeViewController.swift in Sources */,
 				63A7212C21AEF22D00721504 /* GetLocationViewController.swift in Sources */,
+				634F272C21C11062004D693A /* GetPredictImageViewModel.swift in Sources */,
 				63AC794B21C0D44A0019687D /* UserModel.swift in Sources */,
 				637995A721B8DC61000A8CD5 /* UIImageView.swift in Sources */,
 				63F3473321AC7E46000FAEC3 /* PredictImageViewModel.swift in Sources */,
 				63C39AF621BE8FB700B88999 /* LoginViewModel.swift in Sources */,
 				639F804721AC4A3F008A98AE /* AppDelegate.swift in Sources */,
+				63C2737D21C1436F003A3557 /* SendImageDataViewController.swift in Sources */,
 				637995A521B8D8E6000A8CD5 /* UIButton.swift in Sources */,
 				63AC794921C0D3CD0019687D /* AgendaModel.swift in Sources */,
+				634F272A21C11055004D693A /* GetPredictImageViewController.swift in Sources */,
 				636E52DA21BE39E800BF3AEB /* LoginViewController.swift in Sources */,
 				636E52DC21BE3A8D00BF3AEB /* UITextField.swift in Sources */,
 			);
@@ -844,16 +926,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				6385305321B2BFA70013985C /* PredictRequestRepository.swift in Sources */,
-				6385304F21B2BE9A0013985C /* PredictResponseEntity.swift in Sources */,
+				6385304F21B2BE9A0013985C /* SuperResponseEntity.swift in Sources */,
 				63F3472321AC5DF0000FAEC3 /* CoordinateRepository.swift in Sources */,
 				63FE727B21B2AB4100DA4610 /* GetPredictImageUseCase.swift in Sources */,
 				6391CBDF21B4064900E57004 /* UserEntity.swift in Sources */,
+				63C2738321C147D0003A3557 /* SendImageRequestRepository.swift in Sources */,
 				63F3472521AC5F91000FAEC3 /* GetCoordinateGPSUseCase.swift in Sources */,
 				63DA144721B7AE5C00886563 /* GetRangeTwoCoordinateInMetersUseCase.swift in Sources */,
 				635984F721B8FF0D00E37013 /* AgendaEntity.swift in Sources */,
 				63F3471E21AC52CB000FAEC3 /* MapperBase.swift in Sources */,
 				6385305121B2BF090013985C /* PredictRequstEntity.swift in Sources */,
+				63C2738121C14737003A3557 /* SendImageRequestEntity.swift in Sources */,
 				6391CBE321B4079900E57004 /* ImageEntity.swift in Sources */,
+				634F272E21C113A3004D693A /* AbsentRequestEntity.swift in Sources */,
+				637DF7AB21C11B2200E3BD41 /* AbsentRequestRepository.swift in Sources */,
+				637DF7A921C11AF500E3BD41 /* GetAbsentUserUseCase.swift in Sources */,
+				63C2738521C14814003A3557 /* SendImageUserUseCase.swift in Sources */,
 				63F3471B21AC51B5000FAEC3 /* CoordinateEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -863,10 +951,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				63FE728121B2B21100DA4610 /* APIManager.swift in Sources */,
-				633A729521B8150E00200753 /* PredictResponseMapper.swift in Sources */,
+				633A729521B8150E00200753 /* SuperResponseMapper.swift in Sources */,
+				634F273021C1143C004D693A /* UserModelData.swift in Sources */,
+				63C2738721C148C3003A3557 /* SendImageRequestRepositoryData.swift in Sources */,
+				63C2738921C1496A003A3557 /* SendImageRequestData.swift in Sources */,
+				634F273221C11447004D693A /* AgendaModelData.swift in Sources */,
+				63C2737821C13B70003A3557 /* AbsentUserRequestMapper.swift in Sources */,
 				6391CBE121B406D100E57004 /* PredictRequestMapper.swift in Sources */,
+				63C2738B21C14999003A3557 /* SendImageRequestMapper.swift in Sources */,
+				637DF7AD21C11F0600E3BD41 /* AbsentUserRequestRepositoryData.swift in Sources */,
+				63C2737A21C13BF2003A3557 /* AbsentRequestData.swift in Sources */,
 				63E64A4221B290E700C32115 /* PredictRequestData.swift in Sources */,
-				633A729321B813F800200753 /* PredictResponseData.swift in Sources */,
+				633A729321B813F800200753 /* SuperResponseData.swift in Sources */,
 				6385305521B2C0200013985C /* PredictRequestRepositoryData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

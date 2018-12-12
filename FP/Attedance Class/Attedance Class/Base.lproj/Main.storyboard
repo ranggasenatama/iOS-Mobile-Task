@@ -51,7 +51,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="245.59999999999999" y="116.49175412293854"/>
+            <point key="canvasLocation" x="2478" y="-143"/>
         </scene>
         <!--Get Location View Controller-->
         <scene sceneID="QmQ-yi-IJM">
@@ -87,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HFg-oR-dKl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1008.8" y="115.59220389805098"/>
+            <point key="canvasLocation" x="3241" y="-143"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="uyf-gx-5LF">
@@ -202,7 +202,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cuw-ka-Iqu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1655" y="1657"/>
+            <point key="canvasLocation" x="1142" y="1751"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="24V-Ac-1aK">
@@ -339,11 +339,107 @@
                         <outlet property="topView" destination="cN0-cF-Ji0" id="dPw-4U-FME"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="AttendaceClass" id="47r-H8-XX3"/>
                         <segue destination="muW-8i-zB7" kind="presentation" identifier="login" id="QyY-wC-XPK"/>
+                        <segue destination="zhl-kh-6Ja" kind="show" id="fHc-Pn-QV7"/>
+                        <segue destination="FNG-n4-WLr" kind="show" id="fc4-Lc-LCI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zqC-j9-NnF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1143" y="979"/>
+        </scene>
+        <!--Predict Image-->
+        <scene sceneID="xlT-f6-vbg">
+            <objects>
+                <viewController title="Predict Image" id="zhl-kh-6Ja" customClass="GetPredictImageViewController" customModule="Attedance_Class" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t8I-sc-Sc9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8qe-kZ-YxH">
+                                <rect key="frame" x="55" y="134" width="265" height="242"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xrt-eO-LGT">
+                                <rect key="frame" x="55" y="499" width="265" height="50"/>
+                                <color key="backgroundColor" red="0.1911550909280777" green="0.6378670334815979" blue="0.26147949695587158" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="xZS-NS-1av"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="Predict">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="predictButtonPressed:" destination="zhl-kh-6Ja" eventType="touchUpInside" id="u1t-Y4-GlA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.13346317410469055" green="0.18231484293937683" blue="0.25190103054046631" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.17257410287857056" green="0.21834245324134827" blue="0.44677489995956421" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Xrt-eO-LGT" firstAttribute="top" secondItem="8qe-kZ-YxH" secondAttribute="bottom" constant="123" id="NmP-Be-B5q"/>
+                            <constraint firstItem="tfa-xa-whd" firstAttribute="trailing" secondItem="8qe-kZ-YxH" secondAttribute="trailing" constant="55" id="U6x-vl-BCb"/>
+                            <constraint firstItem="tfa-xa-whd" firstAttribute="trailing" secondItem="Xrt-eO-LGT" secondAttribute="trailing" constant="55" id="fIg-Ee-LXX"/>
+                            <constraint firstItem="8qe-kZ-YxH" firstAttribute="top" secondItem="tfa-xa-whd" secondAttribute="top" constant="70" id="iD5-g4-hx0"/>
+                            <constraint firstItem="Xrt-eO-LGT" firstAttribute="leading" secondItem="tfa-xa-whd" secondAttribute="leading" constant="55" id="oM5-gI-i2i"/>
+                            <constraint firstItem="tfa-xa-whd" firstAttribute="bottom" secondItem="Xrt-eO-LGT" secondAttribute="bottom" constant="118" id="pZY-hz-igG"/>
+                            <constraint firstItem="8qe-kZ-YxH" firstAttribute="leading" secondItem="tfa-xa-whd" secondAttribute="leading" constant="55" id="uSm-aV-ZTp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tfa-xa-whd"/>
+                    </view>
+                    <connections>
+                        <outlet property="cameraView" destination="8qe-kZ-YxH" id="C6B-3r-yf5"/>
+                        <outlet property="predictButton" destination="Xrt-eO-LGT" id="EUc-gN-D1n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uEC-49-Btt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2478" y="605"/>
+        </scene>
+        <!--Send Image-->
+        <scene sceneID="4E5-jx-xNs">
+            <objects>
+                <viewController title="Send Image" id="FNG-n4-WLr" customClass="SendImageDataViewController" customModule="Attedance_Class" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="36i-cV-mwB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kh2-bE-NrH">
+                                <rect key="frame" x="55" y="134" width="265" height="247"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVD-cw-I31">
+                                <rect key="frame" x="55" y="504" width="265" height="45"/>
+                                <color key="backgroundColor" red="0.19115509089999999" green="0.63786703349999996" blue="0.26147949700000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendImageButtonPressed:" destination="FNG-n4-WLr" eventType="touchUpInside" id="tdA-cX-N76"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.13346317410469055" green="0.18231484293937683" blue="0.25190103054046631" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="3LB-Kv-g2A" firstAttribute="trailing" secondItem="XVD-cw-I31" secondAttribute="trailing" constant="55" id="HI0-JY-eek"/>
+                            <constraint firstItem="3LB-Kv-g2A" firstAttribute="trailing" secondItem="Kh2-bE-NrH" secondAttribute="trailing" constant="55" id="MDs-z8-IC5"/>
+                            <constraint firstItem="XVD-cw-I31" firstAttribute="top" secondItem="Kh2-bE-NrH" secondAttribute="bottom" constant="123" id="OpU-AN-NUs"/>
+                            <constraint firstItem="Kh2-bE-NrH" firstAttribute="leading" secondItem="3LB-Kv-g2A" secondAttribute="leading" constant="55" id="RlA-Pa-Sc1"/>
+                            <constraint firstItem="Kh2-bE-NrH" firstAttribute="top" secondItem="3LB-Kv-g2A" secondAttribute="top" constant="70" id="WWZ-a2-Jdq"/>
+                            <constraint firstItem="3LB-Kv-g2A" firstAttribute="bottom" secondItem="XVD-cw-I31" secondAttribute="bottom" constant="118" id="mj6-f8-Hgl"/>
+                            <constraint firstItem="XVD-cw-I31" firstAttribute="leading" secondItem="3LB-Kv-g2A" secondAttribute="leading" constant="55" id="pt3-u5-CVl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3LB-Kv-g2A"/>
+                    </view>
+                    <connections>
+                        <outlet property="cameraView" destination="Kh2-bE-NrH" id="tRb-0S-gPQ"/>
+                        <outlet property="sendImageButton" destination="XVD-cw-I31" id="4Hl-VL-LGO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F9H-5k-kYn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2478" y="1330"/>
         </scene>
         <!--FaceID Scanner-->
         <scene sceneID="UFS-DV-Nan">
@@ -389,7 +485,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="INQ-VG-HaB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1796" y="115.59220389805098"/>
+            <point key="canvasLocation" x="4028" y="-143"/>
         </scene>
     </scenes>
     <resources>

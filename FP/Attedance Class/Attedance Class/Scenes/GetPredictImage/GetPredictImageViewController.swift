@@ -1,48 +1,43 @@
 //
-//  ViewController.swift
+//  GetPredictImageViewController.swift
 //  Attedance Class
 //
-//  Created by Rangga Senatama Putra on 26/11/18.
+//  Created by Rangga Senatama Putra on 12/12/18.
 //  Copyright © 2018 Rangga Senatama Putra. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import AVFoundation
 import JGProgressHUD
 
-class PredictImageViewController: UIViewController, AVCapturePhotoCaptureDelegate {
+class GetPredictImageViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     @IBOutlet weak var cameraView: UIView!
+    @IBOutlet weak var predictButton: UIButton!
+    
     var captureSession: AVCaptureSession!
     var stillImageOutput: AVCapturePhotoOutput!
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
     
-    @IBOutlet weak var absentPredictButton: UIButton!
     var user: UserModel = UserModel(_nrp: "5115100076", _password: "123456")
     var image: UIImage!
-    var agenda: AgendaModel = AgendaModel(_lat: "-7.27952930", _lon: "112.79732590", _idAgenda: "IF184903_A_18")
-    
-    let predictImageViewModel: PredictImageViewModel = PredictImageViewModel()
+    let getPredictImageViewModel: GetPredictImageViewModel = GetPredictImageViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        absentPredictButton.rounded()
+        predictButton.rounded()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func predictButtonPressed(_ sender: Any) {
+    @IBAction func predictButtonPressed(_ sender: UIButton) {
         let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
         stillImageOutput.capturePhoto(with: settings, delegate: self)
         self.captureSession.stopRunning()
         
         var hud = self.showProgressHUD(msg: "Loading")
-
+        
         self.delayWithSeconds(1) {
             self.initViewModel()
-            self.predictImageViewModel.makeAbsentUser().subscribe(onNext: { (result) in
+            self.getPredictImageViewModel.makePredict().subscribe(onNext: { (result) in
                 hud.dismiss()
                 if result.message.prefix(1) == "R" {
                     hud = self.showProgressHUDWithError(msg: result.message)
@@ -62,9 +57,8 @@ class PredictImageViewController: UIViewController, AVCapturePhotoCaptureDelegat
     }
     
     func initViewModel() {
-        self.predictImageViewModel.user = UserModel(_nrp: self.user.nrp, _password: self.user.password)
-        self.predictImageViewModel.image = self.image
-        self.predictImageViewModel.agenda = AgendaModel(_lat: self.agenda.Lat, _lon: self.agenda.Lon, _idAgenda: self.agenda.idAgenda)
+        self.getPredictImageViewModel.user = self.user
+        self.getPredictImageViewModel.image = self.image
     }
     
     func showProgressHUD(msg: String) -> JGProgressHUD {
@@ -91,7 +85,7 @@ class PredictImageViewController: UIViewController, AVCapturePhotoCaptureDelegat
     }
 }
 
-extension PredictImageViewController {
+extension GetPredictImageViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -147,7 +141,7 @@ extension PredictImageViewController {
     }
 }
 
-extension PredictImageViewController {
+extension GetPredictImageViewController {
     func delayWithSeconds(_ seconds: Double, completion: @escaping () -> ()) {
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             completion()

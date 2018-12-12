@@ -32,6 +32,4 @@ public class CoordinateRepositoryDevice: CoordinateRepository {
         let distanceInMeters = data1.distance(from: data2)
         return distanceInMeters
     }
-    
-    
 }

@@ -18,9 +18,9 @@ public class PredictRequestRepositoryData: PredictRequestRepository {
         
     }
     
-    public func makePredict(entity: PredictRequestEntity) -> Observable<PredictResponseEntity>  {
+    public func makePredict(entity: PredictRequestEntity) -> Observable<SuperResponseEntity>  {
         let request: PredictRequestData = predictMapper.mapToModel(entity: entity)
 
-        return apiManager.makePredictImage(_username: request.nrp, _password: request.password, _image: request.image, _lat: request.Lat, _lon: request.Lon, _agenda: request.idAgenda)
+        return apiManager.makePredictImage(_username: request.user.nrp, _password: request.user.password, _image: request.image)
     }
 }

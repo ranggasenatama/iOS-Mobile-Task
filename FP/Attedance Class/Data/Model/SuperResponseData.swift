@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class PredictResponseData {
+public class SuperResponseData {
     public let msg: String
     public let statusCode: Int
     

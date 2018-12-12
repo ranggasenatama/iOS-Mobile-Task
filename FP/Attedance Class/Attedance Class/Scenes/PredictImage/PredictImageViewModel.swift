@@ -16,16 +16,15 @@ class PredictImageViewModel {
     var image: UIImage!
     var agenda: AgendaModel!
     
-    let getPredictImageUseCase: GetPredictImageUseCase = GetPredictImageUseCase(_predictRepository: PredictRequestRepositoryData())
+    let getAbsentUserUseCase: GetAbsentUserUseCase = GetAbsentUserUseCase(_absentUserRepository: AbsentUserRequestRepositoryData())
     
-    func makePredict() -> Observable<PredictResponseEntity> {
+    func makeAbsentUser() -> Observable<SuperResponseEntity> {
         let resize = self.image.renderResizedImage(newWidth: 96)
-        //let compressImage = resize.compressTo(1)
+        
         guard let data = UIImageJPEGRepresentation(resize, 0.5) else {
             fatalError("error convert UIImage to data")
         }
-        print(data)
         
-        return self.getPredictImageUseCase.invoke(_entity: PredictRequestEntity(_user: UserEntity(_nrp: self.user.nrp, _password: self.user.password), _image: ImageEntity(_image: data), _agenda: AgendaEntity(_lat: self.agenda.Lat, _lon: self.agenda.Lon, _idAgenda: self.agenda.idAgenda)))
+        return self.getAbsentUserUseCase.invoke(_entity: AbsentRequestEntity(_user: UserEntity(_nrp: self.user.nrp, _password: self.user.password), _image: ImageEntity(_image: data), _agenda: AgendaEntity(_lat: self.agenda.Lat, _lon: self.agenda.Lon, _idAgenda: self.agenda.idAgenda)))
     }
 }

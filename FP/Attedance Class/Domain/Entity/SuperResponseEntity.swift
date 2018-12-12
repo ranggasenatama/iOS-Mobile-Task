@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class PredictResponseEntity {
+public class SuperResponseEntity {
     public let statusCode: Int
     public let message: String
     

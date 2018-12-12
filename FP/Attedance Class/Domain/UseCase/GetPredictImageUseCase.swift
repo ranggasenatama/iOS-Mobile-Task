@@ -16,7 +16,7 @@ public class GetPredictImageUseCase {
         self.predictRepository = _predictRepository
     }
     
-    public func invoke(_entity: PredictRequestEntity) -> Observable<PredictResponseEntity> {
+    public func invoke(_entity: PredictRequestEntity) -> Observable<SuperResponseEntity> {
         return predictRepository.makePredict(entity: _entity)
     }
 }
