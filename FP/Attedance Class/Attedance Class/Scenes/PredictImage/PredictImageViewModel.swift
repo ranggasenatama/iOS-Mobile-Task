@@ -12,12 +12,9 @@ import Data
 import RxSwift
 
 class PredictImageViewModel {
-    var nrp: String!
-    var password: String!
+    var user: UserModel!
     var image: UIImage!
-    var lat: String!
-    var lon: String!
-    var agenda: String!
+    var agenda: AgendaModel!
     
     let getPredictImageUseCase: GetPredictImageUseCase = GetPredictImageUseCase(_predictRepository: PredictRequestRepositoryData())
     
@@ -29,6 +26,6 @@ class PredictImageViewModel {
         }
         print(data)
         
-        return self.getPredictImageUseCase.invoke(_entity: PredictRequestEntity(_user: UserEntity(_nrp: self.nrp, _password: self.password), _image: ImageEntity(_image: data), _agenda: AgendaEntity(_lat: self.lat, _lon: self.lon, _idAgenda: self.agenda)))
+        return self.getPredictImageUseCase.invoke(_entity: PredictRequestEntity(_user: UserEntity(_nrp: self.user.nrp, _password: self.user.password), _image: ImageEntity(_image: data), _agenda: AgendaEntity(_lat: self.agenda.Lat, _lon: self.agenda.Lon, _idAgenda: self.agenda.idAgenda)))
     }
 }

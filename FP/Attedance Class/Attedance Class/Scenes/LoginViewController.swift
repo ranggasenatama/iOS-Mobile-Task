@@ -11,10 +11,16 @@ import MaterialComponents
 import Device
 import Reachability
 
+protocol isAbleToReceiveData {
+    func pass(user: UserModel)  //data: string is an example parameter
+}
+
 class LoginViewController: UIViewController {
     @IBOutlet weak var nrpTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    
+    var delegate: isAbleToReceiveData?
     
     let connection = ConnectionUtil.sharedInstance
     var loginViewModel: LoginViewModel!
@@ -40,7 +46,7 @@ class LoginViewController: UIViewController {
         loginViewModel = LoginViewModel(_nrp: self.nrpTextField.text!, _password: self.passwordTextField.text!)
         
         if isValidUser() {
-            performSegue(withIdentifier: "home", sender: self)
+            self.dismiss(animated: true, completion: nil)
         }
     }
 }
@@ -49,6 +55,7 @@ extension LoginViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         workItem?.cancel()
+        delegate?.pass(user: UserModel(_nrp: loginViewModel.nrp, _password: loginViewModel.password))
     }
     
     func isReachableConnection() {

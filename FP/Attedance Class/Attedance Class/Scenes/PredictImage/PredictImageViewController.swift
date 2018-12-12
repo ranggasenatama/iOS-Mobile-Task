@@ -7,26 +7,72 @@
 //
 
 import UIKit
-import Device
+import AVFoundation
+import JGProgressHUD
 
-class PredictImageViewController: UIViewController {
-    @IBOutlet weak var imageView: UIImageView!
+class PredictImageViewController: UIViewController, AVCapturePhotoCaptureDelegate {
+    @IBOutlet weak var cameraView: UIView!
+    var captureSession: AVCaptureSession!
+    var stillImageOutput: AVCapturePhotoOutput!
+    var videoPreviewLayer: AVCaptureVideoPreviewLayer!
     
+    @IBOutlet weak var absentPredictButton: UIButton!
     var data: String!
-    var nrp: String!
-    var password: String!
     var statusCode: Int!
-    var agenda: String!
-    var lat: String!
-    var lon: String!
+    var user: UserModel = UserModel(_nrp: "5115100076", _password: "123456")
+    var image: UIImage!
+    var agenda: AgendaModel = AgendaModel(_lat: "-7.27952930", _lon: "112.79732590", _idAgenda: "IF184903_A_18")
     
     let predictImageViewModel: PredictImageViewModel = PredictImageViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        absentPredictButton.rounded()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        loginPage()
-        // Do any additional setup after loading the view, typically from a nib.
+        captureSession = AVCaptureSession()
+        captureSession.sessionPreset = AVCaptureSession.Preset.medium
+        guard let frontCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .front)
+            else {
+                print("Unable to access front camera!")
+                return
+        }
+        do {
+            let input = try AVCaptureDeviceInput(device: frontCamera)
+            stillImageOutput = AVCapturePhotoOutput()
+            if captureSession.canAddInput(input) && captureSession.canAddOutput(stillImageOutput) {
+                captureSession.addInput(input)
+                captureSession.addOutput(stillImageOutput)
+                setupLivePreview()
+            }
+        }
+        catch let error  {
+            print("Error Unable to initialize front camera:  \(error.localizedDescription)")
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.captureSession.stopRunning()
+    }
+    
+    func setupLivePreview() {
+        videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        
+        videoPreviewLayer.videoGravity = .resizeAspectFill
+        videoPreviewLayer.connection?.videoOrientation = .portrait
+        cameraView.layer.addSublayer(videoPreviewLayer)
+        
+        DispatchQueue.global(qos: .userInitiated).async { //[weak self] in
+            self.captureSession.startRunning()
+            
+            DispatchQueue.main.async {
+                self.videoPreviewLayer.frame = self.cameraView.bounds
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,79 +80,79 @@ class PredictImageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func cameraButtonPressed(_ sender: UIBarButtonItem) {
-        CameraUtils.shared.showActionSheet(vc: self)
-        CameraUtils.shared.imagePickedBlock = { (image) in
-            self.imageView.image = image
-        }
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        
+        guard let imageData = photo.fileDataRepresentation()
+            else { fatalError("Error get data image") }
+        
+        let image = UIImage(data: imageData)
+        self.image = image
     }
     
     @IBAction func predictButtonPressed(_ sender: Any) {
-        predictImageViewModel.nrp = self.nrp
-        predictImageViewModel.password = self.password
-        predictImageViewModel.image = imageView.image
-        predictImageViewModel.lat = self.lat
-        predictImageViewModel.lon = self.lon
-        predictImageViewModel.agenda = self.agenda
+        let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
+        stillImageOutput.capturePhoto(with: settings, delegate: self)
+        self.captureSession.stopRunning()
         
-        predictImageViewModel.makePredict().subscribe(onNext: { (result) in
-            self.data = result.message
-            self.statusCode = result.statusCode
-            
-            self.performSegue(withIdentifier: "berhasil", sender: self)
-        }, onError: nil, onCompleted: nil, onDisposed: nil)
+        var hud = self.showProgressHUD(msg: "Loading")
+
+        self.delayWithSeconds(1) {
+            self.initViewModel()
+            self.predictImageViewModel.makePredict().subscribe(onNext: { (result) in
+                self.data = result.message
+                self.statusCode = result.statusCode
+                hud.dismiss()
+                if self.data.prefix(1) == "R" {
+                    hud = self.showProgressHUDWithError(msg: self.data)
+                    self.delayWithSeconds(2, completion: {
+                        hud.dismiss()
+                        self.captureSession.startRunning()
+                    })
+                } else if self.data.prefix(1) == "A" {
+                    hud = self.showProgressHUDWithSuccess(msg: self.data)
+                    self.delayWithSeconds(2, completion: {
+                        hud.dismiss()
+                        self.navigationController?.popToRootViewController(animated: true)
+                    })
+                }
+            }, onError: nil, onCompleted: nil, onDisposed: nil)
+        }
+    }
+    
+    func initViewModel() {
+        self.predictImageViewModel.user = UserModel(_nrp: self.user.nrp, _password: self.user.password)
+        self.predictImageViewModel.image = self.image
+        self.predictImageViewModel.agenda = AgendaModel(_lat: self.agenda.Lat, _lon: self.agenda.Lon, _idAgenda: self.agenda.idAgenda)
+    }
+    
+    func showProgressHUD(msg: String) -> JGProgressHUD {
+        let hud = JGProgressHUD(style: .dark)
+        hud.textLabel.text = msg
+        hud.show(in: self.view)
+        return hud
+    }
+    
+    func showProgressHUDWithError(msg: String) -> JGProgressHUD  {
+        let hud = JGProgressHUD(style: .dark)
+        hud.textLabel.text = msg
+        hud.indicatorView = JGProgressHUDErrorIndicatorView.init()
+        hud.show(in: self.view)
+        return hud
+    }
+    
+    func showProgressHUDWithSuccess(msg: String) -> JGProgressHUD {
+        let hud = JGProgressHUD(style: .dark)
+        hud.textLabel.text = msg
+        hud.indicatorView = JGProgressHUDSuccessIndicatorView.init()
+        hud.show(in: self.view)
+        return hud
     }
 }
 
 extension PredictImageViewController {
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "berhasil" {
-            if let succesViewController = segue.destination as? SuccessViewController {
-                print("data \(self.data)")
-                print("status code \(self.statusCode)")
-                succesViewController.statusCodeVar = "Status code: \(self.statusCode!)"
-                succesViewController.messageVar = self.data
-            }
+    func delayWithSeconds(_ seconds: Double, completion: @escaping () -> ()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            completion()
         }
-    }
-}
-
-extension PredictImageViewController {
-    func loginPage() {
-        // 1
-        let loginController = UIAlertController(title: "Please Sign In", message: "Fill in the following", preferredStyle: UIAlertControllerStyle.alert)
-        // 2
-        let loginAction = UIAlertAction(title: "Log In", style: UIAlertActionStyle.default) { (action:UIAlertAction) -> Void in
-            
-            let loginTextField = loginController.textFields![0] as! UITextField
-            
-            let passwordTextField = loginController.textFields![1] as! UITextField
-            
-            self.nrp = loginTextField.text!
-            self.password = passwordTextField.text!
-            print(self.nrp)
-            print(self.password)
-        }
-        loginAction.isEnabled = true
-        // 4
-        loginController.addTextField { (textField:UITextField!) -> Void in
-            
-            textField.placeholder = "Username or Email"
-            
-            textField.keyboardType = UIKeyboardType.default
-            
-        }
-        // 5
-        loginController.addTextField { (textField:UITextField!) -> Void in
-            
-            textField.placeholder = "Password"
-            
-            textField.isSecureTextEntry = true
-            
-        }
-        // 6
-        loginController.addAction(loginAction)
-        // 7
-        present(loginController, animated: true, completion: nil)
     }
 }

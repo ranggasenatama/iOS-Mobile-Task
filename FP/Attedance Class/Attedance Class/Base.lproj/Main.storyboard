@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="muW-8i-zB7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8cE-pf-7BC">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -107,7 +107,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bWy-9w-CKM">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bWy-9w-CKM">
                                 <rect key="frame" x="20" y="407" width="335" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="XBm-z2-O0P"/>
@@ -123,7 +123,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaP-vg-UGO">
                                 <rect key="frame" x="20" y="477" width="335" height="50"/>
-                                <color key="backgroundColor" red="0.15294117647058825" green="0.68235294117647061" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.1911550909280777" green="0.6378670334815979" blue="0.26147949695587158" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="gX7-3e-K0a"/>
                                 </constraints>
@@ -135,7 +135,7 @@
                                     <action selector="loginButtonPressed:" destination="muW-8i-zB7" eventType="touchUpInside" id="v7J-1O-sNY"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="NRP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7c3-JR-dKu">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="NRP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7c3-JR-dKu">
                                 <rect key="frame" x="20" y="337" width="335" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="jcb-ES-bWj"/>
@@ -159,7 +159,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="LogAttendance adalah aplikasi mahasiswa informatika berbasis mobile yang ingin melakukan absensi" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1rb-xb-tas">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="LogAttendance adalah aplikasi mahasiswa informatika berbasis mobile yang ingin melakukan absensi" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1rb-xb-tas">
                                 <rect key="frame" x="16" y="209" width="343" height="76"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="76" id="49s-kV-hgp"/>
@@ -198,17 +198,17 @@
                         <outlet property="loginButton" destination="iaP-vg-UGO" id="GUM-6C-Arz"/>
                         <outlet property="nrpTextField" destination="7c3-JR-dKu" id="GIJ-MM-euZ"/>
                         <outlet property="passwordTextField" destination="bWy-9w-CKM" id="b8V-zV-skE"/>
-                        <segue destination="8cE-pf-7BC" kind="show" identifier="home" id="DtB-ZD-dVD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cuw-ka-Iqu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-782" y="980"/>
+            <point key="canvasLocation" x="1655" y="1657"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="24V-Ac-1aK">
             <objects>
                 <navigationController id="8cE-pf-7BC" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="LaO-SP-8h8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Uau-H3-4zP">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -338,6 +338,7 @@
                         <outlet property="collectionView" destination="6Wi-KO-Vjk" id="fC0-JS-Odp"/>
                         <outlet property="topView" destination="cN0-cF-Ji0" id="dPw-4U-FME"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="AttendaceClass" id="47r-H8-XX3"/>
+                        <segue destination="muW-8i-zB7" kind="presentation" identifier="login" id="QyY-wC-XPK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zqC-j9-NnF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -352,16 +353,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="7gJ-MC-OZV" customClass="RoundedImageView" customModule="Attedance_Class" customModuleProvider="target">
-                                <rect key="frame" x="23" y="134" width="328" height="249"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="249" id="kCy-9b-tN6"/>
-                                    <constraint firstAttribute="width" constant="328" id="wYq-3W-m8n"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sw1-b1-NER" customClass="RectBorderButton" customModule="Attedance_Class" customModuleProvider="target">
-                                <rect key="frame" x="100" y="493" width="175" height="56"/>
-                                <color key="backgroundColor" red="0.61176470589999998" green="0.1529411765" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bjM-lI-saj" userLabel="preview image">
+                                <rect key="frame" x="55" y="134" width="265" height="236"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sw1-b1-NER">
+                                <rect key="frame" x="55" y="493" width="265" height="56"/>
+                                <color key="backgroundColor" red="0.1911550909280777" green="0.6378670334815979" blue="0.26147949695587158" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="KannadaSangamMN-Bold" family="Kannada Sangam MN" pointSize="34"/>
                                 <state key="normal" title="Predict">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -371,32 +369,27 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.13346317410469055" green="0.18231484293937683" blue="0.25190103054046631" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="7gJ-MC-OZV" firstAttribute="leading" secondItem="Bop-W0-qPY" secondAttribute="leading" constant="23" id="2Sb-v2-wGD"/>
-                            <constraint firstItem="7gJ-MC-OZV" firstAttribute="top" secondItem="Bop-W0-qPY" secondAttribute="top" constant="70" id="K94-4g-t6Y"/>
-                            <constraint firstItem="Bop-W0-qPY" firstAttribute="bottom" secondItem="sw1-b1-NER" secondAttribute="bottom" constant="118" id="QhB-1Z-b05"/>
-                            <constraint firstItem="Bop-W0-qPY" firstAttribute="trailing" secondItem="7gJ-MC-OZV" secondAttribute="trailing" constant="24" id="SWw-OF-QOq"/>
-                            <constraint firstItem="sw1-b1-NER" firstAttribute="top" secondItem="7gJ-MC-OZV" secondAttribute="bottom" constant="110" id="aX1-2d-xut"/>
-                            <constraint firstItem="Bop-W0-qPY" firstAttribute="trailing" secondItem="sw1-b1-NER" secondAttribute="trailing" constant="100" id="deo-ht-fOB"/>
-                            <constraint firstItem="sw1-b1-NER" firstAttribute="leading" secondItem="Bop-W0-qPY" secondAttribute="leading" constant="100" id="moN-mY-TN3"/>
+                            <constraint firstItem="sw1-b1-NER" firstAttribute="leading" secondItem="Bop-W0-qPY" secondAttribute="leading" constant="55" id="1jc-CR-Ope"/>
+                            <constraint firstItem="bjM-lI-saj" firstAttribute="top" secondItem="Bop-W0-qPY" secondAttribute="top" constant="70" id="43h-1f-nJ6"/>
+                            <constraint firstItem="bjM-lI-saj" firstAttribute="leading" secondItem="Bop-W0-qPY" secondAttribute="leading" constant="55" id="Vnl-1Z-lEf"/>
+                            <constraint firstItem="Bop-W0-qPY" firstAttribute="bottom" secondItem="sw1-b1-NER" secondAttribute="bottom" constant="118" id="qGX-4c-YD0"/>
+                            <constraint firstItem="sw1-b1-NER" firstAttribute="top" secondItem="bjM-lI-saj" secondAttribute="bottom" constant="123" id="trz-TT-ENo"/>
+                            <constraint firstItem="Bop-W0-qPY" firstAttribute="trailing" secondItem="bjM-lI-saj" secondAttribute="trailing" constant="55" id="whf-5y-HDG"/>
+                            <constraint firstItem="Bop-W0-qPY" firstAttribute="trailing" secondItem="sw1-b1-NER" secondAttribute="trailing" constant="55" id="yqF-y0-W9V"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bop-W0-qPY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="FaceID Scanner" id="n3H-n8-DRd">
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="bHC-ec-4XL">
-                            <connections>
-                                <action selector="cameraButtonPressed:" destination="J2q-2Q-hzq" id="ugp-2P-Nq0"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="FaceID Scanner" id="n3H-n8-DRd"/>
                     <connections>
-                        <outlet property="imageView" destination="7gJ-MC-OZV" id="JV3-Gu-bfu"/>
+                        <outlet property="absentPredictButton" destination="sw1-b1-NER" id="3tI-jO-qjC"/>
+                        <outlet property="cameraView" destination="bjM-lI-saj" id="0Ok-Ub-kOF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="INQ-VG-HaB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1796" y="116"/>
+            <point key="canvasLocation" x="1796" y="115.59220389805098"/>
         </scene>
     </scenes>
     <resources>
@@ -404,7 +397,6 @@
         <image name="bg_siluet" width="1667" height="1667"/>
         <image name="foto" width="261" height="348"/>
         <image name="logo" width="422" height="90"/>
-        <image name="profile" width="112" height="112"/>
         <image name="qrcode2" width="256" height="256"/>
     </resources>
 </document>

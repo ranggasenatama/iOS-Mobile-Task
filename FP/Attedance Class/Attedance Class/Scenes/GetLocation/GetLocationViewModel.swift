@@ -30,6 +30,6 @@ class GetLocationViewModel {
         let agendaQRCode = CoordinateEntity(_longtitude: Double(longtitude)!, _latitude: Double(latitude)!)
         let meters = self.getRangeTwoCoordinate.invoke(_coordinate1: currentLocation, _coordinate2: agendaQRCode)
         print(meters)
-        return meters <= 30
+        return true
     }
 }

@@ -46,7 +46,8 @@
 		63A7212E21AEF28900721504 /* GetLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A7212D21AEF28900721504 /* GetLocationViewModel.swift */; };
 		63A7213121AEFF1F00721504 /* ShowAgendaScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A7213021AEFF1F00721504 /* ShowAgendaScan.swift */; };
 		63A944C921AF93340040D501 /* CameraUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A944C821AF93340040D501 /* CameraUtils.swift */; };
-		63A944D821AFA2BB0040D501 /* SuccesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A944D721AFA2BB0040D501 /* SuccesViewController.swift */; };
+		63AC794921C0D3CD0019687D /* AgendaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AC794821C0D3CD0019687D /* AgendaModel.swift */; };
+		63AC794B21C0D44A0019687D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AC794A21C0D44A0019687D /* UserModel.swift */; };
 		63AFFAE521B5182100FD0B28 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AFFAE421B5182100FD0B28 /* UIImage.swift */; };
 		63C39AF621BE8FB700B88999 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C39AF521BE8FB700B88999 /* LoginViewModel.swift */; };
 		63DA144721B7AE5C00886563 /* GetRangeTwoCoordinateInMetersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DA144621B7AE5C00886563 /* GetRangeTwoCoordinateInMetersUseCase.swift */; };
@@ -149,7 +150,8 @@
 		63A7212D21AEF28900721504 /* GetLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocationViewModel.swift; sourceTree = "<group>"; };
 		63A7213021AEFF1F00721504 /* ShowAgendaScan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAgendaScan.swift; sourceTree = "<group>"; };
 		63A944C821AF93340040D501 /* CameraUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraUtils.swift; sourceTree = "<group>"; };
-		63A944D721AFA2BB0040D501 /* SuccesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccesViewController.swift; sourceTree = "<group>"; };
+		63AC794821C0D3CD0019687D /* AgendaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaModel.swift; sourceTree = "<group>"; };
+		63AC794A21C0D44A0019687D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		63AFFAE421B5182100FD0B28 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		63C39AF521BE8FB700B88999 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		63DA144621B7AE5C00886563 /* GetRangeTwoCoordinateInMetersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRangeTwoCoordinateInMetersUseCase.swift; sourceTree = "<group>"; };
@@ -231,7 +233,6 @@
 				63A7212F21AEFEDA00721504 /* ShowAgendaScan */,
 				63A7212A21AEF20100721504 /* GetLocation */,
 				6312336821AEDBB8006783FE /* MakePredictImage */,
-				63A944D621AFA28E0040D501 /* Success */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -267,6 +268,8 @@
 		6385305821B2C3D70013985C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				63AC794821C0D3CD0019687D /* AgendaModel.swift */,
+				63AC794A21C0D44A0019687D /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -387,14 +390,6 @@
 				63A7213021AEFF1F00721504 /* ShowAgendaScan.swift */,
 			);
 			path = ShowAgendaScan;
-			sourceTree = "<group>";
-		};
-		63A944D621AFA28E0040D501 /* Success */ = {
-			isa = PBXGroup;
-			children = (
-				63A944D721AFA2BB0040D501 /* SuccesViewController.swift */,
-			);
-			path = Success;
 			sourceTree = "<group>";
 		};
 		63AFFAE321B5180B00FD0B28 /* Extension */ = {
@@ -785,6 +780,8 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Attedance Class/Pods-Attedance Class-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
@@ -798,6 +795,8 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
@@ -824,16 +823,17 @@
 				639F804921AC4A3F008A98AE /* PredictImageViewController.swift in Sources */,
 				63AFFAE521B5182100FD0B28 /* UIImage.swift in Sources */,
 				63A7213121AEFF1F00721504 /* ShowAgendaScan.swift in Sources */,
-				63A944D821AFA2BB0040D501 /* SuccesViewController.swift in Sources */,
 				63A7212E21AEF28900721504 /* GetLocationViewModel.swift in Sources */,
 				635CCA9121BE9F9400353FCF /* HomeCollectionViewCell.swift in Sources */,
 				637FABD321BE93B600FB6AAB /* HomeViewController.swift in Sources */,
 				63A7212C21AEF22D00721504 /* GetLocationViewController.swift in Sources */,
+				63AC794B21C0D44A0019687D /* UserModel.swift in Sources */,
 				637995A721B8DC61000A8CD5 /* UIImageView.swift in Sources */,
 				63F3473321AC7E46000FAEC3 /* PredictImageViewModel.swift in Sources */,
 				63C39AF621BE8FB700B88999 /* LoginViewModel.swift in Sources */,
 				639F804721AC4A3F008A98AE /* AppDelegate.swift in Sources */,
 				637995A521B8D8E6000A8CD5 /* UIButton.swift in Sources */,
+				63AC794921C0D3CD0019687D /* AgendaModel.swift in Sources */,
 				636E52DA21BE39E800BF3AEB /* LoginViewController.swift in Sources */,
 				636E52DC21BE3A8D00BF3AEB /* UITextField.swift in Sources */,
 			);

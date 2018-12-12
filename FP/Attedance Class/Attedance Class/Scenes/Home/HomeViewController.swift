@@ -17,14 +17,25 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var botView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var user: UserModel!
+    
     var workItem: DispatchWorkItem?
     let connection = ConnectionUtil.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        isUserLogin()
         isReachableConnection()
         initCollectionCell()
         configUI()
+    }
+    
+    func isUserLogin() {
+        if user == nil {
+            performSegue(withIdentifier: "login", sender: self)
+        } else {
+            print(user.nrp)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,9 +97,18 @@ extension HomeViewController {
     }
 }
 
+extension HomeViewController: isAbleToReceiveData {
+    func pass(user: UserModel) {
+        self.user = UserModel(_nrp: user.nrp, _password: user.password)
+        print(self.user.nrp)
+    }
+}
+
 extension HomeViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "AttendanceClass" {
+        if let loginViewController = segue.destination as? LoginViewController {
+            loginViewController.delegate = self
+        } else if segue.identifier == "AttendanceClass" {
             print("AttendanceClass")
         }
     }

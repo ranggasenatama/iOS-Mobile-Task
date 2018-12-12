@@ -8,11 +8,11 @@
 
 import UIKit
 import AVFoundation
+import MaterialComponents
 
 class GetLocationViewController: UIViewController {
     
     @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var topBar: UIView!
     
     var viewModel: GetLocationViewModel = GetLocationViewModel()
     
@@ -46,8 +46,6 @@ class GetLocationViewController: UIViewController {
         AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
 
         // Get the back-facing camera for capturing videos
-
-        
         guard let captureDevice = deviceDiscoverySession.devices.first else {
             print("Failed to get the camera device")
             return
@@ -86,7 +84,6 @@ class GetLocationViewController: UIViewController {
         
         // Move the message label and top bar to the front
         view.bringSubview(toFront: messageLabel)
-        view.bringSubview(toFront: topBar)
         
         // Initialize QR Code Frame to highlight the QR code
         qrCodeFrameView = UIView()
@@ -119,7 +116,7 @@ class GetLocationViewController: UIViewController {
             if self.viewModel.isInRangeLocation() {
                 self.performSegue(withIdentifier: "faceIDScanner", sender: self)
             } else {
-                self.captureSession.startRunning()
+                self.messageSnackbar(msg: "More than 30 meters")
             }
             
         })
@@ -130,19 +127,15 @@ class GetLocationViewController: UIViewController {
         alertPrompt.addAction(cancelAction)
         
         present(alertPrompt, animated: true, completion: nil)
-        self.captureSession.startRunning()
     }
+    
     
 }
 
 extension GetLocationViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let navVC = segue.destination as? UINavigationController {
-            if let predictController = navVC.viewControllers.first as? PredictImageViewController {
-                predictController.agenda = viewModel.agenda
-                predictController.lat = viewModel.latitude
-                predictController.lon = viewModel.longtitude
-            }
+        if let predictController = segue.destination as? PredictImageViewController {
+//            predictController.agenda = AgendaModel(_lat: viewModel.latitude, _lon: viewModel.longtitude, _idAgenda: viewModel.latitude)
         }
     }
 }
@@ -167,6 +160,22 @@ extension GetLocationViewController: AVCaptureMetadataOutputObjectsDelegate {
                 messageLabel.text = metadataObj.stringValue
             }
         }
+    }
+}
+
+extension GetLocationViewController {
+    func messageSnackbar(msg: String) {
+        let messageWithAction = MDCSnackbarMessage()
+        let action = MDCSnackbarMessageAction()
+        messageWithAction.text = msg
+        let actionHandler = {() in
+            self.captureSession.startRunning()
+        }
+        action.handler = actionHandler
+        action.title = "Retry"
+        messageWithAction.action = action
+        messageWithAction.duration = 10
+        MDCSnackbarManager.show(messageWithAction)
     }
 }
 

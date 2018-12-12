@@ -12,8 +12,4 @@ class ShowAgendaScan: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    @IBAction func unwindSegue(segue: UIStoryboardSegue) {
-        dismiss(animated: true, completion: nil)
-    }
 }
