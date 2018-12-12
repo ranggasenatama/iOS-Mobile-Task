@@ -147,9 +147,17 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        var targetView: String = ""
         if indexPath.row == 0 {
-            performSegue(withIdentifier: "AttendaceClass", sender: self)
+            targetView = "AttendaceClass"
+        } else if indexPath.row == 1 {
+            targetView = "SendImage"
+        } else if indexPath.row == 2 {
+            targetView = "TrainData"
+        } else {
+            targetView = "PredictImage"
         }
+        performSegue(withIdentifier: targetView, sender: self)
     }
     
     func shadowCell(cell: HomeCollectionViewCell) -> HomeCollectionViewCell {

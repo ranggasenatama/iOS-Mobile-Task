@@ -339,7 +339,7 @@
                         <outlet property="topView" destination="cN0-cF-Ji0" id="dPw-4U-FME"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="AttendaceClass" id="47r-H8-XX3"/>
                         <segue destination="muW-8i-zB7" kind="presentation" identifier="Login" id="QyY-wC-XPK"/>
-                        <segue destination="zhl-kh-6Ja" kind="show" identifier="Predict" id="fHc-Pn-QV7"/>
+                        <segue destination="zhl-kh-6Ja" kind="show" identifier="PredictImage" id="fHc-Pn-QV7"/>
                         <segue destination="FNG-n4-WLr" kind="show" identifier="SendImage" id="fc4-Lc-LCI"/>
                         <segue destination="cQt-jt-u4E" kind="show" identifier="TrainData" id="ELM-Z9-kKx"/>
                     </connections>
