@@ -32,9 +32,7 @@ class HomeViewController: UIViewController {
     
     func isUserLogin() {
         if user == nil {
-            performSegue(withIdentifier: "login", sender: self)
-        } else {
-            print(user.nrp)
+            performSegue(withIdentifier: "Login", sender: self)
         }
     }
     

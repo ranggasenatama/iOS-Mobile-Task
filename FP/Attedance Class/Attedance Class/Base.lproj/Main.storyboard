@@ -51,7 +51,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2478" y="-143"/>
+            <point key="canvasLocation" x="2478" y="-544"/>
         </scene>
         <!--Get Location View Controller-->
         <scene sceneID="QmQ-yi-IJM">
@@ -87,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HFg-oR-dKl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3241" y="-143"/>
+            <point key="canvasLocation" x="3260" y="-545"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="uyf-gx-5LF">
@@ -202,7 +202,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cuw-ka-Iqu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1142" y="1751"/>
+            <point key="canvasLocation" x="1142" y="1735"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="24V-Ac-1aK">
@@ -338,9 +338,10 @@
                         <outlet property="collectionView" destination="6Wi-KO-Vjk" id="fC0-JS-Odp"/>
                         <outlet property="topView" destination="cN0-cF-Ji0" id="dPw-4U-FME"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="AttendaceClass" id="47r-H8-XX3"/>
-                        <segue destination="muW-8i-zB7" kind="presentation" identifier="login" id="QyY-wC-XPK"/>
-                        <segue destination="zhl-kh-6Ja" kind="show" id="fHc-Pn-QV7"/>
-                        <segue destination="FNG-n4-WLr" kind="show" id="fc4-Lc-LCI"/>
+                        <segue destination="muW-8i-zB7" kind="presentation" identifier="Login" id="QyY-wC-XPK"/>
+                        <segue destination="zhl-kh-6Ja" kind="show" identifier="Predict" id="fHc-Pn-QV7"/>
+                        <segue destination="FNG-n4-WLr" kind="show" identifier="SendImage" id="fc4-Lc-LCI"/>
+                        <segue destination="cQt-jt-u4E" kind="show" identifier="TrainData" id="ELM-Z9-kKx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zqC-j9-NnF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -394,7 +395,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uEC-49-Btt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2478" y="605"/>
+            <point key="canvasLocation" x="2478" y="152"/>
         </scene>
         <!--Send Image-->
         <scene sceneID="4E5-jx-xNs">
@@ -439,7 +440,43 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F9H-5k-kYn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2478" y="1330"/>
+            <point key="canvasLocation" x="2478" y="824"/>
+        </scene>
+        <!--Train Data-->
+        <scene sceneID="Twe-fi-gxj">
+            <objects>
+                <viewController title="Train Data" id="cQt-jt-u4E" customClass="TrainDataViewController" customModule="Attedance_Class" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fgO-2Y-IAD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1h-yj-MO6">
+                                <rect key="frame" x="55" y="504" width="265" height="45"/>
+                                <color key="backgroundColor" red="0.19115509089999999" green="0.63786703349999996" blue="0.26147949700000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="Train Data">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="trainDataButtonPressed:" destination="cQt-jt-u4E" eventType="touchUpInside" id="Dx8-cJ-aZb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1334631741" green="0.1823148429" blue="0.25190103050000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="FZm-Lb-Sln" firstAttribute="trailing" secondItem="h1h-yj-MO6" secondAttribute="trailing" constant="55" id="HoI-3K-Avq"/>
+                            <constraint firstItem="FZm-Lb-Sln" firstAttribute="bottom" secondItem="h1h-yj-MO6" secondAttribute="bottom" constant="118" id="fFn-Kp-IRn"/>
+                            <constraint firstItem="h1h-yj-MO6" firstAttribute="leading" secondItem="FZm-Lb-Sln" secondAttribute="leading" constant="55" id="pWd-7V-X2q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FZm-Lb-Sln"/>
+                    </view>
+                    <connections>
+                        <outlet property="trainDataButton" destination="h1h-yj-MO6" id="Lgn-1I-fQT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uRg-QU-BgL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2478" y="1524"/>
         </scene>
         <!--FaceID Scanner-->
         <scene sceneID="UFS-DV-Nan">
@@ -457,7 +494,7 @@
                                 <rect key="frame" x="55" y="493" width="265" height="56"/>
                                 <color key="backgroundColor" red="0.1911550909280777" green="0.6378670334815979" blue="0.26147949695587158" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="KannadaSangamMN-Bold" family="Kannada Sangam MN" pointSize="34"/>
-                                <state key="normal" title="Predict">
+                                <state key="normal" title="Absent">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -485,7 +522,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="INQ-VG-HaB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4028" y="-143"/>
+            <point key="canvasLocation" x="4094" y="-545"/>
         </scene>
     </scenes>
     <resources>

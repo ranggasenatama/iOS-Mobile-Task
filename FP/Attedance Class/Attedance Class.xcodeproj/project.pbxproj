@@ -67,6 +67,14 @@
 		63C2738721C148C3003A3557 /* SendImageRequestRepositoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2738621C148C3003A3557 /* SendImageRequestRepositoryData.swift */; };
 		63C2738921C1496A003A3557 /* SendImageRequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2738821C1496A003A3557 /* SendImageRequestData.swift */; };
 		63C2738B21C14999003A3557 /* SendImageRequestMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2738A21C14999003A3557 /* SendImageRequestMapper.swift */; };
+		63C2738D21C14EB2003A3557 /* TrainDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2738C21C14EB2003A3557 /* TrainDataViewController.swift */; };
+		63C2738F21C14EBE003A3557 /* TrainDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2738E21C14EBE003A3557 /* TrainDataViewModel.swift */; };
+		63C2739121C15315003A3557 /* TrainDataRequestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2739021C15315003A3557 /* TrainDataRequestRepository.swift */; };
+		63C2739321C1533E003A3557 /* TrainDataRequestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2739221C1533E003A3557 /* TrainDataRequestEntity.swift */; };
+		63C2739521C1537C003A3557 /* TrainDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2739421C1537C003A3557 /* TrainDataUseCase.swift */; };
+		63C2739721C153E6003A3557 /* TrainDataRequestRepositoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2739621C153E6003A3557 /* TrainDataRequestRepositoryData.swift */; };
+		63C2739921C1541E003A3557 /* TrainDataRequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2739821C1541E003A3557 /* TrainDataRequestData.swift */; };
+		63C2739B21C15460003A3557 /* TrainDataRequestMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2739A21C15460003A3557 /* TrainDataRequestMapper.swift */; };
 		63C39AF621BE8FB700B88999 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C39AF521BE8FB700B88999 /* LoginViewModel.swift */; };
 		63DA144721B7AE5C00886563 /* GetRangeTwoCoordinateInMetersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DA144621B7AE5C00886563 /* GetRangeTwoCoordinateInMetersUseCase.swift */; };
 		63E64A4221B290E700C32115 /* PredictRequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E64A4121B290E700C32115 /* PredictRequestData.swift */; };
@@ -189,6 +197,14 @@
 		63C2738621C148C3003A3557 /* SendImageRequestRepositoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendImageRequestRepositoryData.swift; sourceTree = "<group>"; };
 		63C2738821C1496A003A3557 /* SendImageRequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendImageRequestData.swift; sourceTree = "<group>"; };
 		63C2738A21C14999003A3557 /* SendImageRequestMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendImageRequestMapper.swift; sourceTree = "<group>"; };
+		63C2738C21C14EB2003A3557 /* TrainDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainDataViewController.swift; sourceTree = "<group>"; };
+		63C2738E21C14EBE003A3557 /* TrainDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainDataViewModel.swift; sourceTree = "<group>"; };
+		63C2739021C15315003A3557 /* TrainDataRequestRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainDataRequestRepository.swift; sourceTree = "<group>"; };
+		63C2739221C1533E003A3557 /* TrainDataRequestEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainDataRequestEntity.swift; sourceTree = "<group>"; };
+		63C2739421C1537C003A3557 /* TrainDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainDataUseCase.swift; sourceTree = "<group>"; };
+		63C2739621C153E6003A3557 /* TrainDataRequestRepositoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainDataRequestRepositoryData.swift; sourceTree = "<group>"; };
+		63C2739821C1541E003A3557 /* TrainDataRequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainDataRequestData.swift; sourceTree = "<group>"; };
+		63C2739A21C15460003A3557 /* TrainDataRequestMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainDataRequestMapper.swift; sourceTree = "<group>"; };
 		63C39AF521BE8FB700B88999 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		63DA144621B7AE5C00886563 /* GetRangeTwoCoordinateInMetersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRangeTwoCoordinateInMetersUseCase.swift; sourceTree = "<group>"; };
 		63E64A4121B290E700C32115 /* PredictRequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictRequestData.swift; sourceTree = "<group>"; };
@@ -307,6 +323,8 @@
 		634F272821C10FEB004D693A /* TrainData */ = {
 			isa = PBXGroup;
 			children = (
+				63C2738C21C14EB2003A3557 /* TrainDataViewController.swift */,
+				63C2738E21C14EBE003A3557 /* TrainDataViewModel.swift */,
 			);
 			path = TrainData;
 			sourceTree = "<group>";
@@ -422,6 +440,7 @@
 				63F3471A21AC51B5000FAEC3 /* CoordinateEntity.swift */,
 				63C2738021C14737003A3557 /* SendImageRequestEntity.swift */,
 				634F272D21C113A3004D693A /* AbsentRequestEntity.swift */,
+				63C2739221C1533E003A3557 /* TrainDataRequestEntity.swift */,
 				6385304E21B2BE9A0013985C /* SuperResponseEntity.swift */,
 				6385305021B2BF090013985C /* PredictRequstEntity.swift */,
 				6391CBDE21B4064900E57004 /* UserEntity.swift */,
@@ -439,6 +458,7 @@
 				63FE727A21B2AB4100DA4610 /* GetPredictImageUseCase.swift */,
 				637DF7A821C11AF500E3BD41 /* GetAbsentUserUseCase.swift */,
 				63C2738421C14814003A3557 /* SendImageUserUseCase.swift */,
+				63C2739421C1537C003A3557 /* TrainDataUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -478,6 +498,7 @@
 				6385305421B2C0200013985C /* PredictRequestRepositoryData.swift */,
 				637DF7AC21C11F0600E3BD41 /* AbsentUserRequestRepositoryData.swift */,
 				63C2738621C148C3003A3557 /* SendImageRequestRepositoryData.swift */,
+				63C2739621C153E6003A3557 /* TrainDataRequestRepositoryData.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -488,6 +509,7 @@
 				63E64A4121B290E700C32115 /* PredictRequestData.swift */,
 				63C2737921C13BF2003A3557 /* AbsentRequestData.swift */,
 				63C2738821C1496A003A3557 /* SendImageRequestData.swift */,
+				63C2739821C1541E003A3557 /* TrainDataRequestData.swift */,
 				633A729221B813F800200753 /* SuperResponseData.swift */,
 				634F272F21C1143C004D693A /* UserModelData.swift */,
 				634F273121C11447004D693A /* AgendaModelData.swift */,
@@ -498,10 +520,11 @@
 		63E64A4521B2961000C32115 /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
-				6391CBE021B406D100E57004 /* PredictRequestMapper.swift */,
 				633A729421B8150E00200753 /* SuperResponseMapper.swift */,
+				6391CBE021B406D100E57004 /* PredictRequestMapper.swift */,
 				63C2737721C13B70003A3557 /* AbsentUserRequestMapper.swift */,
 				63C2738A21C14999003A3557 /* SendImageRequestMapper.swift */,
+				63C2739A21C15460003A3557 /* TrainDataRequestMapper.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -521,6 +544,7 @@
 				6385305221B2BFA70013985C /* PredictRequestRepository.swift */,
 				637DF7AA21C11B2200E3BD41 /* AbsentRequestRepository.swift */,
 				63C2738221C147D0003A3557 /* SendImageRequestRepository.swift */,
+				63C2739021C15315003A3557 /* TrainDataRequestRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -902,11 +926,13 @@
 				63AFFAE521B5182100FD0B28 /* UIImage.swift in Sources */,
 				63A7213121AEFF1F00721504 /* ShowAgendaScan.swift in Sources */,
 				63C2737F21C1437B003A3557 /* SendImageDataViewModel.swift in Sources */,
+				63C2738D21C14EB2003A3557 /* TrainDataViewController.swift in Sources */,
 				63A7212E21AEF28900721504 /* GetLocationViewModel.swift in Sources */,
 				635CCA9121BE9F9400353FCF /* HomeCollectionViewCell.swift in Sources */,
 				637FABD321BE93B600FB6AAB /* HomeViewController.swift in Sources */,
 				63A7212C21AEF22D00721504 /* GetLocationViewController.swift in Sources */,
 				634F272C21C11062004D693A /* GetPredictImageViewModel.swift in Sources */,
+				63C2738F21C14EBE003A3557 /* TrainDataViewModel.swift in Sources */,
 				63AC794B21C0D44A0019687D /* UserModel.swift in Sources */,
 				637995A721B8DC61000A8CD5 /* UIImageView.swift in Sources */,
 				63F3473321AC7E46000FAEC3 /* PredictImageViewModel.swift in Sources */,
@@ -931,6 +957,7 @@
 				63FE727B21B2AB4100DA4610 /* GetPredictImageUseCase.swift in Sources */,
 				6391CBDF21B4064900E57004 /* UserEntity.swift in Sources */,
 				63C2738321C147D0003A3557 /* SendImageRequestRepository.swift in Sources */,
+				63C2739521C1537C003A3557 /* TrainDataUseCase.swift in Sources */,
 				63F3472521AC5F91000FAEC3 /* GetCoordinateGPSUseCase.swift in Sources */,
 				63DA144721B7AE5C00886563 /* GetRangeTwoCoordinateInMetersUseCase.swift in Sources */,
 				635984F721B8FF0D00E37013 /* AgendaEntity.swift in Sources */,
@@ -940,7 +967,9 @@
 				6391CBE321B4079900E57004 /* ImageEntity.swift in Sources */,
 				634F272E21C113A3004D693A /* AbsentRequestEntity.swift in Sources */,
 				637DF7AB21C11B2200E3BD41 /* AbsentRequestRepository.swift in Sources */,
+				63C2739121C15315003A3557 /* TrainDataRequestRepository.swift in Sources */,
 				637DF7A921C11AF500E3BD41 /* GetAbsentUserUseCase.swift in Sources */,
+				63C2739321C1533E003A3557 /* TrainDataRequestEntity.swift in Sources */,
 				63C2738521C14814003A3557 /* SendImageUserUseCase.swift in Sources */,
 				63F3471B21AC51B5000FAEC3 /* CoordinateEntity.swift in Sources */,
 			);
@@ -950,6 +979,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63C2739921C1541E003A3557 /* TrainDataRequestData.swift in Sources */,
 				63FE728121B2B21100DA4610 /* APIManager.swift in Sources */,
 				633A729521B8150E00200753 /* SuperResponseMapper.swift in Sources */,
 				634F273021C1143C004D693A /* UserModelData.swift in Sources */,
@@ -957,10 +987,12 @@
 				63C2738921C1496A003A3557 /* SendImageRequestData.swift in Sources */,
 				634F273221C11447004D693A /* AgendaModelData.swift in Sources */,
 				63C2737821C13B70003A3557 /* AbsentUserRequestMapper.swift in Sources */,
+				63C2739721C153E6003A3557 /* TrainDataRequestRepositoryData.swift in Sources */,
 				6391CBE121B406D100E57004 /* PredictRequestMapper.swift in Sources */,
 				63C2738B21C14999003A3557 /* SendImageRequestMapper.swift in Sources */,
 				637DF7AD21C11F0600E3BD41 /* AbsentUserRequestRepositoryData.swift in Sources */,
 				63C2737A21C13BF2003A3557 /* AbsentRequestData.swift in Sources */,
+				63C2739B21C15460003A3557 /* TrainDataRequestMapper.swift in Sources */,
 				63E64A4221B290E700C32115 /* PredictRequestData.swift in Sources */,
 				633A729321B813F800200753 /* SuperResponseData.swift in Sources */,
 				6385305521B2C0200013985C /* PredictRequestRepositoryData.swift in Sources */,
