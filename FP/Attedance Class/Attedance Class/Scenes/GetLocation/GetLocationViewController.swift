@@ -207,7 +207,8 @@ extension GetLocationViewController {
         if CLLocationManager.locationServicesEnabled() {
             switch CLLocationManager.authorizationStatus() {
             case .notDetermined, .restricted, .denied:
-                print("No access")
+                messageGPS()
+                return false
             case .authorizedAlways, .authorizedWhenInUse:
                 print("Access")
             }

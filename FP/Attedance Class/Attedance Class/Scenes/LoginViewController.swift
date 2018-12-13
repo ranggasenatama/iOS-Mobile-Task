@@ -9,6 +9,7 @@
 import UIKit
 import MaterialComponents
 import Device
+import JGProgressHUD
 
 protocol isAbleToReceiveData {
     func pass(user: UserModel)
@@ -42,8 +43,13 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         loginViewModel = LoginViewModel(_nrp: self.nrpTextField.text!, _password: self.passwordTextField.text!)
         
-        if isValidUser() {
-            self.dismiss(animated: true, completion: nil)
+        if self.isValidUser() {
+            var hud = self.showProgressHUD(msg: "Loading")
+            self.delayWithSeconds(1) {
+                hud.dismiss()
+                self.dismiss(animated: true, completion: nil)
+            }
+            
         }
     }
 }
@@ -76,10 +82,30 @@ extension LoginViewController {
             MDCSnackbarManager.show(message)
             return false
         } else if loginViewModel.isNotValidNRPOrPassword() {
-            message.text = "Your NRP or Password is Wrong"
-            MDCSnackbarManager.show(message)
+            var hud = self.showProgressHUD(msg: "Loading")
+            self.delayWithSeconds(1) {
+                hud.dismiss()
+                message.text = "Your NRP or Password is Wrong"
+                MDCSnackbarManager.show(message)
+            }
             return false
+        } else {
+            return true
         }
-        return true
+    }
+    
+    func showProgressHUD(msg: String) -> JGProgressHUD {
+        let hud = JGProgressHUD(style: .dark)
+        hud.textLabel.text = msg
+        hud.show(in: self.view)
+        return hud
+    }
+}
+
+extension LoginViewController {
+    func delayWithSeconds(_ seconds: Double, completion: @escaping () -> ()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            completion()
+        }
     }
 }
