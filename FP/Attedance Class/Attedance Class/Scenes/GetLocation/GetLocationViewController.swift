@@ -9,12 +9,15 @@
 import UIKit
 import AVFoundation
 import MaterialComponents
+import CoreLocation
+import KTSnackBar
 
 class GetLocationViewController: UIViewController {
     
     @IBOutlet weak var messageLabel: UILabel!
     
     var viewModel: GetLocationViewModel = GetLocationViewModel()
+    fileprivate var snackBar: KTSnackBar?
     
     var captureSession = AVCaptureSession()
     
@@ -128,8 +131,6 @@ class GetLocationViewController: UIViewController {
         
         present(alertPrompt, animated: true, completion: nil)
     }
-    
-    
 }
 
 extension GetLocationViewController {
@@ -137,6 +138,16 @@ extension GetLocationViewController {
         if let predictController = segue.destination as? PredictImageViewController {
 //            predictController.agenda = AgendaModel(_lat: viewModel.latitude, _lon: viewModel.longtitude, _idAgenda: viewModel.latitude)
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.checkServiceGPS()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.snackBar?.dismiss()
     }
 }
 
@@ -164,6 +175,14 @@ extension GetLocationViewController: AVCaptureMetadataOutputObjectsDelegate {
 }
 
 extension GetLocationViewController {
+    func messageGPS() {
+        self.snackBar = KTSnackBar()
+        self.snackBar?.show(buttonText: "Location services are not enabled")
+        self.snackBar?.pressedBlock = {
+            
+        }
+    }
+    
     func messageSnackbar(msg: String) {
         let messageWithAction = MDCSnackbarMessage()
         let action = MDCSnackbarMessageAction()
@@ -181,6 +200,19 @@ extension GetLocationViewController {
 
 
 extension GetLocationViewController {
+    func checkServiceGPS() {
+        if CLLocationManager.locationServicesEnabled() {
+            switch CLLocationManager.authorizationStatus() {
+            case .notDetermined, .restricted, .denied:
+                print("No access")
+            case .authorizedAlways, .authorizedWhenInUse:
+                print("Access")
+            }
+        } else {
+            messageGPS()
+        }
+    }
+    
     func premission() {
         let authorizationStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
         switch authorizationStatus {

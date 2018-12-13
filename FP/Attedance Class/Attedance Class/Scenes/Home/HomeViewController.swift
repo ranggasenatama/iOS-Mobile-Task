@@ -77,11 +77,7 @@ extension HomeViewController {
         self.snackBar?.show(buttonText: "Lost connection")
         self.snackBar?.pressedBlock = {
             ConnectionUtil.isUnreachable { networkManagerInstance in
-                print("aduh dek rara")
                 self.messageConnection()
-            }
-            ConnectionUtil.isReachable { networkManagerInstance in
-                print("aduh dek rara2")
             }
         }
     }
