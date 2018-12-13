@@ -9,10 +9,9 @@
 import UIKit
 import MaterialComponents
 import Device
-import Reachability
 
 protocol isAbleToReceiveData {
-    func pass(user: UserModel)  //data: string is an example parameter
+    func pass(user: UserModel)
 }
 
 class LoginViewController: UIViewController {

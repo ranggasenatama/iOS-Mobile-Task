@@ -10,7 +10,6 @@ import UIKit
 import ChameleonFramework
 import KTSnackBar
 import Device
-import Reachability
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var topView: UIView!

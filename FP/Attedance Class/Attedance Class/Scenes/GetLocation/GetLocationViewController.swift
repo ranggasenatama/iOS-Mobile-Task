@@ -114,14 +114,17 @@ class GetLocationViewController: UIViewController {
         
         let alertPrompt = UIAlertController(title: "Open App", message: "You're going to open \(decode)", preferredStyle: .actionSheet)
         let confirmAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.default, handler: { (action) -> Void in
-            
+            self.snackBar?.dismiss()
             self.viewModel.transfrom(input: decode)
-            if self.viewModel.isInRangeLocation() {
-                self.performSegue(withIdentifier: "faceIDScanner", sender: self)
+            if self.checkServiceGPS() {
+                if  self.viewModel.isInRangeLocation() {
+                    self.performSegue(withIdentifier: "faceIDScanner", sender: self)
+                } else {
+                    self.messageSnackbar(msg: "More than 30 meters")
+                }
             } else {
-                self.messageSnackbar(msg: "More than 30 meters")
+                self.captureSession.startRunning()
             }
-            
         })
         
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: {_ -> Void in self.captureSession.startRunning()})
@@ -200,7 +203,7 @@ extension GetLocationViewController {
 
 
 extension GetLocationViewController {
-    func checkServiceGPS() {
+    func checkServiceGPS() -> Bool {
         if CLLocationManager.locationServicesEnabled() {
             switch CLLocationManager.authorizationStatus() {
             case .notDetermined, .restricted, .denied:
@@ -210,7 +213,9 @@ extension GetLocationViewController {
             }
         } else {
             messageGPS()
+            return false
         }
+        return true
     }
     
     func premission() {

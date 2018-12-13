@@ -8,6 +8,7 @@
 
 import UIKit
 import JGProgressHUD
+import Device
 
 class TrainDataViewController: UIViewController {
     @IBOutlet weak var trainDataButton: UIButton!
@@ -22,24 +23,37 @@ class TrainDataViewController: UIViewController {
     
     @IBAction func trainDataButtonPressed(_ sender: UIButton) {
         initViewModel()
+        self.checkReachability()
+    }
+    
+    func checkReachability() {
         var hud = self.showProgressHUD(msg: "Loading")
-        trainDataViewModel.trainData().subscribe(onNext: { (result) in
+        ConnectionUtil.isReachable(completed: { (_) in
+            self.trainDataViewModel.trainData().subscribe(onNext: { (result) in
+                hud.dismiss()
+                if result.message.prefix(1) == "R" {
+                    hud = self.showProgressHUDWithError(msg: result.message)
+                    self.delayWithSeconds(2, completion: {
+                        hud.dismiss()
+                    })
+                } else if result.message.prefix(1) == "A" {
+                    hud = self.showProgressHUDWithSuccess(msg: result.message)
+                    self.delayWithSeconds(2, completion: {
+                        hud.dismiss()
+                        self.navigationController?.popToRootViewController(animated: true)
+                    })
+                }
+            }, onError: { (error) in
+                print("error")
+            }, onCompleted: nil, onDisposed: nil)
+        })
+        ConnectionUtil.isUnreachable(completed: { (_) in
             hud.dismiss()
-            if result.message.prefix(1) == "R" {
-                hud = self.showProgressHUDWithError(msg: result.message)
-                self.delayWithSeconds(2, completion: {
-                    hud.dismiss()
-                })
-            } else if result.message.prefix(1) == "A" {
-                hud = self.showProgressHUDWithSuccess(msg: result.message)
-                self.delayWithSeconds(2, completion: {
-                    hud.dismiss()
-                    self.navigationController?.popToRootViewController(animated: true)
-                })
-            }
-        }, onError: { (error) in
-            print("error")
-        }, onCompleted: nil, onDisposed: nil)
+            hud = self.showProgressHUDWithError(msg: "No connection")
+            self.delayWithSeconds(2, completion: {
+                hud.dismiss()
+            })
+        })
     }
     
     func initViewModel() {

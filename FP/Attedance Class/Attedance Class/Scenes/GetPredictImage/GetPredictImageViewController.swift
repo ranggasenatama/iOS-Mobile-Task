@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import AVFoundation
 import JGProgressHUD
+import Device
 
 class GetPredictImageViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     @IBOutlet weak var cameraView: UIView!
@@ -36,23 +37,32 @@ class GetPredictImageViewController: UIViewController, AVCapturePhotoCaptureDele
         var hud = self.showProgressHUD(msg: "Loading")
         
         self.delayWithSeconds(1) {
-            self.initViewModel()
-            self.getPredictImageViewModel.makePredict().subscribe(onNext: { (result) in
+            ConnectionUtil.isReachable(completed: { (_) in
+                self.initViewModel()
+                self.getPredictImageViewModel.makePredict().subscribe(onNext: { (result) in
+                    hud.dismiss()
+                    if result.message.prefix(1) == "R" {
+                        hud = self.showProgressHUDWithError(msg: result.message)
+                        self.delayWithSeconds(2, completion: {
+                            hud.dismiss()
+                            self.captureSession.startRunning()
+                        })
+                    } else if result.message.prefix(1) == "A" {
+                        hud = self.showProgressHUDWithSuccess(msg: result.message)
+                        self.delayWithSeconds(2, completion: {
+                            hud.dismiss()
+                            self.navigationController?.popToRootViewController(animated: true)
+                        })
+                    }
+                }, onError: nil, onCompleted: nil, onDisposed: nil)
+            })
+            ConnectionUtil.isUnreachable(completed: { (_) in
                 hud.dismiss()
-                if result.message.prefix(1) == "R" {
-                    hud = self.showProgressHUDWithError(msg: result.message)
-                    self.delayWithSeconds(2, completion: {
-                        hud.dismiss()
-                        self.captureSession.startRunning()
-                    })
-                } else if result.message.prefix(1) == "A" {
-                    hud = self.showProgressHUDWithSuccess(msg: result.message)
-                    self.delayWithSeconds(2, completion: {
-                        hud.dismiss()
-                        self.navigationController?.popToRootViewController(animated: true)
-                    })
-                }
-            }, onError: nil, onCompleted: nil, onDisposed: nil)
+                hud = self.showProgressHUDWithError(msg: "No connection")
+                self.delayWithSeconds(2, completion: {
+                    hud.dismiss()
+                })
+            })
         }
     }
     
