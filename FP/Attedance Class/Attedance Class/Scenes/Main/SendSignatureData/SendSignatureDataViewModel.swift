@@ -13,12 +13,13 @@ import Data
 import RxSwift
 
 public class SendSignatureDataViewModel {
-    var user: UserModel = UserModel(_nrp: "5115100076", _password: "123456")
+    var user: UserModel!
     var signature: UIImage!
     
     let sendSignatureUseCase: SendSignatureUseCase = SendSignatureUseCase(_sendSignatureRepository: SendSignatureRequestRepositoryData())
     
-    init(_signature: UIImage) {
+    init(_user:UserModel, _signature: UIImage) {
+        self.user = _user
         self.signature = _signature
     }
     

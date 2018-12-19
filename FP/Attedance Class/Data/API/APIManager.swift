@@ -212,4 +212,42 @@ public class APIManager {
             })
         }
     }
+    
+    func trainSignature(_username: String, _password: String) -> Observable<SuperResponseEntity> {
+        
+        let parameters: [String: String] = [
+            "idUser" : _username,
+            "password" : _password
+        ]
+        
+        let url = "http://etc.if.its.ac.id/doTrain_TTD/"
+        
+        return Observable<SuperResponseEntity>.create { (observer) -> Disposable in
+            let requestReference = Alamofire.request(url,
+                                                     method: .post,
+                                                     parameters: parameters)
+                .validate()
+                .responseJSON { (response) in
+                    switch response.result{
+                    case .success:
+                        if response.data != nil {
+                            do {
+                                let json = try JSON(data: response.data!)
+                                
+                                observer.onNext(self.superResponseMapper.mapToEntity(model: json))
+                                observer.onCompleted()
+                            } catch {
+                                print("error")
+                            }
+                            
+                        }
+                    case .failure(let error):
+                        observer.onError(error)
+                    }
+            }
+            return Disposables.create(with: {
+                requestReference.cancel()
+            })
+        }
+    }
 }

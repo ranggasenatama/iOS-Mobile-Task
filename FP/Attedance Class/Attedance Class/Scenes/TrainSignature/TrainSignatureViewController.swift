@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  TrainSignatureViewController.swift
 //  Attedance Class
 //
 //  Created by Rangga Senatama Putra on 19/12/18.
@@ -7,38 +7,32 @@
 //
 
 import UIKit
-import YPDrawSignatureView
-import Device
 import JGProgressHUD
+import Device
 
-class SendSignatureDataViewController: UIViewController {
+class TrainSignatureViewController: UIViewController {
     
-    @IBOutlet weak var clearButton: UIButton!
-    @IBOutlet weak var sendButton: UIButton!
-    
-    @IBOutlet weak var signatureView: YPDrawSignatureView!
-    
-    var sendSignatureViewModel: SendSignatureDataViewModel!
+    @IBOutlet weak var trainButton: UIButton!
     var user: UserModel = UserModel(_nrp: "5115100076", _password: "123456")
+    
+    var trainSignatureViewModel: TrainSignatureViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sendButton.rounded()
-        clearButton.rounded()
+        trainButton.rounded()
     }
     
-    @IBAction func sendButtonPressed(_ sender: UIButton) {
-        guard let image = self.signatureView.getSignature() else {
-            fatalError("get image signature")
-        }
-        self.sendSignatureViewModel = SendSignatureDataViewModel(_user: user, _signature: image)
-        
+    @IBAction func trainButtonPressed(_ sender: UIButton) {
+        self.trainSignatureViewModel = TrainSignatureViewModel(_user: user)
+        self.checkReachability()
+    }
+    
+    func checkReachability() {
         var hud = self.showProgressHUD(msg: "Loading")
-        
         ConnectionUtil.isReachable(completed: { (_) in
-            self.sendSignatureViewModel.sendSignature().subscribe(onNext: { (result) in
+            self.trainSignatureViewModel.trainSignature().subscribe(onNext: { (result) in
                 hud.dismiss()
-                if result.message.prefix(1) == "T" {
+                if result.message.prefix(1) == "A" {
                     hud = self.showProgressHUDWithSuccess(msg: result.message)
                     self.delayWithSeconds(2, completion: {
                         hud.dismiss()
@@ -51,7 +45,7 @@ class SendSignatureDataViewController: UIViewController {
                     })
                 }
             }, onError: { (error) in
-                print(error)
+                print("error")
             }, onCompleted: nil, onDisposed: nil)
         })
         ConnectionUtil.isUnreachable(completed: { (_) in
@@ -63,9 +57,6 @@ class SendSignatureDataViewController: UIViewController {
         })
     }
     
-    @IBAction func clearButtonPressed(_ sender: UIButton) {
-        self.signatureView.clear()
-    }
     
     func showProgressHUD(msg: String) -> JGProgressHUD {
         let hud = JGProgressHUD(style: .dark)
@@ -91,7 +82,7 @@ class SendSignatureDataViewController: UIViewController {
     }
 }
 
-extension SendSignatureDataViewController {
+extension TrainSignatureViewController {
     func delayWithSeconds(_ seconds: Double, completion: @escaping () -> ()) {
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             completion()

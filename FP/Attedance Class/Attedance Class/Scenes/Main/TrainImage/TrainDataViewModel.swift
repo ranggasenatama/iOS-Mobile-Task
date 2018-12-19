@@ -6,7 +6,6 @@
 //  Copyright © 2018 Rangga Senatama Putra. All rights reserved.
 //
 
-import Foundation
 import Domain
 import Data
 import RxSwift

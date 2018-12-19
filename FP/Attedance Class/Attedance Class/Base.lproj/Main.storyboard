@@ -49,7 +49,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2478" y="-546"/>
+            <point key="canvasLocation" x="2478" y="-53"/>
         </scene>
         <!--Get Location View Controller-->
         <scene sceneID="QmQ-yi-IJM">
@@ -85,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HFg-oR-dKl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3321" y="-546"/>
+            <point key="canvasLocation" x="3206" y="-54"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="DXI-mg-g0d">
@@ -119,7 +119,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="02o-di-1bI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2308" y="978"/>
+            <point key="canvasLocation" x="246" y="1735"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="uyf-gx-5LF">
@@ -376,6 +376,8 @@
                         <segue destination="FNG-n4-WLr" kind="show" identifier="SendImage" id="fc4-Lc-LCI"/>
                         <segue destination="cQt-jt-u4E" kind="show" identifier="TrainData" id="ELM-Z9-kKx"/>
                         <segue destination="Cq4-5n-zP3" kind="show" identifier="SendSignature" id="mKW-tg-bxL"/>
+                        <segue destination="9v2-0d-MEj" kind="show" identifier="PredictSignature" id="oeZ-1m-kGZ"/>
+                        <segue destination="Wul-i9-vfP" kind="show" identifier="TrainSignature" id="ZSe-ce-sVs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zqC-j9-NnF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -429,7 +431,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uEC-49-Btt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2478" y="152"/>
+            <point key="canvasLocation" x="3929" y="650"/>
         </scene>
         <!--Send Image-->
         <scene sceneID="4E5-jx-xNs">
@@ -474,7 +476,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F9H-5k-kYn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2478" y="824"/>
+            <point key="canvasLocation" x="2478" y="650"/>
         </scene>
         <!--Train Image-->
         <scene sceneID="Twe-fi-gxj">
@@ -510,11 +512,119 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uRg-QU-BgL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2478" y="1524"/>
+            <point key="canvasLocation" x="3206" y="650"/>
+        </scene>
+        <!--Predict Signature-->
+        <scene sceneID="uP0-yF-9nZ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hvL-Vq-VJF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController title="Predict Signature" id="9v2-0d-MEj" customClass="GetPredictSignatureViewController" customModule="Attedance_Class" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zfU-CE-gD0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jzt-Iq-7nY" customClass="YPDrawSignatureView" customModule="YPDrawSignatureView">
+                                <rect key="frame" x="55" y="134" width="265" height="234"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWK-yo-8yu">
+                                <rect key="frame" x="195" y="468" width="125" height="50"/>
+                                <color key="backgroundColor" red="0.76089900730000004" green="0.25649610160000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="j58-sZ-z4R"/>
+                                    <constraint firstAttribute="width" constant="125" id="ltQ-ff-R57"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                <state key="normal" title="Clear">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearButtonPressed:" destination="9v2-0d-MEj" eventType="touchUpInside" id="Eop-FH-Zkz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjj-C4-d0P">
+                                <rect key="frame" x="55" y="468" width="125" height="50"/>
+                                <color key="backgroundColor" red="0.19115509089999999" green="0.63786703349999996" blue="0.26147949700000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="VcB-Nt-yXb"/>
+                                    <constraint firstAttribute="width" constant="125" id="eyz-iO-JCC"/>
+                                </constraints>
+                                <state key="normal" title="Predict">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="predictButtonPressed:" destination="9v2-0d-MEj" eventType="touchUpInside" id="Lhd-Gn-HO3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.15868747229999999" green="0.2182204425" blue="0.30320093040000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="jzt-Iq-7nY" firstAttribute="leading" secondItem="y0S-Kg-NTJ" secondAttribute="leading" constant="55" id="4gR-rs-W9W"/>
+                            <constraint firstItem="y0S-Kg-NTJ" firstAttribute="trailing" secondItem="jzt-Iq-7nY" secondAttribute="trailing" constant="55" id="58D-r6-UTo"/>
+                            <constraint firstItem="KWK-yo-8yu" firstAttribute="top" secondItem="jzt-Iq-7nY" secondAttribute="bottom" constant="100" id="c6z-Qn-ncu"/>
+                            <constraint firstItem="vjj-C4-d0P" firstAttribute="leading" secondItem="y0S-Kg-NTJ" secondAttribute="leading" constant="55" id="dDn-zH-Btr"/>
+                            <constraint firstItem="y0S-Kg-NTJ" firstAttribute="trailing" secondItem="KWK-yo-8yu" secondAttribute="trailing" constant="55" id="fKP-7m-oEZ"/>
+                            <constraint firstItem="y0S-Kg-NTJ" firstAttribute="bottom" secondItem="vjj-C4-d0P" secondAttribute="bottom" constant="100" id="pxO-Hp-Bi3"/>
+                            <constraint firstItem="jzt-Iq-7nY" firstAttribute="top" secondItem="y0S-Kg-NTJ" secondAttribute="top" constant="70" id="vz5-mD-klj"/>
+                            <constraint firstItem="y0S-Kg-NTJ" firstAttribute="bottom" secondItem="KWK-yo-8yu" secondAttribute="bottom" constant="100" id="zdD-9k-99f"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="y0S-Kg-NTJ"/>
+                    </view>
+                    <connections>
+                        <outlet property="clearButton" destination="KWK-yo-8yu" id="ivT-Np-eG3"/>
+                        <outlet property="predictButton" destination="vjj-C4-d0P" id="Rdq-9t-PrL"/>
+                        <outlet property="signatureView" destination="jzt-Iq-7nY" id="9J5-yM-Iva"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="3929" y="1312"/>
+        </scene>
+        <!--Train Signature-->
+        <scene sceneID="pIi-vb-LED">
+            <objects>
+                <viewController title="Train Signature" id="Wul-i9-vfP" customClass="TrainSignatureViewController" customModule="Attedance_Class" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GrQ-26-b1b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EX2-dv-vUw">
+                                <rect key="frame" x="55" y="468" width="265" height="50"/>
+                                <color key="backgroundColor" red="0.19115509089999999" green="0.63786703349999996" blue="0.26147949700000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="K0q-6T-Fdg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Train Signature">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="trainButtonPressed:" destination="Wul-i9-vfP" eventType="touchUpInside" id="sdW-MW-YHK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.15868747229999999" green="0.2182204425" blue="0.30320093040000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="FSi-vM-XS7" firstAttribute="trailing" secondItem="EX2-dv-vUw" secondAttribute="trailing" constant="55" id="LQ6-mb-AFy"/>
+                            <constraint firstItem="EX2-dv-vUw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="FSi-vM-XS7" secondAttribute="top" constant="387" id="Veq-OE-064"/>
+                            <constraint firstItem="FSi-vM-XS7" firstAttribute="bottom" secondItem="EX2-dv-vUw" secondAttribute="bottom" constant="100" id="bZJ-BQ-mwU"/>
+                            <constraint firstItem="EX2-dv-vUw" firstAttribute="leading" secondItem="FSi-vM-XS7" secondAttribute="leading" constant="55" id="icH-SL-xgi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FSi-vM-XS7"/>
+                    </view>
+                    <connections>
+                        <outlet property="trainButton" destination="EX2-dv-vUw" id="vke-xc-bfu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OO3-QR-u0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3206" y="1312"/>
         </scene>
         <!--Send Signature-->
         <scene sceneID="9WC-WZ-qI5">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hP1-hX-qqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Send Signature" id="Cq4-5n-zP3" customClass="SendSignatureDataViewController" customModule="Attedance_Class" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O7r-rL-zKt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -580,9 +690,8 @@
                         <outlet property="signatureView" destination="Abf-Ba-u2p" id="lkE-1O-WoL"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hP1-hX-qqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1582" y="-546"/>
+            <point key="canvasLocation" x="2478" y="1312"/>
         </scene>
         <!--FaceID Scanner-->
         <scene sceneID="UFS-DV-Nan">
@@ -628,7 +737,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="INQ-VG-HaB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4151" y="-546"/>
+            <point key="canvasLocation" x="3929" y="-54"/>
         </scene>
     </scenes>
     <resources>

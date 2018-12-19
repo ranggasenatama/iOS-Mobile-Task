@@ -31,16 +31,16 @@ class TrainDataViewController: UIViewController {
         ConnectionUtil.isReachable(completed: { (_) in
             self.trainDataViewModel.trainData().subscribe(onNext: { (result) in
                 hud.dismiss()
-                if result.message.prefix(1) == "R" {
-                    hud = self.showProgressHUDWithError(msg: result.message)
-                    self.delayWithSeconds(2, completion: {
-                        hud.dismiss()
-                    })
-                } else if result.message.prefix(1) == "A" {
+                if result.message.prefix(1) == "A" {
                     hud = self.showProgressHUDWithSuccess(msg: result.message)
                     self.delayWithSeconds(2, completion: {
                         hud.dismiss()
                         self.navigationController?.popToRootViewController(animated: true)
+                    })
+                } else {
+                    hud = self.showProgressHUDWithError(msg: result.message)
+                    self.delayWithSeconds(2, completion: {
+                        hud.dismiss()
                     })
                 }
             }, onError: { (error) in

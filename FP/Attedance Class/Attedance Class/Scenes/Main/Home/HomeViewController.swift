@@ -152,8 +152,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             targetView = "TrainData"
         } else if indexPath.row == 3 {
             targetView = "PredictImage"
-        } else {
+        } else if indexPath.row == 4 {
             targetView = "SendSignature"
+        } else if indexPath.row == 5 {
+            targetView = "TrainSignature"
+        } else {
+            targetView = "PredictSignature"
         }
         performSegue(withIdentifier: targetView, sender: self)
     }

@@ -41,17 +41,18 @@ class GetPredictImageViewController: UIViewController, AVCapturePhotoCaptureDele
                 self.initViewModel()
                 self.getPredictImageViewModel.makePredict().subscribe(onNext: { (result) in
                     hud.dismiss()
-                    if result.message.prefix(1) == "R" {
-                        hud = self.showProgressHUDWithError(msg: result.message)
-                        self.delayWithSeconds(2, completion: {
-                            hud.dismiss()
-                            self.captureSession.startRunning()
-                        })
-                    } else if result.message.prefix(1) == "A" {
+                    if result.message.prefix(1) == "A" {
                         hud = self.showProgressHUDWithSuccess(msg: result.message)
                         self.delayWithSeconds(2, completion: {
                             hud.dismiss()
                             self.navigationController?.popToRootViewController(animated: true)
+                        })
+                    } else {
+                        
+                        hud = self.showProgressHUDWithError(msg: result.message)
+                        self.delayWithSeconds(2, completion: {
+                            hud.dismiss()
+                            self.captureSession.startRunning()
                         })
                     }
                 }, onError: nil, onCompleted: nil, onDisposed: nil)
