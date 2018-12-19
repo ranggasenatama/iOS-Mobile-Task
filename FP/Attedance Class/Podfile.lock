@@ -54,6 +54,7 @@ PODS:
     - RxSwift (~> 4.0)
   - RxSwift (4.3.0)
   - SwiftyJSON (4.1.0)
+  - YPDrawSignatureView (1.1.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
@@ -67,6 +68,7 @@ DEPENDENCIES:
   - RxCocoa (~> 4.3)
   - RxSwift (~> 4.3)
   - SwiftyJSON (~> 4.0)
+  - YPDrawSignatureView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -82,6 +84,7 @@ SPEC REPOS:
     - RxCocoa
     - RxSwift
     - SwiftyJSON
+    - YPDrawSignatureView
 
 EXTERNAL SOURCES:
   ChameleonFramework:
@@ -106,7 +109,8 @@ SPEC CHECKSUMS:
   RxCocoa: 71b9cce833fbcb89a8eec11816dd225830c2bd3c
   RxSwift: a9717a34df3179fe63563f76e046ad345078dd3a
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+  YPDrawSignatureView: 0ca1cfcd329b9f4bf74172859f80a47a200a0e0d
 
-PODFILE CHECKSUM: f939e778a4ebfb1158b91479d5e421b8d074cfcb
+PODFILE CHECKSUM: 2382f9fe6c2ff61c8c9b3cfad677cef2502b7bab
 
 COCOAPODS: 1.5.3

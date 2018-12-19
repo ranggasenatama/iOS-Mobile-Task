@@ -106,7 +106,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 7
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -114,7 +114,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         cell = shadowCell(cell: cell)
         
-        if indexPath.row == 1 {
+        if indexPath.row == 0 {
+            cell.imageView.image = UIImage(named: "icon-attendance")
+            cell.nameLabel.text = "Attendance Class"
+        }
+        else if indexPath.row == 1 {
             cell.imageView.image = UIImage(named: "icon-sendimg")
             cell.nameLabel.text = "Send Image"
         } else if indexPath.row == 2 {
@@ -125,7 +129,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.nameLabel.text = "Predict Image"
         } else {
             cell.imageView.image = UIImage(named: "icon-attendance")
-            cell.nameLabel.text = "Attendance Class"
+            cell.nameLabel.text = "Send Signature"
         }
         
         cell.backgroundColor = UIColor.white
@@ -141,8 +145,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             targetView = "SendImage"
         } else if indexPath.row == 2 {
             targetView = "TrainData"
-        } else {
+        } else if indexPath.row == 3 {
             targetView = "PredictImage"
+        } else {
+            targetView = "SendSignature"
         }
         performSegue(withIdentifier: targetView, sender: self)
     }

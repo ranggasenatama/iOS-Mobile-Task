@@ -21,7 +21,8 @@ target 'Attedance Class' do
 	pod 'IQKeyboardManagerSwift'
 	pod 'JGProgressHUD'
 	pod "KTSnackBar"
-	pod 'MaterialComponents/Snackbar'	
+	pod 'MaterialComponents/Snackbar'
+	pod 'YPDrawSignatureView'
 end
 
 target 'Data' do
