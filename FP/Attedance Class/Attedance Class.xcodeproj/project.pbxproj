@@ -11,6 +11,12 @@
 		4BA629AA4E6E5E2AD195268F /* Pods_Device.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 445063F086F5D58F1D109416 /* Pods_Device.framework */; };
 		6333EB3C21CA399200712549 /* SendSignatureDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6333EB3B21CA399200712549 /* SendSignatureDataViewController.swift */; };
 		6333EB3F21CA3A1100712549 /* SendSignatureDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6333EB3E21CA3A1100712549 /* SendSignatureDataViewModel.swift */; };
+		6333EB4221CA49A500712549 /* SendSignatureRequestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6333EB4121CA49A500712549 /* SendSignatureRequestEntity.swift */; };
+		6333EB4421CA49DF00712549 /* SendSignatureUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6333EB4321CA49DF00712549 /* SendSignatureUseCase.swift */; };
+		6333EB4621CA4A1C00712549 /* SendSignatureRequestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6333EB4521CA4A1C00712549 /* SendSignatureRequestRepository.swift */; };
+		6333EB4821CA510900712549 /* SendSignatureRequestRepositoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6333EB4721CA510900712549 /* SendSignatureRequestRepositoryData.swift */; };
+		6333EB4A21CA516700712549 /* SendSignatureRequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6333EB4921CA516700712549 /* SendSignatureRequestData.swift */; };
+		6333EB4C21CA519700712549 /* SendSignatureRequestMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6333EB4B21CA519700712549 /* SendSignatureRequestMapper.swift */; };
 		633A729321B813F800200753 /* SuperResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633A729221B813F800200753 /* SuperResponseData.swift */; };
 		633A729521B8150E00200753 /* SuperResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633A729421B8150E00200753 /* SuperResponseMapper.swift */; };
 		634F272A21C11055004D693A /* GetPredictImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634F272921C11055004D693A /* GetPredictImageViewController.swift */; };
@@ -143,6 +149,12 @@
 		5F212D291ACAE0111D8AB830 /* Pods-Attedance Class.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Attedance Class.release.xcconfig"; path = "Pods/Target Support Files/Pods-Attedance Class/Pods-Attedance Class.release.xcconfig"; sourceTree = "<group>"; };
 		6333EB3B21CA399200712549 /* SendSignatureDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendSignatureDataViewController.swift; sourceTree = "<group>"; };
 		6333EB3E21CA3A1100712549 /* SendSignatureDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendSignatureDataViewModel.swift; sourceTree = "<group>"; };
+		6333EB4121CA49A500712549 /* SendSignatureRequestEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendSignatureRequestEntity.swift; sourceTree = "<group>"; };
+		6333EB4321CA49DF00712549 /* SendSignatureUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendSignatureUseCase.swift; sourceTree = "<group>"; };
+		6333EB4521CA4A1C00712549 /* SendSignatureRequestRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendSignatureRequestRepository.swift; sourceTree = "<group>"; };
+		6333EB4721CA510900712549 /* SendSignatureRequestRepositoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendSignatureRequestRepositoryData.swift; sourceTree = "<group>"; };
+		6333EB4921CA516700712549 /* SendSignatureRequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendSignatureRequestData.swift; sourceTree = "<group>"; };
+		6333EB4B21CA519700712549 /* SendSignatureRequestMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendSignatureRequestMapper.swift; sourceTree = "<group>"; };
 		633A729221B813F800200753 /* SuperResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperResponseData.swift; sourceTree = "<group>"; };
 		633A729421B8150E00200753 /* SuperResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperResponseMapper.swift; sourceTree = "<group>"; };
 		634F272921C11055004D693A /* GetPredictImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPredictImageViewController.swift; sourceTree = "<group>"; };
@@ -308,7 +320,7 @@
 				637FABD121BE93A800FB6AAB /* Home */,
 				6333EB4021CA408A00712549 /* AttendanceClass */,
 				634F272621C10FBD004D693A /* SendImageData */,
-				634F272821C10FEB004D693A /* TrainData */,
+				634F272821C10FEB004D693A /* TrainImage */,
 				634F272721C10FD5004D693A /* GetPredictImage */,
 				6333EB3A21CA396F00712549 /* SendSignatureData */,
 			);
@@ -393,13 +405,13 @@
 			path = GetPredictImage;
 			sourceTree = "<group>";
 		};
-		634F272821C10FEB004D693A /* TrainData */ = {
+		634F272821C10FEB004D693A /* TrainImage */ = {
 			isa = PBXGroup;
 			children = (
 				63C2738C21C14EB2003A3557 /* TrainDataViewController.swift */,
 				63C2738E21C14EBE003A3557 /* TrainDataViewModel.swift */,
 			);
-			path = TrainData;
+			path = TrainImage;
 			sourceTree = "<group>";
 		};
 		636E52D821BE39D100BF3AEB /* Login */ = {
@@ -514,6 +526,7 @@
 				63C2738021C14737003A3557 /* SendImageRequestEntity.swift */,
 				634F272D21C113A3004D693A /* AbsentRequestEntity.swift */,
 				63C2739221C1533E003A3557 /* TrainDataRequestEntity.swift */,
+				6333EB4121CA49A500712549 /* SendSignatureRequestEntity.swift */,
 				6385304E21B2BE9A0013985C /* SuperResponseEntity.swift */,
 				6385305021B2BF090013985C /* PredictRequstEntity.swift */,
 				6391CBDE21B4064900E57004 /* UserEntity.swift */,
@@ -532,6 +545,7 @@
 				637DF7A821C11AF500E3BD41 /* GetAbsentUserUseCase.swift */,
 				63C2738421C14814003A3557 /* SendImageUserUseCase.swift */,
 				63C2739421C1537C003A3557 /* TrainDataUseCase.swift */,
+				6333EB4321CA49DF00712549 /* SendSignatureUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -572,6 +586,7 @@
 				637DF7AC21C11F0600E3BD41 /* AbsentUserRequestRepositoryData.swift */,
 				63C2738621C148C3003A3557 /* SendImageRequestRepositoryData.swift */,
 				63C2739621C153E6003A3557 /* TrainDataRequestRepositoryData.swift */,
+				6333EB4721CA510900712549 /* SendSignatureRequestRepositoryData.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -583,6 +598,7 @@
 				63C2737921C13BF2003A3557 /* AbsentRequestData.swift */,
 				63C2738821C1496A003A3557 /* SendImageRequestData.swift */,
 				63C2739821C1541E003A3557 /* TrainDataRequestData.swift */,
+				6333EB4921CA516700712549 /* SendSignatureRequestData.swift */,
 				633A729221B813F800200753 /* SuperResponseData.swift */,
 				634F272F21C1143C004D693A /* UserModelData.swift */,
 				634F273121C11447004D693A /* AgendaModelData.swift */,
@@ -598,6 +614,7 @@
 				63C2737721C13B70003A3557 /* AbsentUserRequestMapper.swift */,
 				63C2738A21C14999003A3557 /* SendImageRequestMapper.swift */,
 				63C2739A21C15460003A3557 /* TrainDataRequestMapper.swift */,
+				6333EB4B21CA519700712549 /* SendSignatureRequestMapper.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -618,6 +635,7 @@
 				637DF7AA21C11B2200E3BD41 /* AbsentRequestRepository.swift */,
 				63C2738221C147D0003A3557 /* SendImageRequestRepository.swift */,
 				63C2739021C15315003A3557 /* TrainDataRequestRepository.swift */,
+				6333EB4521CA4A1C00712549 /* SendSignatureRequestRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -1046,8 +1064,11 @@
 				6391CBE321B4079900E57004 /* ImageEntity.swift in Sources */,
 				634F272E21C113A3004D693A /* AbsentRequestEntity.swift in Sources */,
 				637DF7AB21C11B2200E3BD41 /* AbsentRequestRepository.swift in Sources */,
+				6333EB4221CA49A500712549 /* SendSignatureRequestEntity.swift in Sources */,
 				63C2739121C15315003A3557 /* TrainDataRequestRepository.swift in Sources */,
 				637DF7A921C11AF500E3BD41 /* GetAbsentUserUseCase.swift in Sources */,
+				6333EB4421CA49DF00712549 /* SendSignatureUseCase.swift in Sources */,
+				6333EB4621CA4A1C00712549 /* SendSignatureRequestRepository.swift in Sources */,
 				63C2739321C1533E003A3557 /* TrainDataRequestEntity.swift in Sources */,
 				63C2738521C14814003A3557 /* SendImageUserUseCase.swift in Sources */,
 				63F3471B21AC51B5000FAEC3 /* CoordinateEntity.swift in Sources */,
@@ -1060,13 +1081,16 @@
 			files = (
 				63C2739921C1541E003A3557 /* TrainDataRequestData.swift in Sources */,
 				63FE728121B2B21100DA4610 /* APIManager.swift in Sources */,
+				6333EB4C21CA519700712549 /* SendSignatureRequestMapper.swift in Sources */,
 				633A729521B8150E00200753 /* SuperResponseMapper.swift in Sources */,
 				634F273021C1143C004D693A /* UserModelData.swift in Sources */,
 				63C2738721C148C3003A3557 /* SendImageRequestRepositoryData.swift in Sources */,
 				63C2738921C1496A003A3557 /* SendImageRequestData.swift in Sources */,
 				634F273221C11447004D693A /* AgendaModelData.swift in Sources */,
 				63C2737821C13B70003A3557 /* AbsentUserRequestMapper.swift in Sources */,
+				6333EB4821CA510900712549 /* SendSignatureRequestRepositoryData.swift in Sources */,
 				63C2739721C153E6003A3557 /* TrainDataRequestRepositoryData.swift in Sources */,
+				6333EB4A21CA516700712549 /* SendSignatureRequestData.swift in Sources */,
 				6391CBE121B406D100E57004 /* PredictRequestMapper.swift in Sources */,
 				63C2738B21C14999003A3557 /* SendImageRequestMapper.swift in Sources */,
 				637DF7AD21C11F0600E3BD41 /* AbsentUserRequestRepositoryData.swift in Sources */,

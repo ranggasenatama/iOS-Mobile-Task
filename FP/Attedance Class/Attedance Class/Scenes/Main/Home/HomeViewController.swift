@@ -117,19 +117,24 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         if indexPath.row == 0 {
             cell.imageView.image = UIImage(named: "icon-attendance")
             cell.nameLabel.text = "Attendance Class"
-        }
-        else if indexPath.row == 1 {
+        } else if indexPath.row == 1 {
             cell.imageView.image = UIImage(named: "icon-sendimg")
             cell.nameLabel.text = "Send Image"
         } else if indexPath.row == 2 {
             cell.imageView.image = UIImage(named: "icon-train")
-            cell.nameLabel.text = "Train Data"
+            cell.nameLabel.text = "Train Image"
         } else if indexPath.row == 3 {
             cell.imageView.image = UIImage(named: "icon-predict")
             cell.nameLabel.text = "Predict Image"
-        } else {
-            cell.imageView.image = UIImage(named: "icon-attendance")
+        } else if indexPath.row == 4 {
+            cell.imageView.image = UIImage(named: "icon-sendsignature")
             cell.nameLabel.text = "Send Signature"
+        } else if indexPath.row == 5 {
+            cell.imageView.image = UIImage(named: "icon-trainsignature")
+            cell.nameLabel.text = "Train Signature"
+        } else {
+            cell.imageView.image = UIImage(named: "icon-predictsignature")
+            cell.nameLabel.text = "Predict Signature"
         }
         
         cell.backgroundColor = UIColor.white

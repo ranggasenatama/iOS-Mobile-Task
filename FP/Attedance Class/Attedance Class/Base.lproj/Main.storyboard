@@ -26,7 +26,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xp-oS-NcD">
-                                <rect key="frame" x="87" y="184" width="200" height="200"/>
+                                <rect key="frame" x="59" y="205.5" width="256" height="256"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="qrcode2"/>
                                 <connections>
@@ -37,12 +37,10 @@
                         <color key="backgroundColor" red="0.13346317410469055" green="0.18231484293937683" blue="0.25190103054046631" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="YdQ-kE-Qb3" secondAttribute="bottom" constant="532" id="3F7-ut-MeI"/>
-                            <constraint firstItem="5Xp-oS-NcD" firstAttribute="top" secondItem="YdQ-kE-Qb3" secondAttribute="bottom" constant="98" id="Aa5-bw-tXi"/>
-                            <constraint firstItem="5Xp-oS-NcD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="Jdc-Q0-ad4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Xp-oS-NcD" secondAttribute="trailing" constant="88" id="TZs-f1-sw3"/>
+                            <constraint firstItem="5Xp-oS-NcD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="WbY-sq-GxY"/>
+                            <constraint firstItem="5Xp-oS-NcD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gPN-dq-a5W"/>
                             <constraint firstItem="YdQ-kE-Qb3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="h2h-IO-dp8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YdQ-kE-Qb3" secondAttribute="trailing" constant="65" id="tSb-Iu-FOM"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5Xp-oS-NcD" secondAttribute="bottom" constant="234" id="ybG-T1-TxG"/>
                             <constraint firstItem="YdQ-kE-Qb3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="65" id="ywW-zO-wZH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -478,10 +476,10 @@
             </objects>
             <point key="canvasLocation" x="2478" y="824"/>
         </scene>
-        <!--Train Data-->
+        <!--Train Image-->
         <scene sceneID="Twe-fi-gxj">
             <objects>
-                <viewController title="Train Data" id="cQt-jt-u4E" customClass="TrainDataViewController" customModule="Attedance_Class" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Train Image" id="cQt-jt-u4E" customClass="TrainDataViewController" customModule="Attedance_Class" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fgO-2Y-IAD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -490,7 +488,7 @@
                                 <rect key="frame" x="55" y="473" width="265" height="45"/>
                                 <color key="backgroundColor" red="0.19115509089999999" green="0.63786703349999996" blue="0.26147949700000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <state key="normal" title="Train Data">
+                                <state key="normal" title="Train Image">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -514,16 +512,16 @@
             </objects>
             <point key="canvasLocation" x="2478" y="1524"/>
         </scene>
-        <!--Send Signature Data View Controller-->
+        <!--Send Signature-->
         <scene sceneID="9WC-WZ-qI5">
             <objects>
-                <viewController id="Cq4-5n-zP3" customClass="SendSignatureDataViewController" customModule="Attedance_Class" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Send Signature" id="Cq4-5n-zP3" customClass="SendSignatureDataViewController" customModule="Attedance_Class" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O7r-rL-zKt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Abf-Ba-u2p" customClass="YPDrawSignatureView" customModule="YPDrawSignatureView">
-                                <rect key="frame" x="55" y="134" width="265" height="211"/>
+                                <rect key="frame" x="55" y="134" width="265" height="234"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="strokeWidth">
@@ -550,7 +548,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LhT-5f-1GJ">
                                 <rect key="frame" x="55" y="468" width="125" height="50"/>
-                                <color key="backgroundColor" red="0.15101002156734467" green="0.56891876459121704" blue="0.43715286254882812" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.19115509089999999" green="0.63786703349999996" blue="0.26147949700000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="125" id="SfX-rf-c18"/>
                                     <constraint firstAttribute="height" constant="50" id="o7P-Xe-fe0"/>
@@ -563,12 +561,12 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.18998533487319946" green="0.35768887400627136" blue="0.43821841478347778" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.15868747234344482" green="0.21822044253349304" blue="0.30320093035697937" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="vl3-dc-cwg" firstAttribute="bottom" secondItem="LhT-5f-1GJ" secondAttribute="bottom" constant="100" id="0II-ej-AEU"/>
                             <constraint firstItem="vl3-dc-cwg" firstAttribute="bottom" secondItem="DQv-Cj-oN9" secondAttribute="bottom" constant="100" id="3A2-be-aed"/>
                             <constraint firstItem="vl3-dc-cwg" firstAttribute="trailing" secondItem="Abf-Ba-u2p" secondAttribute="trailing" constant="55" id="8Xx-8E-eLp"/>
-                            <constraint firstItem="DQv-Cj-oN9" firstAttribute="top" secondItem="Abf-Ba-u2p" secondAttribute="bottom" constant="123" id="FTv-7H-H7E"/>
+                            <constraint firstItem="DQv-Cj-oN9" firstAttribute="top" secondItem="Abf-Ba-u2p" secondAttribute="bottom" constant="100" id="FTv-7H-H7E"/>
                             <constraint firstItem="LhT-5f-1GJ" firstAttribute="leading" secondItem="vl3-dc-cwg" secondAttribute="leading" constant="55" id="I8g-Qw-QIU"/>
                             <constraint firstItem="vl3-dc-cwg" firstAttribute="trailing" secondItem="DQv-Cj-oN9" secondAttribute="trailing" constant="55" id="QDK-FH-CBt"/>
                             <constraint firstItem="Abf-Ba-u2p" firstAttribute="leading" secondItem="vl3-dc-cwg" secondAttribute="leading" constant="55" id="Tix-lT-eAl"/>
