@@ -93,8 +93,6 @@ extension HomeViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let loginViewController = segue.destination as? LoginViewController {
             loginViewController.delegate = self
-        } else if segue.identifier == "AttendanceClass" {
-            print("AttendanceClass")
         }
     }
 }

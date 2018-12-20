@@ -12,15 +12,15 @@ import RxSwift
 
 public class PredictSignatureRequestRepositoryData: PredictSignatureRequestRepository {
     let apiManager = APIManager()
-    let predictMapper: MapperBase<PredictRequestEntity, PredictRequestData> = PredictRequestMapper()
+    let predictMapper: MapperBase<PredictSignatureRequestEntity, PredictSignatureRequestData> = PredictSignatureRequestMapper()
     
     public init(){
         
     }
     
     public func makePredictSignature(entity: PredictSignatureRequestEntity) -> Observable<SuperResponseEntity> {
-        let request: PredictRequestData = predictMapper.mapToModel(entity: entity)
+        let request: PredictSignatureRequestData = predictMapper.mapToModel(entity: entity)
         
-        return apiManager.makePredictImage(_username: request.user.nrp, _password: request.user.password, _image: request.image)
+        return apiManager.makePredictSignature(_username: request.user.nrp, _password: request.user.password, _image: request.image)
     }
 }

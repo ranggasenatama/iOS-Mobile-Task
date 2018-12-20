@@ -22,51 +22,52 @@ class GetPredictSignatureViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        predictButton.rounded()
+        clearButton.rounded()
     }
     
     @IBAction func predictButtonPressed(_ sender: UIButton) {
-        
-    }
-    
-    @IBAction func clearButtonPressed(_ sender: UIButton) {
-        self.signatureView.clear()
+        self.image = signatureView.getSignature()
         initViewModel()
         checkReachability()
     }
     
+    @IBAction func clearButtonPressed(_ sender: UIButton) {
+        self.signatureView.clear()
+    }
+    
     func checkReachability() {
-//        var hud = self.showProgressHUD(msg: "Loading")
-//        ConnectionUtil.isReachable(completed: { (_) in
-//            self.trainSignatureViewModel.trainSignature().subscribe(onNext: { (result) in
-//                hud.dismiss()
-//                if result.message.prefix(1) == "A" {
-//                    hud = self.showProgressHUDWithSuccess(msg: result.message)
-//                    self.delayWithSeconds(2, completion: {
-//                        hud.dismiss()
-//                        self.navigationController?.popToRootViewController(animated: true)
-//                    })
-//                } else {
-//                    hud = self.showProgressHUDWithError(msg: result.message)
-//                    self.delayWithSeconds(2, completion: {
-//                        hud.dismiss()
-//                    })
-//                }
-//            }, onError: { (error) in
-//                print("error")
-//            }, onCompleted: nil, onDisposed: nil)
-//        })
-//        ConnectionUtil.isUnreachable(completed: { (_) in
-//            hud.dismiss()
-//            hud = self.showProgressHUDWithError(msg: "No connection")
-//            self.delayWithSeconds(2, completion: {
-//                hud.dismiss()
-//            })
-//        })
+        var hud = self.showProgressHUD(msg: "Loading")
+        ConnectionUtil.isReachable(completed: { (_) in
+            self.getPredictSignatureViewModel.makePredictSignature().subscribe(onNext: { (result) in
+                hud.dismiss()
+                if result.message.prefix(5) == "TTD A" {
+                    hud = self.showProgressHUDWithSuccess(msg: result.message)
+                    self.delayWithSeconds(2, completion: {
+                        hud.dismiss()
+                        self.navigationController?.popToRootViewController(animated: true)
+                    })
+                } else {
+                    hud = self.showProgressHUDWithError(msg: result.message)
+                    self.delayWithSeconds(2, completion: {
+                        hud.dismiss()
+                    })
+                }
+            }, onError: { (error) in
+                print("error")
+            }, onCompleted: nil, onDisposed: nil)
+        })
+        ConnectionUtil.isUnreachable(completed: { (_) in
+            hud.dismiss()
+            hud = self.showProgressHUDWithError(msg: "No connection")
+            self.delayWithSeconds(2, completion: {
+                hud.dismiss()
+            })
+        })
     }
     
     func initViewModel() {
-        self.getPredictSignatureViewModel.user = self.user
-        self.getPredictSignatureViewModel.image = self.image
+        self.getPredictSignatureViewModel = GetPredictSignatureViewModel(_user: user, _image: image)
     }
     
     func showProgressHUD(msg: String) -> JGProgressHUD {

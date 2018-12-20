@@ -19,6 +19,16 @@
 		6333EB4C21CA519700712549 /* SendSignatureRequestMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6333EB4B21CA519700712549 /* SendSignatureRequestMapper.swift */; };
 		633A729321B813F800200753 /* SuperResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633A729221B813F800200753 /* SuperResponseData.swift */; };
 		633A729521B8150E00200753 /* SuperResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633A729421B8150E00200753 /* SuperResponseMapper.swift */; };
+		634518F621CAB22300BA35F2 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634518F521CAB22300BA35F2 /* ProfilePageViewController.swift */; };
+		634518F921CAB89400BA35F2 /* PredictSignatureAbsentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634518F821CAB89400BA35F2 /* PredictSignatureAbsentViewController.swift */; };
+		634518FB21CABA3500BA35F2 /* PredictSignatureAbsentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634518FA21CABA3500BA35F2 /* PredictSignatureAbsentViewModel.swift */; };
+		634518FD21CABC3D00BA35F2 /* SignatureAbsentRequestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634518FC21CABC3D00BA35F2 /* SignatureAbsentRequestRepository.swift */; };
+		634518FF21CABD2800BA35F2 /* SignatureAbsentRequestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634518FE21CABD2800BA35F2 /* SignatureAbsentRequestEntity.swift */; };
+		6345190121CABDB400BA35F2 /* GetSignatureAbsentUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6345190021CABDB400BA35F2 /* GetSignatureAbsentUseCase.swift */; };
+		6345190321CABEBC00BA35F2 /* SignatureAbsentRequestRepositoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6345190221CABEBC00BA35F2 /* SignatureAbsentRequestRepositoryData.swift */; };
+		6345190521CABF5400BA35F2 /* SignatureAbsentRequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6345190421CABF5400BA35F2 /* SignatureAbsentRequestData.swift */; };
+		6345190721CABFC700BA35F2 /* SignatureAbsentRequestMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6345190621CABFC700BA35F2 /* SignatureAbsentRequestMapper.swift */; };
+		6345190921CB454800BA35F2 /* ProfilePageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6345190821CB454800BA35F2 /* ProfilePageTableViewCell.swift */; };
 		634F272A21C11055004D693A /* GetPredictImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634F272921C11055004D693A /* GetPredictImageViewController.swift */; };
 		634F272C21C11062004D693A /* GetPredictImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634F272B21C11062004D693A /* GetPredictImageViewModel.swift */; };
 		634F272E21C113A3004D693A /* AbsentRequestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634F272D21C113A3004D693A /* AbsentRequestEntity.swift */; };
@@ -173,6 +183,16 @@
 		6333EB4B21CA519700712549 /* SendSignatureRequestMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendSignatureRequestMapper.swift; sourceTree = "<group>"; };
 		633A729221B813F800200753 /* SuperResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperResponseData.swift; sourceTree = "<group>"; };
 		633A729421B8150E00200753 /* SuperResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperResponseMapper.swift; sourceTree = "<group>"; };
+		634518F521CAB22300BA35F2 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
+		634518F821CAB89400BA35F2 /* PredictSignatureAbsentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictSignatureAbsentViewController.swift; sourceTree = "<group>"; };
+		634518FA21CABA3500BA35F2 /* PredictSignatureAbsentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictSignatureAbsentViewModel.swift; sourceTree = "<group>"; };
+		634518FC21CABC3D00BA35F2 /* SignatureAbsentRequestRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureAbsentRequestRepository.swift; sourceTree = "<group>"; };
+		634518FE21CABD2800BA35F2 /* SignatureAbsentRequestEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureAbsentRequestEntity.swift; sourceTree = "<group>"; };
+		6345190021CABDB400BA35F2 /* GetSignatureAbsentUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSignatureAbsentUseCase.swift; sourceTree = "<group>"; };
+		6345190221CABEBC00BA35F2 /* SignatureAbsentRequestRepositoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureAbsentRequestRepositoryData.swift; sourceTree = "<group>"; };
+		6345190421CABF5400BA35F2 /* SignatureAbsentRequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureAbsentRequestData.swift; sourceTree = "<group>"; };
+		6345190621CABFC700BA35F2 /* SignatureAbsentRequestMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureAbsentRequestMapper.swift; sourceTree = "<group>"; };
+		6345190821CB454800BA35F2 /* ProfilePageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageTableViewCell.swift; sourceTree = "<group>"; };
 		634F272921C11055004D693A /* GetPredictImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPredictImageViewController.swift; sourceTree = "<group>"; };
 		634F272B21C11062004D693A /* GetPredictImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPredictImageViewModel.swift; sourceTree = "<group>"; };
 		634F272D21C113A3004D693A /* AbsentRequestEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsentRequestEntity.swift; sourceTree = "<group>"; };
@@ -332,6 +352,7 @@
 			children = (
 				636E52D821BE39D100BF3AEB /* Login */,
 				6333EB3921CA393A00712549 /* Main */,
+				634518F421CAB20200BA35F2 /* Profile */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -376,6 +397,7 @@
 				63A7212F21AEFEDA00721504 /* ShowAgendaScan */,
 				63A7212A21AEF20100721504 /* GetLocation */,
 				6312336821AEDBB8006783FE /* MakePredictImage */,
+				634518F721CAB82D00BA35F2 /* MakePredictSignature */,
 			);
 			path = AttendanceClass;
 			sourceTree = "<group>";
@@ -419,6 +441,24 @@
 				636E52DB21BE3A8D00BF3AEB /* UITextField.swift */,
 			);
 			path = UITextField;
+			sourceTree = "<group>";
+		};
+		634518F421CAB20200BA35F2 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				634518F521CAB22300BA35F2 /* ProfilePageViewController.swift */,
+				6345190821CB454800BA35F2 /* ProfilePageTableViewCell.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		634518F721CAB82D00BA35F2 /* MakePredictSignature */ = {
+			isa = PBXGroup;
+			children = (
+				634518F821CAB89400BA35F2 /* PredictSignatureAbsentViewController.swift */,
+				634518FA21CABA3500BA35F2 /* PredictSignatureAbsentViewModel.swift */,
+			);
+			path = MakePredictSignature;
 			sourceTree = "<group>";
 		};
 		634F272621C10FBD004D693A /* SendImageData */ = {
@@ -559,6 +599,7 @@
 				63F3471A21AC51B5000FAEC3 /* CoordinateEntity.swift */,
 				63C2738021C14737003A3557 /* SendImageRequestEntity.swift */,
 				634F272D21C113A3004D693A /* AbsentRequestEntity.swift */,
+				634518FE21CABD2800BA35F2 /* SignatureAbsentRequestEntity.swift */,
 				63C2739221C1533E003A3557 /* TrainDataRequestEntity.swift */,
 				6385305021B2BF090013985C /* PredictRequstEntity.swift */,
 				6333EB4121CA49A500712549 /* SendSignatureRequestEntity.swift */,
@@ -578,6 +619,7 @@
 				63F3472421AC5F91000FAEC3 /* GetCoordinateGPSUseCase.swift */,
 				63DA144621B7AE5C00886563 /* GetRangeTwoCoordinateInMetersUseCase.swift */,
 				637DF7A821C11AF500E3BD41 /* GetAbsentUserUseCase.swift */,
+				6345190021CABDB400BA35F2 /* GetSignatureAbsentUseCase.swift */,
 				63FE727A21B2AB4100DA4610 /* GetPredictImageUseCase.swift */,
 				63C2738421C14814003A3557 /* SendImageUserUseCase.swift */,
 				63C2739421C1537C003A3557 /* TrainDataUseCase.swift */,
@@ -641,6 +683,7 @@
 			children = (
 				6385305421B2C0200013985C /* PredictRequestRepositoryData.swift */,
 				637DF7AC21C11F0600E3BD41 /* AbsentUserRequestRepositoryData.swift */,
+				6345190221CABEBC00BA35F2 /* SignatureAbsentRequestRepositoryData.swift */,
 				63C2738621C148C3003A3557 /* SendImageRequestRepositoryData.swift */,
 				63C2739621C153E6003A3557 /* TrainDataRequestRepositoryData.swift */,
 				6333EB4721CA510900712549 /* SendSignatureRequestRepositoryData.swift */,
@@ -655,6 +698,7 @@
 			children = (
 				63E64A4121B290E700C32115 /* PredictRequestData.swift */,
 				63C2737921C13BF2003A3557 /* AbsentRequestData.swift */,
+				6345190421CABF5400BA35F2 /* SignatureAbsentRequestData.swift */,
 				63C2738821C1496A003A3557 /* SendImageRequestData.swift */,
 				63C2739821C1541E003A3557 /* TrainDataRequestData.swift */,
 				6333EB4921CA516700712549 /* SendSignatureRequestData.swift */,
@@ -673,6 +717,7 @@
 				633A729421B8150E00200753 /* SuperResponseMapper.swift */,
 				6391CBE021B406D100E57004 /* PredictRequestMapper.swift */,
 				63C2737721C13B70003A3557 /* AbsentUserRequestMapper.swift */,
+				6345190621CABFC700BA35F2 /* SignatureAbsentRequestMapper.swift */,
 				63C2738A21C14999003A3557 /* SendImageRequestMapper.swift */,
 				63C2739A21C15460003A3557 /* TrainDataRequestMapper.swift */,
 				6333EB4B21CA519700712549 /* SendSignatureRequestMapper.swift */,
@@ -696,6 +741,7 @@
 				63F3472221AC5DF0000FAEC3 /* CoordinateRepository.swift */,
 				6385305221B2BFA70013985C /* PredictRequestRepository.swift */,
 				637DF7AA21C11B2200E3BD41 /* AbsentRequestRepository.swift */,
+				634518FC21CABC3D00BA35F2 /* SignatureAbsentRequestRepository.swift */,
 				63C2738221C147D0003A3557 /* SendImageRequestRepository.swift */,
 				63C2739021C15315003A3557 /* TrainDataRequestRepository.swift */,
 				6333EB4521CA4A1C00712549 /* SendSignatureRequestRepository.swift */,
@@ -1087,6 +1133,7 @@
 				63A7213121AEFF1F00721504 /* ShowAgendaScan.swift in Sources */,
 				63C2737F21C1437B003A3557 /* SendImageDataViewModel.swift in Sources */,
 				63A8266C21CA733000351CA1 /* GetPredictSignatureViewModel.swift in Sources */,
+				634518FB21CABA3500BA35F2 /* PredictSignatureAbsentViewModel.swift in Sources */,
 				63C2738D21C14EB2003A3557 /* TrainDataViewController.swift in Sources */,
 				63A8266A21CA716100351CA1 /* GetPredictSignatureViewController.swift in Sources */,
 				63A7212E21AEF28900721504 /* GetLocationViewModel.swift in Sources */,
@@ -1096,6 +1143,8 @@
 				63A7212C21AEF22D00721504 /* GetLocationViewController.swift in Sources */,
 				634F272C21C11062004D693A /* GetPredictImageViewModel.swift in Sources */,
 				63C2738F21C14EBE003A3557 /* TrainDataViewModel.swift in Sources */,
+				6345190921CB454800BA35F2 /* ProfilePageTableViewCell.swift in Sources */,
+				634518F921CAB89400BA35F2 /* PredictSignatureAbsentViewController.swift in Sources */,
 				63AC794B21C0D44A0019687D /* UserModel.swift in Sources */,
 				6333EB3C21CA399200712549 /* SendSignatureDataViewController.swift in Sources */,
 				637995A721B8DC61000A8CD5 /* UIImageView.swift in Sources */,
@@ -1106,6 +1155,7 @@
 				637995A521B8D8E6000A8CD5 /* UIButton.swift in Sources */,
 				63AC794921C0D3CD0019687D /* AgendaModel.swift in Sources */,
 				63A8265C21CA601700351CA1 /* TrainSignatureViewModel.swift in Sources */,
+				634518F621CAB22300BA35F2 /* ProfilePageViewController.swift in Sources */,
 				63A8265A21CA600A00351CA1 /* TrainSignatureViewController.swift in Sources */,
 				634F272A21C11055004D693A /* GetPredictImageViewController.swift in Sources */,
 				636E52DA21BE39E800BF3AEB /* LoginViewController.swift in Sources */,
@@ -1123,6 +1173,7 @@
 				63F3472321AC5DF0000FAEC3 /* CoordinateRepository.swift in Sources */,
 				63FE727B21B2AB4100DA4610 /* GetPredictImageUseCase.swift in Sources */,
 				6391CBDF21B4064900E57004 /* UserEntity.swift in Sources */,
+				6345190121CABDB400BA35F2 /* GetSignatureAbsentUseCase.swift in Sources */,
 				63C2738321C147D0003A3557 /* SendImageRequestRepository.swift in Sources */,
 				63C2739521C1537C003A3557 /* TrainDataUseCase.swift in Sources */,
 				63F3472521AC5F91000FAEC3 /* GetCoordinateGPSUseCase.swift in Sources */,
@@ -1138,10 +1189,12 @@
 				63A8267221CA7B6800351CA1 /* GetPredictSignatureUseCase.swift in Sources */,
 				6333EB4221CA49A500712549 /* SendSignatureRequestEntity.swift in Sources */,
 				63C2739121C15315003A3557 /* TrainDataRequestRepository.swift in Sources */,
+				634518FD21CABC3D00BA35F2 /* SignatureAbsentRequestRepository.swift in Sources */,
 				637DF7A921C11AF500E3BD41 /* GetAbsentUserUseCase.swift in Sources */,
 				6333EB4421CA49DF00712549 /* SendSignatureUseCase.swift in Sources */,
 				6333EB4621CA4A1C00712549 /* SendSignatureRequestRepository.swift in Sources */,
 				63C2739321C1533E003A3557 /* TrainDataRequestEntity.swift in Sources */,
+				634518FF21CABD2800BA35F2 /* SignatureAbsentRequestEntity.swift in Sources */,
 				63C2738521C14814003A3557 /* SendImageUserUseCase.swift in Sources */,
 				63A8266E21CA797A00351CA1 /* PredictSignatureRequestRepository.swift in Sources */,
 				63A8266021CA677800351CA1 /* TrainSignatureRequestRepository.swift in Sources */,
@@ -1156,6 +1209,7 @@
 			files = (
 				63C2739921C1541E003A3557 /* TrainDataRequestData.swift in Sources */,
 				63FE728121B2B21100DA4610 /* APIManager.swift in Sources */,
+				6345190321CABEBC00BA35F2 /* SignatureAbsentRequestRepositoryData.swift in Sources */,
 				6333EB4C21CA519700712549 /* SendSignatureRequestMapper.swift in Sources */,
 				63A8266621CA687D00351CA1 /* TrainSignatureRequestData.swift in Sources */,
 				633A729521B8150E00200753 /* SuperResponseMapper.swift in Sources */,
@@ -1179,6 +1233,8 @@
 				63C2739B21C15460003A3557 /* TrainDataRequestMapper.swift in Sources */,
 				63E64A4221B290E700C32115 /* PredictRequestData.swift in Sources */,
 				633A729321B813F800200753 /* SuperResponseData.swift in Sources */,
+				6345190521CABF5400BA35F2 /* SignatureAbsentRequestData.swift in Sources */,
+				6345190721CABFC700BA35F2 /* SignatureAbsentRequestMapper.swift in Sources */,
 				6385305521B2C0200013985C /* PredictRequestRepositoryData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -97,6 +97,48 @@ public class APIManager {
         }
     }
     
+    func makeSignatureAbsentUser(_username: String, _password: String, _image: String, _lat: String, _lon: String, _agenda: String) -> Observable<SuperResponseEntity> {
+        
+        let parameters: [String: String] = [
+            "idUser" : _username,
+            "password" : _password,
+            "image" : _image,
+            "Lat": _lat,
+            "Lon": _lon,
+            "idAgenda": _agenda
+        ]
+        
+        let url = "http://etc.if.its.ac.id/signin_TTD/"
+        
+        return Observable<SuperResponseEntity>.create { (observer) -> Disposable in
+            let requestReference = Alamofire.request(url,
+                                                     method: .post,
+                                                     parameters: parameters)
+                .validate()
+                .responseJSON { (response) in
+                    switch response.result{
+                    case .success:
+                        if response.data != nil {
+                            do {
+                                let json = try JSON(data: response.data!)
+                                
+                                observer.onNext(self.superResponseMapper.mapToEntity(model: json))
+                                observer.onCompleted()
+                            } catch {
+                                print("error")
+                            }
+                            
+                        }
+                    case .failure(let error):
+                        observer.onError(error)
+                    }
+            }
+            return Disposables.create(with: {
+                requestReference.cancel()
+            })
+        }
+    }
+    
     func sendImageUser(_username: String, _password: String, _image: String) -> Observable<SuperResponseEntity> {
         
         let parameters: [String: String] = [
@@ -221,6 +263,45 @@ public class APIManager {
         ]
         
         let url = "http://etc.if.its.ac.id/doTrain_TTD/"
+        
+        return Observable<SuperResponseEntity>.create { (observer) -> Disposable in
+            let requestReference = Alamofire.request(url,
+                                                     method: .post,
+                                                     parameters: parameters)
+                .validate()
+                .responseJSON { (response) in
+                    switch response.result{
+                    case .success:
+                        if response.data != nil {
+                            do {
+                                let json = try JSON(data: response.data!)
+                                
+                                observer.onNext(self.superResponseMapper.mapToEntity(model: json))
+                                observer.onCompleted()
+                            } catch {
+                                print("error")
+                            }
+                            
+                        }
+                    case .failure(let error):
+                        observer.onError(error)
+                    }
+            }
+            return Disposables.create(with: {
+                requestReference.cancel()
+            })
+        }
+    }
+    
+    func makePredictSignature(_username: String, _password: String, _image: String) -> Observable<SuperResponseEntity> {
+        
+        let parameters: [String: String] = [
+            "idUser" : _username,
+            "password" : _password,
+            "image" : _image
+        ]
+        
+        let url = "http://etc.if.its.ac.id/doPredict_TTD/"
         
         return Observable<SuperResponseEntity>.create { (observer) -> Disposable in
             let requestReference = Alamofire.request(url,

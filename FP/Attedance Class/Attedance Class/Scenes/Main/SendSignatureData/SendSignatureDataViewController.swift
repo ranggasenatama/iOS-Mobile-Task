@@ -38,7 +38,7 @@ class SendSignatureDataViewController: UIViewController {
         ConnectionUtil.isReachable(completed: { (_) in
             self.sendSignatureViewModel.sendSignature().subscribe(onNext: { (result) in
                 hud.dismiss()
-                if result.message.prefix(1) == "T" {
+                if result.message.prefix(5) == "TTD A" {
                     hud = self.showProgressHUDWithSuccess(msg: result.message)
                     self.delayWithSeconds(2, completion: {
                         hud.dismiss()

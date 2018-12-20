@@ -46,16 +46,16 @@ class PredictImageViewController: UIViewController, AVCapturePhotoCaptureDelegat
                 self.initViewModel()
                 self.predictImageViewModel.makeAbsentUser().subscribe(onNext: { (result) in
                     hud.dismiss()
-                    if result.message.prefix(1) == "R" {
-                        hud = self.showProgressHUDWithError(msg: result.message)
-                        self.delayWithSeconds(2, completion: {
-                            hud.dismiss()
-                        })
-                    } else if result.message.prefix(1) == "A" {
+                    if result.message.prefix(1) == "A" {
                         hud = self.showProgressHUDWithSuccess(msg: result.message)
                         self.delayWithSeconds(2, completion: {
                             hud.dismiss()
-                            self.navigationController?.popToRootViewController(animated: true)
+                            self.performSegue(withIdentifier: "SignatureAbsent", sender: self)
+                        })
+                    } else {
+                        hud = self.showProgressHUDWithError(msg: result.message)
+                        self.delayWithSeconds(2, completion: {
+                            hud.dismiss()
                         })
                     }
                 }, onError: nil, onCompleted: nil, onDisposed: nil)
